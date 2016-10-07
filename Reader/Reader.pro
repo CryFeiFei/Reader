@@ -17,4 +17,5 @@ SOURCES += main.cpp\
     kit.cpp
 
 HEADERS  += mainwindow.h \
+    PDFkit.h \
     kit.h

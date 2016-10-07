@@ -20,7 +20,7 @@ class MainWindow : public QMainWindow
 public:
      MainWindow(QWidget *parent = 0);
      void Init();
-    ~MainWindow();
+     ~MainWindow();
 protected:
      QMenu*               m_FileMenu;
      QMenu*               m_EditMenu;
@@ -30,7 +30,6 @@ protected:
      QAction*             m_OpenAction;
      QAction*             m_SaveAction;
      QAction*             m_CancelAction;
-     QAction*             chat;
      QToolBar*            Tool1;
      QToolBar*            Tool2;
 public slots:
