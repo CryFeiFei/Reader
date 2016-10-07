@@ -12,11 +12,14 @@
 #include<QGridLayout>
 #include<QLineEdit>
 #include<QLabel>
+
+
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+     Q_OBJECT
 public:
      MainWindow(QWidget *parent = 0);
+     void Init();
     ~MainWindow();
 protected:
      QMenu*               m_FileMenu;
@@ -24,9 +27,9 @@ protected:
      QMenu*               m_WindowMenu;
      QMenu*               m_HelpMenu;
      QMenuBar*            total;
-     QAction*             open;
-     QAction*             save;
-     QAction*             cancel;
+     QAction*             m_OpenAction;
+     QAction*             m_SaveAction;
+     QAction*             m_CancelAction;
      QAction*             chat;
      QToolBar*            Tool1;
      QToolBar*            Tool2;
