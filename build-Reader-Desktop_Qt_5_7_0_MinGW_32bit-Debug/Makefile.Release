@@ -52,6 +52,7 @@ OBJECTS       = release/main.o \
 		release/moc_mainwindow.o
 
 DIST          =  ..\Reader\mainwindow.h \
+		..\Reader\PDFkit.h \
 		..\Reader\kit.h ..\Reader\main.cpp \
 		..\Reader\mainwindow.cpp \
 		..\Reader\kit.cpp
