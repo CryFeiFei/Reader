@@ -19,3 +19,6 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     PDFkit.h \
     kit.h
+
+RESOURCES += \
+    resource.qrc

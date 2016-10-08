@@ -3,93 +3,85 @@
 
 MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent)
 {
-    m_OpenAction = new QAction(QIcon(":/image/clean"),"打开",this);
-    m_SaveAction = new QAction(QIcon(":/image/save"),"保存",this);
-    m_CancelAction = new QAction(QIcon(":/image/cancel"),"取消",this);
-    m_FileMenu = new QMenu("文件(F)");
-    m_EditMenu = new QMenu("编辑(E)");
-    m_WindowMenu = new QMenu("视图(V)");
-    m_HelpMenu = new QMenu("帮助(H)");
-    Tool1 = new QToolBar(this);
-    Tool2 = new QToolBar(this);
-
+ //   showWidget =new ShowWidget(this);
+//    setCentralWidget(showWidget);
+    this->resize(QSize(800,600)); //设置初始窗口大小
+    statusBar(); //显示状态栏
+    CreatActions();
+    CreatMenus();
+    CreatToolBar();
 }
 
-void MainWindow::Init()
+void MainWindow::CreatActions()
 {
-    this->resize(QSize( 800, 600 )); //设置初始窗口的大小
-    m_OpenAction->setStatusTip("you will open a messagebox");
-    statusBar();//它是类的函数所以可以直接调用，显示状态栏
+    //打开动作
+    m_OpenAction = new QAction(QIcon(":/image/open"), "打开", this);
+    m_OpenAction->setShortcut(tr("Ctrl+O"));
+    m_OpenAction->setStatusTip(tr("打开文件"));
+    connect(m_OpenAction,SIGNAL(triggered()), this, SLOT(ShowOpenFile()));
+
+    //保存动作
+    m_SaveAction = new QAction(QIcon(":/image/save"), "保存", this);
+    m_SaveAction->setShortcut(tr("Ctrl+S"));
+    m_SaveAction->setStatusTip(tr("保存文件"));
+    connect(m_OpenAction,SIGNAL(triggered()), this, SLOT(SaveFile()));
+
+    //退出动作
+    m_QuitAction = new QAction(QIcon(":/image/cancel"), "退出", this);
+    m_QuitAction->setShortcut(tr("Ctrl+Q"));
+    m_QuitAction->setStatusTip(tr("退出程序"));
+    connect(m_QuitAction,SIGNAL(triggered()),this,SLOT(CloseFile()));
+}
+
+void MainWindow::CreatMenus()
+{
+    m_FileMenu = menuBar()->addMenu(tr("文件(F)"));
     m_FileMenu->addAction(m_OpenAction);//往菜单栏内添加动作
     m_FileMenu->addAction(m_SaveAction);
-//    m_EditMenu->addAction(chat);
-    m_WindowMenu->addAction(m_CancelAction);
-    m_HelpMenu->addAction(m_SaveAction);
-    menuBar()->addMenu(m_FileMenu); //往主窗口添加菜单项
+    m_FileMenu->addSeparator();
+    m_FileMenu->addAction(m_QuitAction);
+
+    //两种添加menu的方法
+    m_EditMenu = new QMenu("编辑(E)");
     menuBar()->addMenu(m_EditMenu);
-    menuBar()->addMenu(m_WindowMenu);
-    menuBar()->addMenu(m_HelpMenu);
-    Tool1->addAction(m_OpenAction);//向工具栏内添加动作
-    Tool1->addAction(m_CancelAction);
-    Tool2->addAction(m_SaveAction);
-    addToolBar(Qt::TopToolBarArea,Tool1);//把这两个工具栏添加到窗口
-    addToolBar(Qt::TopToolBarArea,Tool2);
 
-    //绑定槽
-    connect(m_OpenAction, SIGNAL(triggered()), this, SLOT(openclicked()));
+    m_WindowMenu = menuBar()->addMenu(tr("视图(V)"));
+    m_HelpMenu = menuBar()->addMenu(tr("帮助(H)"));
 }
 
-//class dialog:public QDialog
-//{
-//  public:
-//   QPushButton *button1;
-//   QPushButton *button2;
-//   QLineEdit   *lineidt;
-//   QLabel     *label;
-//   QGridLayout *gridlayout;
-//   dialog()//构造函数
-//   {
-//      this->setFixedSize(600,400);
-//      button1=new QPushButton("choose");
-//      button2=new QPushButton("quit");
-//      label=new QLabel("input data");
-//      lineidt=new QLineEdit("");
-//      gridlayout=new QGridLayout(this);
-//      gridlayout->addWidget(label,0,0);
-//      gridlayout->addWidget(lineidt,0,1);
-//      gridlayout->addWidget(button1,1,0);
-//      gridlayout->addWidget(button2,1,1);
-//      connect(button2,SIGNAL(clicked()),this,SLOT(close()));
-//      setLayout(gridlayout);
-//   }
-//   ~dialog()
-//   {
-//   }
-//};
-void MainWindow::openclicked()
+void MainWindow::CreatToolBar()
 {
-    QDialog a;
-    QPushButton *button1;
-    QPushButton *button2;
-    QLineEdit   *lineidt;
-    QLabel     *label;
-    QGridLayout *gridlayout;
-    a.setFixedSize(600,400);
-    button1=new QPushButton("choose");
-    button2=new QPushButton("quit");
-    label=new QLabel("input data");
-    lineidt=new QLineEdit("");
-    gridlayout=new QGridLayout(&a);
-    gridlayout->addWidget(label,0,0);
-    gridlayout->addWidget(lineidt,0,1);
-    gridlayout->addWidget(button1,1,0);
-    gridlayout->addWidget(button2,1,1);
-//    connect(button2,SIGNAL(clicked()),&a,SLOT(close()));
-    setLayout(gridlayout);
-    a.exec();
- //  dialog a;
- //  a.exec();
+    m_FileTool = new QToolBar(this);
+    addToolBar(Qt::TopToolBarArea,m_FileTool);//把这两个工具栏添加到窗口
+    m_FileTool->addAction(m_OpenAction);//向工具栏内添加动作
+    m_FileTool->addAction(m_SaveAction);
+    m_FileTool->addSeparator();
+    m_FileTool->addAction(m_QuitAction);
+
+    m_ZoomTool = new QToolBar(this);
+    addToolBar(Qt::TopToolBarArea, m_ZoomTool);
 }
+
+void MainWindow::ShowOpenFile()
+{
+    m_strFileName = QFileDialog::getOpenFileName(this,"打开");
+    if(!m_strFileName.isEmpty())
+    {
+
+    }
+}
+
+void MainWindow::SaveFile()
+{
+
+}
+
+void MainWindow::CloseFile()
+{
+    this->close();
+}
+
+
 MainWindow::~MainWindow()
 {
 }
