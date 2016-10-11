@@ -5,11 +5,19 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent)
 {
  //   showWidget =new ShowWidget(this);
 //    setCentralWidget(showWidget);
+    m_MainMdiArea = new QMdiArea();
+    setCentralWidget(m_MainMdiArea);
+    m_MainMdiArea->setViewMode(QMdiArea::TabbedView);
+ //   connect(m_MainMdiArea, &QMdiArea::subWindowActivated, this, &MainWindow::UpDataMenus);
+
     this->resize(QSize(800,600)); //设置初始窗口大小
     statusBar(); //显示状态栏
     CreatActions();
     CreatMenus();
     CreatToolBar();
+
+
+
 }
 
 void MainWindow::CreatActions()
@@ -62,7 +70,7 @@ void MainWindow::CreatToolBar()
     addToolBar(Qt::TopToolBarArea, m_ZoomTool);
 }
 
-void MainWindow::ShowOpenFile()
+void MainWindow::OpenFile()
 {
     m_strFileName = QFileDialog::getOpenFileName(this,"打开");
     if(!m_strFileName.isEmpty())
@@ -81,6 +89,10 @@ void MainWindow::CloseFile()
     this->close();
 }
 
+void MainWindow::UpDataMenus()
+{
+
+}
 
 MainWindow::~MainWindow()
 {

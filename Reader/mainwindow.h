@@ -1,19 +1,15 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+
 #include<QMainWindow>
 #include<QMenu>
 #include<QMenuBar>
 #include<QAction>
 #include<QToolBar>
 #include<QDialog>
-#include<QPushButton>
-#include<QVBoxLayout>
-#include<QHBoxLayout>
-#include<QGridLayout>
-#include<QLineEdit>
-#include<QLabel>
-#include<QString>
 #include<QFileDialog>
+#include<QString>
+#include<QMdiArea>
 
 class MainWindow : public QMainWindow
 {
@@ -27,23 +23,35 @@ public:
      void CreatActions(); //创建动作
      void CreatMenus(); //创建菜单栏
 
-protected:
-     QMenu*               m_FileMenu;
+private:
+     QMenu*               m_FileMenu; //菜单栏
      QMenu*               m_EditMenu;
      QMenu*               m_WindowMenu;
      QMenu*               m_HelpMenu;
-     QMenuBar*            total;
-     QAction*             m_OpenAction;
-     QAction*             m_SaveAction;
+
+     //动作
+     QAction*             m_OpenAction; //打开文件
+     QAction*             m_SaveAction; //保存文件
      QAction*             m_QuitAction;
+
+     //两个工具栏
      QToolBar*            m_FileTool;
      QToolBar*            m_ZoomTool;
 
+     //窗口布局
+     QWidget*             m_MainWin;    //主窗体
+     QMdiArea*            m_MainMdiArea; //主窗体中的多文档区域
+
+
+
+
 public slots:
      //定义槽函数
-     void ShowOpenFile();
+     void OpenFile();
      void SaveFile();
      void CloseFile();
+
+     void UpDataMenus(); //更新状态栏
 
 private:
      QString m_strFileName;

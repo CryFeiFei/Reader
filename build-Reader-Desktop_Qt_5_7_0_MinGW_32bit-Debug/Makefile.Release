@@ -219,30 +219,15 @@ release/moc_mainwindow.cpp: D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QMainWindo
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qtoolbar.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QDialog \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qdialog.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QPushButton \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QVBoxLayout \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlayout.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QHBoxLayout \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QGridLayout \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QLineEdit \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlineedit.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qframe.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextcursor.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextformat.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qpen.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextoption.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QLabel \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlabel.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtCore/QString \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QFileDialog \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qfiledialog.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtCore/qdir.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtCore/qfileinfo.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtCore/QString \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QMdiArea \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qmdiarea.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qframe.h \
 		../Reader/mainwindow.h \
 		D:/QT5.7/5.7/mingw53_32/bin/moc.exe
 	D:\QT5.7\5.7\mingw53_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/QT5.7/5.7/mingw53_32/mkspecs/win32-g++ -IE:/QTProject/Reader -ID:/QT5.7/5.7/mingw53_32/include -ID:/QT5.7/5.7/mingw53_32/include/QtWidgets -ID:/QT5.7/5.7/mingw53_32/include/QtGui -ID:/QT5.7/5.7/mingw53_32/include/QtANGLE -ID:/QT5.7/5.7/mingw53_32/include/QtCore -I. -ID:/QT5.7/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/QT5.7/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\Reader\mainwindow.h -o release\moc_mainwindow.cpp
@@ -375,30 +360,15 @@ release/main.o: ../Reader/main.cpp ../Reader/mainwindow.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qtoolbar.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QDialog \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qdialog.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QPushButton \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QVBoxLayout \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlayout.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QHBoxLayout \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QGridLayout \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QLineEdit \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlineedit.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qframe.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextcursor.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextformat.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qpen.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextoption.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QLabel \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlabel.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtCore/QString \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QFileDialog \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qfiledialog.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtCore/qdir.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtCore/qfileinfo.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtCore/QString \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QMdiArea \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qmdiarea.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qframe.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QApplication \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qapplication.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -520,30 +490,15 @@ release/mainwindow.o: ../Reader/mainwindow.cpp ../Reader/mainwindow.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qtoolbar.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QDialog \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qdialog.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QPushButton \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QVBoxLayout \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlayout.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QHBoxLayout \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QGridLayout \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QLineEdit \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlineedit.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qframe.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextcursor.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextformat.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qpen.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextoption.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QLabel \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qlabel.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtCore/QString \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QFileDialog \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qfiledialog.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtCore/qdir.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtCore/qfileinfo.h
+		D:/QT5.7/5.7/mingw53_32/include/QtCore/qfileinfo.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtCore/QString \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QMdiArea \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qmdiarea.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qframe.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\Reader\mainwindow.cpp
 
 release/kit.o: ../Reader/kit.cpp ../Reader/kit.h
