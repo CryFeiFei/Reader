@@ -1,3 +1,4 @@
+//接口层所有的逻辑文档解析都在此接口
 #ifndef KIT_H
 #define KIT_H
 

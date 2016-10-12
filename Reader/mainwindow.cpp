@@ -5,9 +5,9 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent)
 {
  //   showWidget =new ShowWidget(this);
 //    setCentralWidget(showWidget);
-    m_MainMdiArea = new QMdiArea();
-    setCentralWidget(m_MainMdiArea);
-    m_MainMdiArea->setViewMode(QMdiArea::TabbedView);
+//    m_MainMdiArea = new QMdiArea();
+//    setCentralWidget(m_MainMdiArea);
+//    m_MainMdiArea->setViewMode(QMdiArea::TabbedView);
  //   connect(m_MainMdiArea, &QMdiArea::subWindowActivated, this, &MainWindow::UpDataMenus);
 
     this->resize(QSize(800,600)); //设置初始窗口大小
@@ -15,6 +15,10 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent)
     CreatActions();
     CreatMenus();
     CreatToolBar();
+
+    m_MainMdiArea = new QMdiArea();
+    setCentralWidget(m_MainMdiArea);
+    m_MainMdiArea->setViewMode(QMdiArea::TabbedView);
 
 
 
@@ -26,7 +30,13 @@ void MainWindow::CreatActions()
     m_OpenAction = new QAction(QIcon(":/image/open"), "打开", this);
     m_OpenAction->setShortcut(tr("Ctrl+O"));
     m_OpenAction->setStatusTip(tr("打开文件"));
-    connect(m_OpenAction,SIGNAL(triggered()), this, SLOT(ShowOpenFile()));
+    connect(m_OpenAction,SIGNAL(triggered()), this, SLOT(OpenFile()));
+
+    //
+    m_NewAction = new QAction(QIcon(":/image/new"), "新建", this);
+    m_NewAction->setShortcut(tr("Ctrl+N"));
+    m_NewAction->setStatusTip(tr("新建文件"));
+    connect(m_NewAction,SIGNAL(triggered()), this, SLOT(NewFile()));
 
     //保存动作
     m_SaveAction = new QAction(QIcon(":/image/save"), "保存", this);
@@ -46,6 +56,7 @@ void MainWindow::CreatMenus()
     m_FileMenu = menuBar()->addMenu(tr("文件(F)"));
     m_FileMenu->addAction(m_OpenAction);//往菜单栏内添加动作
     m_FileMenu->addAction(m_SaveAction);
+    m_FileMenu->addAction(m_NewAction);
     m_FileMenu->addSeparator();
     m_FileMenu->addAction(m_QuitAction);
 
@@ -77,6 +88,20 @@ void MainWindow::OpenFile()
     {
 
     }
+}
+
+void MainWindow::NewFile()
+{
+    MdiChild *child = CreateMdiChild();
+    child->newFile();
+    child->show();
+}
+
+MdiChild* MainWindow::CreateMdiChild()
+{
+    MdiChild *child = new MdiChild();
+    m_MainMdiArea->addSubWindow(child);
+    return child;
 }
 
 void MainWindow::SaveFile()

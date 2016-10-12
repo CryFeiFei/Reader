@@ -11,6 +11,8 @@
 #include<QString>
 #include<QMdiArea>
 
+#include"mdichild.h"
+
 class MainWindow : public QMainWindow
 {
      Q_OBJECT
@@ -32,24 +34,29 @@ private:
      //动作
      QAction*             m_OpenAction; //打开文件
      QAction*             m_SaveAction; //保存文件
-     QAction*             m_QuitAction;
+     QAction*             m_QuitAction; //退出
+
+     //test
+     QAction*             m_NewAction; //新建文件
 
      //两个工具栏
      QToolBar*            m_FileTool;
      QToolBar*            m_ZoomTool;
 
      //窗口布局
-     QWidget*             m_MainWin;    //主窗体
+//     QWidget*             m_MainWin;    //主窗体
      QMdiArea*            m_MainMdiArea; //主窗体中的多文档区域
 
 
-
+public:
+     MdiChild* CreateMdiChild();
 
 public slots:
      //定义槽函数
      void OpenFile();
      void SaveFile();
      void CloseFile();
+     void NewFile();
 
      void UpDataMenus(); //更新状态栏
 

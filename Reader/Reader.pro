@@ -14,11 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    kit.cpp
+    kit.cpp \
+    mdichild.cpp
 
 HEADERS  += mainwindow.h \
     PDFkit.h \
-    kit.h
+    kit.h \
+    mdichild.h
 
 RESOURCES += \
     resource.qrc
