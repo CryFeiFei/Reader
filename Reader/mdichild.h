@@ -2,6 +2,9 @@
 #define MDICHILD_H
 
 #include<QWidget>
+#include<QSplitter>
+#include<QTextEdit>
+#include<QTabWidget>
 
 class MdiChild : public QWidget
 {
@@ -10,11 +13,15 @@ class MdiChild : public QWidget
 public:
     MdiChild();
     ~MdiChild();
+    void resizeEvent(QResizeEvent *event);
 
     void newFile()
     {
         setWindowTitle("qwe");
     }
+
+private:
+    QSplitter *splitterMain;
 
 };
 

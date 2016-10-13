@@ -100,6 +100,7 @@ void MainWindow::NewFile()
 MdiChild* MainWindow::CreateMdiChild()
 {
     MdiChild *child = new MdiChild();
+ //   child->resize(m_MainMdiArea->size());
     m_MainMdiArea->addSubWindow(child);
     return child;
 }

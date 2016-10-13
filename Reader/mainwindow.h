@@ -21,9 +21,14 @@ public:
      ~MainWindow();
 
 public:
+
+
+public:
      void CreatToolBar(); //创建工具栏
      void CreatActions(); //创建动作
      void CreatMenus(); //创建菜单栏
+
+     void resizeEvent();
 
 private:
      QMenu*               m_FileMenu; //菜单栏
