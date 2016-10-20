@@ -236,6 +236,16 @@ debug/moc_mainwindow.cpp: D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QMainWindow 
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qframe.h \
 		../Reader/mdichild.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QWidget \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QSplitter \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qsplitter.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QTextEdit \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qtextedit.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextdocument.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QTabWidget \
 		../Reader/mainwindow.h \
 		D:/QT5.7/5.7/mingw53_32/bin/moc.exe
 	D:\QT5.7\5.7\mingw53_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/QT5.7/5.7/mingw53_32/mkspecs/win32-g++ -IE:/QTProject/Reader -ID:/QT5.7/5.7/mingw53_32/include -ID:/QT5.7/5.7/mingw53_32/include/QtWidgets -ID:/QT5.7/5.7/mingw53_32/include/QtGui -ID:/QT5.7/5.7/mingw53_32/include/QtANGLE -ID:/QT5.7/5.7/mingw53_32/include/QtCore -I. -ID:/QT5.7/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/QT5.7/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\Reader\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -337,6 +347,20 @@ debug/moc_mdichild.cpp: D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QWidget \
 		D:/QT5.7/5.7/mingw53_32/include/QtCore/qfiledevice.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtGui/qvector2d.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtouchdevice.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QSplitter \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qsplitter.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qframe.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QTextEdit \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qtextedit.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextdocument.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QTabWidget \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qicon.h \
 		../Reader/mdichild.h \
 		D:/QT5.7/5.7/mingw53_32/bin/moc.exe
 	D:\QT5.7\5.7\mingw53_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/QT5.7/5.7/mingw53_32/mkspecs/win32-g++ -IE:/QTProject/Reader -ID:/QT5.7/5.7/mingw53_32/include -ID:/QT5.7/5.7/mingw53_32/include/QtWidgets -ID:/QT5.7/5.7/mingw53_32/include/QtGui -ID:/QT5.7/5.7/mingw53_32/include/QtANGLE -ID:/QT5.7/5.7/mingw53_32/include/QtCore -I. -ID:/QT5.7/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/QT5.7/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/QT5.7/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\Reader\mdichild.h -o debug\moc_mdichild.cpp
@@ -480,6 +504,16 @@ debug/main.o: ../Reader/main.cpp ../Reader/mainwindow.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qframe.h \
 		../Reader/mdichild.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QWidget \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QSplitter \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qsplitter.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QTextEdit \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qtextedit.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextdocument.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QTabWidget \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QApplication \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qapplication.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -611,7 +645,17 @@ debug/mainwindow.o: ../Reader/mainwindow.cpp ../Reader/mainwindow.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qframe.h \
 		../Reader/mdichild.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QWidget
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QWidget \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QSplitter \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qsplitter.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QTextEdit \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qtextedit.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextdocument.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QTabWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\Reader\mainwindow.cpp
 
 debug/kit.o: ../Reader/kit.cpp ../Reader/kit.h
@@ -714,7 +758,21 @@ debug/mdichild.o: ../Reader/mdichild.cpp ../Reader/mdichild.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtCore/qfile.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtCore/qfiledevice.h \
 		D:/QT5.7/5.7/mingw53_32/include/QtGui/qvector2d.h \
-		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtouchdevice.h
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtouchdevice.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QSplitter \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qsplitter.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qframe.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QTextEdit \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qtextedit.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextdocument.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/QTabWidget \
+		D:/QT5.7/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
+		D:/QT5.7/5.7/mingw53_32/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mdichild.o ..\Reader\mdichild.cpp
 
 debug/qrc_resource.o: debug/qrc_resource.cpp 
