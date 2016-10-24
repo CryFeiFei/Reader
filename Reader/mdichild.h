@@ -5,6 +5,8 @@
 #include<QSplitter>
 #include<QTextEdit>
 #include<QTabWidget>
+#include<QLayout>
+#include<QPushButton>
 
 
 class MdiChild : public QWidget
@@ -24,10 +26,13 @@ public:
 private:
     QSplitter*            m_splitterMain;
     QWidget*              m_navigationBar; //左边导航栏
+    QWidget*              m_topNBWidget; //上面的菜单栏
     QTabWidget*           m_tabWidget; //导航栏里边的tab标签
     QWidget*              m_OutlineWidget; //大纲栏
     QWidget*              m_ThumbnailWidget; //缩略图
     QWidget*              m_SemanticTree; //语义树
+
+
 
 
 public:

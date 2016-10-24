@@ -9,14 +9,43 @@ MdiChild::MdiChild()
     m_SemanticTree = new QWidget();
 
     m_splitterMain = new QSplitter(Qt::Horizontal, this); //水平分割
+    m_navigationBar = new QWidget(m_splitterMain);
 
-    m_navigationBar = new QWidget();
+//    m_navigationBar = new QWidget();
+    m_topNBWidget = new QWidget();
 
-    m_tabWidget = new QTabWidget(m_splitterMain);
+
+    QHBoxLayout* NBTopLayout = new QHBoxLayout();
+    QPushButton* btn_ok = new QPushButton(QWidget::tr("OK"), m_topNBWidget);
+    btn_ok->setDefault(true);
+    QPushButton* btn_cancel = new QPushButton(QWidget::tr("Cancel"), m_topNBWidget);
+    NBTopLayout->addStretch();
+    NBTopLayout->addWidget(btn_ok);
+    NBTopLayout->addStretch();
+    NBTopLayout->addWidget(btn_cancel);
+    NBTopLayout->addStretch();
+
+    m_tabWidget = new QTabWidget();
     m_tabWidget->setTabPosition(QTabWidget::West);
     m_tabWidget->addTab(m_OutlineWidget,"utitle");
     m_tabWidget->addTab(m_ThumbnailWidget,"utitle");
     m_tabWidget->addTab(m_SemanticTree,"utitle");
+
+    QVBoxLayout* naVLayout = new QVBoxLayout();
+    naVLayout->addLayout(NBTopLayout);
+    naVLayout->addWidget(m_tabWidget);
+//    naVLayout->addLayout(NBTopLayout);
+
+
+
+
+
+
+ //   m_splitterMain = new QSplitter(Qt::Horizontal, this); //水平分割
+    m_navigationBar->setLayout(naVLayout);
+//    m_navigationBar->addLayout();
+//    m_navigationBar->layout()
+
 
     
 
@@ -39,7 +68,8 @@ MdiChild::MdiChild()
 //    QTextEdit *textBottom = new QTextEdit(QObject::tr("底部部件"),splitterRight);
 //    textBottom->setAlignment(Qt::AlignCenter);
 
-    m_splitterMain->setStretchFactor(1,1);
+    m_splitterMain->setStretchFactor(0,3);
+
     m_splitterMain->setWindowTitle(QObject::tr("分割窗口"));
     m_splitterMain->show();
 //    splitterMain->show();
