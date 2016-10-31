@@ -15,12 +15,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     kit.cpp \
-    mdichild.cpp
+    mdichild.cpp \
+    navigationwidget.cpp
 
 HEADERS  += mainwindow.h \
     PDFkit.h \
     kit.h \
-    mdichild.h
+    mdichild.h \
+    navigationwidget.h
 
 RESOURCES += \
     resource.qrc
