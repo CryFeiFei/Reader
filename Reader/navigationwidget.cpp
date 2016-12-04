@@ -5,7 +5,12 @@ NavigationWidget::NavigationWidget(QSplitter* parent): m_splitterMain(parent)
     m_OutlineWidget = new QWidget();
     m_ThumbnailWidget = new QWidget();
     m_SemanticTree = new QWidget();
+
+
     this->setParent(m_splitterMain);
+    m_baseSize = m_splitterMain->sizes();
+
+
  //   m_navigationBar = new (m_splitterMain);
     m_topNBWidget = new QWidget();
     //上边水平布局
@@ -32,4 +37,23 @@ NavigationWidget::NavigationWidget(QSplitter* parent): m_splitterMain(parent)
 
     this->setLayout(naVLayout);
 
+    connect(btn_cancel,SIGNAL(clicked()),this,SLOT(sl_btnClicked()));
+
+}
+
+void NavigationWidget::sl_btnClicked()
+{
+     //todo 少个虚函数
+//    QList<qint32>  newSize;
+
+//    if(this->width()!=0)
+//    {
+//        newSize<<m_baseSize.at(0)+m_baseSize.at(1)<<0;
+//    }
+//    else
+//    {
+//        newSize<<m_baseSize.at(0)<<m_baseSize.at(1);
+//    }
+
+//    m_splitterMain->setSizes(newSize);  //move the SPLITTER
 }
