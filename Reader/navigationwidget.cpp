@@ -2,6 +2,8 @@
 
 NavigationWidget::NavigationWidget(QSplitter* parent): m_splitterMain(parent)
 {
+    //new project
+
     m_OutlineWidget = new QWidget();
     m_ThumbnailWidget = new QWidget();
     m_SemanticTree = new QWidget();
