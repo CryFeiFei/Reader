@@ -2,11 +2,11 @@
 #ifndef KIT_H
 #define KIT_H
 
-class kit
+class Kit
 {
 public:
-    kit(){}
-    ~kit(){}
+    Kit(){}
+    ~Kit(){}
 
 public:
     virtual int OpenFile() = 0;

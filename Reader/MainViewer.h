@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef MAIN_VIEWER_H
+#define MAIN_VIEWER_H
 
 #include<QMainWindow>
 #include<QMenu>
@@ -11,14 +11,14 @@
 #include<QString>
 #include<QMdiArea>
 
-#include"mdichild.h"
+#include"ChildViewer.h"
 
-class MainWindow : public QMainWindow
+class MainViewer : public QMainWindow
 {
      Q_OBJECT
 public:
-     MainWindow(QWidget *parent = 0);
-     ~MainWindow();
+     MainViewer(QWidget *parent = 0);
+     ~MainViewer();
 
 public:
 
@@ -54,7 +54,7 @@ private:
 
 
 public:
-     MdiChild* CreateMdiChild();
+     ChildViewer* CreateChildViewer();
 
 public slots:
      //定义槽函数
@@ -68,4 +68,4 @@ public slots:
 private:
      QString m_strFileName;
 };
-#endif // MAINWINDOW_H
+#endif // MAIN_VIEWER_H

@@ -1,14 +1,14 @@
-#include "mainwindow.h"
+#include "MainViewer.h"
 
 
-MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent)
+MainViewer::MainViewer(QWidget *parent) :  QMainWindow(parent)
 {
  //   showWidget =new ShowWidget(this);
 //    setCentralWidget(showWidget);
 //    m_MainMdiArea = new QMdiArea();
 //    setCentralWidget(m_MainMdiArea);
 //    m_MainMdiArea->setViewMode(QMdiArea::TabbedView);
- //   connect(m_MainMdiArea, &QMdiArea::subWindowActivated, this, &MainWindow::UpDataMenus);
+ //   connect(m_MainMdiArea, &QMdiArea::subWindowActivated, this, &MainViewer::UpDataMenus);
 
     this->resize(QSize(800,600)); //设置初始窗口大小
     statusBar(); //显示状态栏
@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent)
 
 }
 
-void MainWindow::CreatActions()
+void MainViewer::CreatActions()
 {
     //打开动作
     m_OpenAction = new QAction(QIcon(":/image/open"), "打开", this);
@@ -51,7 +51,7 @@ void MainWindow::CreatActions()
     connect(m_QuitAction,SIGNAL(triggered()),this,SLOT(CloseFile()));
 }
 
-void MainWindow::CreatMenus()
+void MainViewer::CreatMenus()
 {
     m_FileMenu = menuBar()->addMenu(tr("文件(F)"));
     m_FileMenu->addAction(m_OpenAction);//往菜单栏内添加动作
@@ -68,7 +68,7 @@ void MainWindow::CreatMenus()
     m_HelpMenu = menuBar()->addMenu(tr("帮助(H)"));
 }
 
-void MainWindow::CreatToolBar()
+void MainViewer::CreatToolBar()
 {
     m_FileTool = new QToolBar(this);
     addToolBar(Qt::TopToolBarArea,m_FileTool);//把这两个工具栏添加到窗口
@@ -81,7 +81,7 @@ void MainWindow::CreatToolBar()
     addToolBar(Qt::TopToolBarArea, m_ZoomTool);
 }
 
-void MainWindow::OpenFile()
+void MainViewer::OpenFile()
 {
     m_strFileName = QFileDialog::getOpenFileName(this,"打开");
     if(!m_strFileName.isEmpty())
@@ -90,36 +90,36 @@ void MainWindow::OpenFile()
     }
 }
 
-void MainWindow::NewFile()
+void MainViewer::NewFile()
 {
-    MdiChild *child = CreateMdiChild();
+    ChildViewer *child = CreateChildViewer();
     child->newFile();
     child->show();
 }
 
-MdiChild* MainWindow::CreateMdiChild()
+ChildViewer* MainViewer::CreateChildViewer()
 {
-    MdiChild *child = new MdiChild();
+    ChildViewer *child = new ChildViewer();
  //   child->resize(m_MainMdiArea->size());
     m_MainMdiArea->addSubWindow(child);
     return child;
 }
 
-void MainWindow::SaveFile()
+void MainViewer::SaveFile()
 {
 
 }
 
-void MainWindow::CloseFile()
+void MainViewer::CloseFile()
 {
     this->close();
 }
 
-void MainWindow::UpDataMenus()
+void MainViewer::UpDataMenus()
 {
 
 }
 
-MainWindow::~MainWindow()
+MainViewer::~MainViewer()
 {
 }

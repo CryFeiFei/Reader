@@ -1,6 +1,6 @@
-#include<mdichild.h>
+#include<ChildViewer.h>
 
-MdiChild::MdiChild()
+ChildViewer::ChildViewer()
 {
     // 为了使关闭窗口时都关闭
     setAttribute(Qt::WA_DeleteOnClose);
@@ -9,7 +9,7 @@ MdiChild::MdiChild()
 
     QWidget *textRight =  new QWidget();
     textRight->setStyleSheet("background-color:gray;");
-    m_navigationBar = new NavigationWidget();
+    m_navigationBar = new NaviViewer();
 
     m_splitterMain->addWidget(m_navigationBar);
     m_splitterMain->addWidget(textRight);
@@ -21,32 +21,32 @@ MdiChild::MdiChild()
 
 }
 
-void MdiChild::resizeEvent(QResizeEvent *event)
+void ChildViewer::resizeEvent(QResizeEvent *event)
 {
     m_splitterMain->resize(this->size());
 }
 
-void MdiChild::CreatNavigationBar()
+void ChildViewer::CreatNavigationBar()
 {
 
 }
 
-MdiChild::~MdiChild()
+ChildViewer::~ChildViewer()
 {
 
 }
 
-void MdiChild::InitOutline()
+void ChildViewer::InitOutline()
 {
 
 }
 
-void MdiChild::InitThumbnail()
+void ChildViewer::InitThumbnail()
 {
 
 }
 
-void MdiChild::InitSemantic()
+void ChildViewer::InitSemantic()
 {
 
 }

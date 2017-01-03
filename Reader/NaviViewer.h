@@ -1,5 +1,5 @@
-#ifndef NAVIGATIONWIDGET_H
-#define NAVIGATIONWIDGET_H
+#ifndef NAVI_VIEWER_H
+#define NAVI_VIEWER_H
 
 #include<QWidget>
 #include<QSplitter>
@@ -8,12 +8,12 @@
 #include<QLayout>
 #include<QPushButton>
 
-class NavigationWidget : public QWidget
+class NaviViewer : public QWidget
 {
     Q_OBJECT
 
 public:
-    NavigationWidget();
+    NaviViewer();
     QSplitter*            m_splitterMain; //主窗口
 
 private:
@@ -31,4 +31,4 @@ private slots:
 
 };
 
-#endif // NAVIGATIONWIDGET_H
+#endif // NAVI_VIEWER_H

@@ -1,6 +1,6 @@
-#include "navigationwidget.h"
+#include "NaviViewer.h"
 
-NavigationWidget::NavigationWidget(/*QSplitter* parent*/)/*: m_splitterMain(parent)*/
+NaviViewer::NaviViewer(/*QSplitter* parent*/)/*: m_splitterMain(parent)*/
 {
     //new project
 
@@ -38,7 +38,7 @@ NavigationWidget::NavigationWidget(/*QSplitter* parent*/)/*: m_splitterMain(pare
 
 }
 
-void NavigationWidget::sl_btnClicked()
+void NaviViewer::sl_btnClicked()
 {
      //todo 少个虚函数
 //    QList<qint32>  newSize;

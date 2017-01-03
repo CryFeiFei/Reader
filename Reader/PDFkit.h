@@ -1,7 +1,7 @@
 #ifndef PDFKIT_H
 #define PDFKIT_H
 
-#include "kit.h"
+#include "Kit.h"
 
 class PDFkit : public kit
 {

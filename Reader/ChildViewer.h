@@ -1,5 +1,5 @@
-#ifndef MDICHILD_H
-#define MDICHILD_H
+#ifndef ChildViewer_H
+#define ChildViewer_H
 
 #include<QWidget>
 #include<QSplitter>
@@ -8,16 +8,16 @@
 #include<QLayout>
 #include<QPushButton>
 
-#include "navigationwidget.h"
+#include "NaviViewer.h"
 
 
-class MdiChild : public QWidget
+class ChildViewer : public QWidget
 {
     Q_OBJECT
 
 public:
-    MdiChild();
-    ~MdiChild();
+    ChildViewer();
+    ~ChildViewer();
     void resizeEvent(QResizeEvent *event);
 
     void newFile()
@@ -27,7 +27,7 @@ public:
 
 public:
     QSplitter*            m_splitterMain;
-    NavigationWidget*     m_navigationBar; //左边导航栏
+    NaviViewer*     m_navigationBar; //左边导航栏
     QWidget*              m_Canves;
 
 
@@ -42,4 +42,4 @@ public:
 
 };
 
-#endif // MDICHILD_H
+#endif // ChildViewer_H
