@@ -1,6 +1,6 @@
 #include "navigationwidget.h"
 
-NavigationWidget::NavigationWidget(QSplitter* parent): m_splitterMain(parent)
+NavigationWidget::NavigationWidget(/*QSplitter* parent*/)/*: m_splitterMain(parent)*/
 {
     //new project
 
@@ -8,12 +8,6 @@ NavigationWidget::NavigationWidget(QSplitter* parent): m_splitterMain(parent)
     m_ThumbnailWidget = new QWidget();
     m_SemanticTree = new QWidget();
 
-
-    this->setParent(m_splitterMain);
-    m_baseSize = m_splitterMain->sizes();
-
-
- //   m_navigationBar = new (m_splitterMain);
     m_topNBWidget = new QWidget();
     //上边水平布局
     QHBoxLayout* NBTopLayout = new QHBoxLayout();
@@ -38,6 +32,7 @@ NavigationWidget::NavigationWidget(QSplitter* parent): m_splitterMain(parent)
     naVLayout->addWidget(m_tabWidget);
 
     this->setLayout(naVLayout);
+ //   m_baseSize = m_splitterMain->sizes();
 
     connect(btn_cancel,SIGNAL(clicked()),this,SLOT(sl_btnClicked()));
 

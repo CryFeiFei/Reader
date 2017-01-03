@@ -13,7 +13,7 @@ class NavigationWidget : public QWidget
     Q_OBJECT
 
 public:
-    NavigationWidget(QSplitter *parent);
+    NavigationWidget();
     QSplitter*            m_splitterMain; //主窗口
 
 private:
