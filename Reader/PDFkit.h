@@ -7,12 +7,12 @@
 class PDFkit : public Kit
 {
 public:
-    PDFkit(){}
-    ~PDFkit(){}
+    PDFkit();
+    ~PDFkit();
 
 public:
-    virtual int OpenFile();
-    virtual int SaveFile();
+    virtual int OpenFile(){};
+    virtual int SaveFile(){};
 
 private:
     Poppler::Page*       m_pdfPage;

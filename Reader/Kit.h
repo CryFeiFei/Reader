@@ -6,7 +6,7 @@ class Kit
 {
 public:
     Kit(){}
-    ~Kit(){}
+    virtual ~Kit(){}
 
 public:
     virtual int OpenFile() = 0;
