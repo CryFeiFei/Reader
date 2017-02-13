@@ -3,12 +3,6 @@
 
 MainViewer::MainViewer(QWidget *parent) :  QMainWindow(parent)
 {
- //   showWidget =new ShowWidget(this);
-//    setCentralWidget(showWidget);
-//    m_MainMdiArea = new QMdiArea();
-//    setCentralWidget(m_MainMdiArea);
-//    m_MainMdiArea->setViewMode(QMdiArea::TabbedView);
- //   connect(m_MainMdiArea, &QMdiArea::subWindowActivated, this, &MainViewer::UpDataMenus);
 
     this->resize(QSize(800,600)); //设置初始窗口大小
     statusBar(); //显示状态栏
@@ -16,11 +10,9 @@ MainViewer::MainViewer(QWidget *parent) :  QMainWindow(parent)
     CreatMenus();
     CreatToolBar();
 
-    m_MainMdiArea = new QMdiArea();
+    m_MainMdiArea = new MultiViwer();
     setCentralWidget(m_MainMdiArea);
     m_MainMdiArea->setViewMode(QMdiArea::TabbedView);
-
-
 
 }
 

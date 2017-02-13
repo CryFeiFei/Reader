@@ -1,3 +1,5 @@
+// summary:单文档显示区域
+
 #ifndef ChildViewer_H
 #define ChildViewer_H
 
@@ -9,6 +11,7 @@
 #include<QPushButton>
 
 #include "NaviViewer.h"
+#include "DocViewer.h"
 
 
 class ChildViewer : public QWidget

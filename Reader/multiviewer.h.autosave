@@ -1,0 +1,6 @@
+#ifndef MULTIVIEWER_H
+#define MULTIVIEWER_H
+
+class MultiViwer:pu
+
+#endif // MULTIVIEWER_H

@@ -1,3 +1,4 @@
+// summary: 主窗口
 #ifndef MAIN_VIEWER_H
 #define MAIN_VIEWER_H
 
@@ -12,6 +13,7 @@
 #include<QMdiArea>
 
 #include"ChildViewer.h"
+#include "MultiViwer.h"
 
 class MainViewer : public QMainWindow
 {
@@ -50,7 +52,7 @@ private:
 
      //窗口布局
 //     QWidget*             m_MainWin;    //主窗体
-     QMdiArea*            m_MainMdiArea; //主窗体中的多文档区域
+     MultiViwer*          m_MainMdiArea; //主窗体中的多文档区域
 
 
 public:
