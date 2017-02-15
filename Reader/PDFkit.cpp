@@ -7,6 +7,16 @@ PDFkit::PDFkit():m_pdfPage(NULL),m_document(NULL)
 
 PDFkit::~PDFkit()
 {
+
+}
+
+void PDFkit::Init(QString strFileName)
+{
+    m_document = Poppler::Document::load(strFileName);
+
+    // 更加清晰
+    m_document->setRenderHint(Poppler::Document::Antialiasing);
+    m_document->setRenderHint(Poppler::Document::TextAntialiasing);
 }
 
 Poppler::Page* PDFkit::GetPage(int nPageNum)
