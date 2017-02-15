@@ -3,10 +3,17 @@
 #ifndef DOC_VIEWER_H
 #define DOC_VIEWER_H
 
-#include<QWidget>
+#include <QWidget>
+#include <QScrollArea>
 
 class DocViewer : public QWidget
 {
+public:
+    DocViewer();
+    ~DocViewer();
+
+public:
+    QScrollArea* m_pscrollarea;
 
 };
 
