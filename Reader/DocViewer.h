@@ -6,14 +6,18 @@
 #include <QWidget>
 #include <QScrollArea>
 
+class ChildViewer;
+
 class DocViewer : public QWidget
 {
 public:
-    DocViewer();
+    DocViewer(ChildViewer* childviewer);
     ~DocViewer();
 
 public:
-    QScrollArea* m_pscrollarea;
+    QScrollArea*        m_pscrollarea;
+    ChildViewer*        m_ChildViewer; //todo待重构
+
 
 };
 
