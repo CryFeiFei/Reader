@@ -27,7 +27,7 @@ public:
     // 获取某一页的页指针
     Poppler::Page* GetPage(int nPageNum);
     // 获得某一页的真实图像
-    QImage* GetActruallyPageImage(int nPageNum);
+    QImage GetActruallyPageImage(int nPageNum);
     // 获得某一页真实的大小
     QSize GetActruallyPageSize(int nPageNum);
 

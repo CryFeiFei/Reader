@@ -7,12 +7,12 @@ ChildViewer::ChildViewer()
     // 水平分割
     m_splitterMain = new QSplitter(Qt::Horizontal, this);
 
-    DocViewer* textRight =  new DocViewer(this);
-    textRight->setStyleSheet("background-color:gray;");
+    DocViewer* docViewer =  new DocViewer(this);
+    docViewer->setStyleSheet("background-color:gray;");
     m_navigationBar = new NaviViewer();
 
     m_splitterMain->addWidget(m_navigationBar);
-    m_splitterMain->addWidget(textRight);
+    m_splitterMain->addWidget(docViewer);
     m_splitterMain->setStretchFactor(0,0);
     m_splitterMain->setStretchFactor(1,1);
     m_splitterMain->setAutoFillBackground(true);

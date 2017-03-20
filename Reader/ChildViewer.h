@@ -30,7 +30,7 @@ public:
 
 public:
     QSplitter*            m_splitterMain;
-    NaviViewer*     m_navigationBar; //左边导航栏
+    NaviViewer*           m_navigationBar; //左边导航栏
     QWidget*              m_Canves;
 
 
