@@ -2,15 +2,28 @@
 #ifndef KIT_H
 #define KIT_H
 
+#include <QString>
+#include <QImage>
+
 class Kit
 {
 public:
-    Kit(){}
+    Kit();
     virtual ~Kit(){}
 
 public:
-    virtual int OpenFile() = 0;
-    virtual int SaveFile() = 0;
+    // 内核初始化，必须要先调用
+    virtual     int Init() = 0;
+    virtual     QImage GetActruallyPageImage(int nPageNum) = 0;
+    virtual     QSize GetActruallyPageSize(int nPageNum) = 0;
+
+public:
+    void  SetFileName(QString strFileName){ m_strFileName = strFileName;}
+
+public:
+    QString     m_strFileName;
+
+
 
 };
 

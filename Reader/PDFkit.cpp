@@ -10,15 +10,6 @@ PDFkit::~PDFkit()
 
 }
 
-void PDFkit::Init(QString strFileName)
-{
-    m_document = Poppler::Document::load(strFileName);
-
-    // 更加清晰
-    m_document->setRenderHint(Poppler::Document::Antialiasing);
-    m_document->setRenderHint(Poppler::Document::TextAntialiasing);
-}
-
 Poppler::Page* PDFkit::GetPage(int nPageNum)
 {
     if (m_document == NULL)
@@ -30,6 +21,15 @@ Poppler::Page* PDFkit::GetPage(int nPageNum)
     Q_ASSERT(pPage != NULL);
 
     return pPage;
+}
+
+int PDFkit::Init()
+{
+    m_document = Poppler::Document::load(m_strFileName);
+
+    // 更加清晰
+    m_document->setRenderHint(Poppler::Document::Antialiasing);
+    m_document->setRenderHint(Poppler::Document::TextAntialiasing);
 }
 
 QImage PDFkit::GetActruallyPageImage(int nPageNum)

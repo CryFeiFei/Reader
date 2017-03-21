@@ -7,6 +7,8 @@
 #include <QScrollArea>
 #include <QPainter>
 
+// 暂时这样写
+#include "Kit.h"
 #include "PDFkit.h"
 
 // 测试头文件
@@ -28,7 +30,7 @@ public:
     QScrollArea*        m_pscrollarea;
     ChildViewer*        m_ChildViewer; //todo待重构,应该传进来接口父类而不是直接传进来
 
-    PDFkit*             m_PDFkit;
+    Kit*             m_kit;
 
 public:
     void paintEvent(QPaintEvent *e);
