@@ -16,6 +16,7 @@ public:
     virtual     int Init() = 0;
     virtual     QImage GetActruallyPageImage(int nPageNum) = 0;
     virtual     QSize GetActruallyPageSize(int nPageNum) = 0;
+    virtual     int GetNumCount() = 0;
 
 public:
     void  SetFileName(QString strFileName){ m_strFileName = strFileName;}

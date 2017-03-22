@@ -28,7 +28,8 @@ HEADERS  += \
     ChildViewer.h \
     Kit.h \
     DocViewer.h \
-    MultiViwer.h
+    MultiViwer.h \
+    IChildViewer.h
 
 RESOURCES += \
     resource.qrc

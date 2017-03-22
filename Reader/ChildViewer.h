@@ -3,18 +3,21 @@
 #ifndef ChildViewer_H
 #define ChildViewer_H
 
-#include<QWidget>
-#include<QSplitter>
-#include<QTextEdit>
-#include<QTabWidget>
-#include<QLayout>
-#include<QPushButton>
+#include <QWidget>
+#include <QSplitter>
+#include <QTextEdit>
+#include <QTabWidget>
+#include <QLayout>
+#include <QPushButton>
+#include <QScrollArea>
+#include <QScrollBar>
 
+#include "IChildViewer.h"
 #include "NaviViewer.h"
 #include "DocViewer.h"
 
 
-class ChildViewer : public QWidget
+class ChildViewer : public IChildViewer
 {
     Q_OBJECT
 
@@ -29,9 +32,15 @@ public:
     }
 
 public:
+    virtual QScrollArea* getScrollArea() { return m_pscrollarea; }
+
+
+public:
     QSplitter*            m_splitterMain;
     NaviViewer*           m_navigationBar; //左边导航栏
     QWidget*              m_Canves;
+
+    QScrollArea*          m_pscrollarea;
 
 
 

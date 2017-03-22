@@ -17,20 +17,24 @@
 #include <QPalette>
 #include <QDesktopWidget>
 
-class ChildViewer;
+#include "IChildViewer.h"
+
+//class IChildViewer;
 
 class DocViewer : public QWidget
 {
 
 public:
-    DocViewer(ChildViewer* childviewer);
+    DocViewer(IChildViewer* childviewer);
     ~DocViewer();
 
 public:
     QScrollArea*        m_pscrollarea;
-    ChildViewer*        m_ChildViewer; //todo待重构,应该传进来接口父类而不是直接传进来
+    QScrollBar*         m_pScrollBar;
+    IChildViewer*       m_IChildViewer;
 
-    Kit*             m_kit;
+    // kit层不应该出现在这里，逻辑层应该与界面层分开
+    Kit*                m_kit;
 
 public:
     void paintEvent(QPaintEvent *e);
