@@ -12,6 +12,8 @@ ChildViewer::ChildViewer()
 
     DocViewer* docViewer =  new DocViewer(this);
     docViewer->setStyleSheet("background-color:gray;");
+
+
     m_navigationBar = new NaviViewer();
 
     m_splitterMain->addWidget(m_navigationBar);
