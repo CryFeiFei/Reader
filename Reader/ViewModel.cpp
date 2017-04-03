@@ -16,14 +16,6 @@ ViewModel::ViewModel(ChildViewer* ChildViewer) : m_ChildViewer(ChildViewer), m_k
 
 ViewModel::~ViewModel()
 {
+
 }
 
-int ViewModel::GetNumCount()
-{
-    return m_kit->GetNumCount();
-}
-
-QSize ViewModel::GetActruallyPageSize(int nPageNum)
-{
-    return m_kit->GetActruallyPageSize(nPageNum);
-}

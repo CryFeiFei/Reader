@@ -36,6 +36,7 @@ public:
     virtual QScrollArea* getScrollArea() { return m_pscrollarea; }
     virtual int getNumCount() { return m_ViewModel->GetNumCount(); }
     virtual QSize getActruallyPageSize(int nPageNum) { return m_ViewModel->GetActruallyPageSize(nPageNum); }
+    virtual QImage getActruallyPageImage(int nPageNum) { return m_ViewModel->GetActruallyPageImage(nPageNum); }
 
 
 
@@ -45,6 +46,7 @@ private:
 public:
     QSplitter*            m_splitterMain;
     NaviViewer*           m_navigationBar; //左边导航栏
+    DocViewer*            m_DocViewer;     //绘制主界面
     QWidget*              m_Canves;
     QScrollArea*          m_pscrollarea;
 

@@ -7,10 +7,6 @@
 #include <QScrollArea>
 #include <QPainter>
 
-// 暂时这样写
-#include "Kit.h"
-#include "PDFkit.h"
-
 // 测试头文件
 #include <QStandardPaths>
 #include <QWidget>
@@ -20,8 +16,6 @@
 #include "IChildViewer.h"
 #include "ViewModel.h"
 
-//class IChildViewer;
-
 class DocViewer : public QWidget
 {
 
@@ -30,15 +24,9 @@ public:
     ~DocViewer();
 
 public:
-    ViewModel*          m_ViewModel;
-
-
     QScrollArea*        m_pscrollarea;
     QScrollBar*         m_pScrollBar;
     IChildViewer*       m_IChildViewer;
-
-    // kit层不应该出现在这里，逻辑层应该与界面层分开
-    Kit*                m_kit;
 
 
 public:

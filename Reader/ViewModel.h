@@ -28,8 +28,9 @@ private:
 
 
 public:
-    int GetNumCount();
-    QSize GetActruallyPageSize(int nPageNum);
+    int GetNumCount() { return m_kit->GetNumCount(); }
+    QSize GetActruallyPageSize(int nPageNum) { return m_kit->GetActruallyPageSize(nPageNum); }
+    QImage GetActruallyPageImage(int nPageNum) { return m_kit->GetActruallyPageImage(nPageNum); }
 
 
 

@@ -12,12 +12,14 @@ ChildViewer::ChildViewer()
 
 
     // 绘制主界面
-    DocViewer* docViewer =  new DocViewer(this);
-    docViewer->setStyleSheet("background-color:gray;");
-
-
+    m_DocViewer =  new DocViewer(this);
     // 左边工具栏
     m_navigationBar = new NaviViewer();
+
+
+
+
+
 
     m_splitterMain->addWidget(m_navigationBar);
     m_splitterMain->addWidget(m_pscrollarea);
