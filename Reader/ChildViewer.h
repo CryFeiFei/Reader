@@ -15,6 +15,7 @@
 #include "IChildViewer.h"
 #include "NaviViewer.h"
 #include "DocViewer.h"
+#include "ViewModel.h"
 
 
 class ChildViewer : public IChildViewer
@@ -33,13 +34,18 @@ public:
 
 public:
     virtual QScrollArea* getScrollArea() { return m_pscrollarea; }
+    virtual int getNumCount() { return m_ViewModel->GetNumCount(); }
+    virtual QSize getActruallyPageSize(int nPageNum) { return m_ViewModel->GetActruallyPageSize(nPageNum); }
 
+
+
+private:
+    ViewModel*            m_ViewModel;     // the most imporent point
 
 public:
     QSplitter*            m_splitterMain;
     NaviViewer*           m_navigationBar; //左边导航栏
     QWidget*              m_Canves;
-
     QScrollArea*          m_pscrollarea;
 
 

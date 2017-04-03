@@ -6,14 +6,17 @@ ChildViewer::ChildViewer()
     setAttribute(Qt::WA_DeleteOnClose);
     // 水平分割
     m_splitterMain = new QSplitter(Qt::Horizontal, this);
-
     m_pscrollarea = new QScrollArea(this);
 
+    m_ViewModel = new ViewModel(this);
 
+
+    // 绘制主界面
     DocViewer* docViewer =  new DocViewer(this);
     docViewer->setStyleSheet("background-color:gray;");
 
 
+    // 左边工具栏
     m_navigationBar = new NaviViewer();
 
     m_splitterMain->addWidget(m_navigationBar);

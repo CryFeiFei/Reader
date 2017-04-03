@@ -2,6 +2,7 @@
 #define I_CHILDVIEWER_H
 
 #include <QWidget>
+#include <QScrollArea>
 
 class IChildViewer : public QWidget
 {
@@ -14,6 +15,8 @@ public:
 public:
     // 获得
     virtual QScrollArea* getScrollArea() = 0;
+    virtual int getNumCount() = 0;
+    virtual QSize getActruallyPageSize(int nPageNum) = 0;
 
 };
 

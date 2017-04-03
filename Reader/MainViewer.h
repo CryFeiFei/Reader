@@ -18,6 +18,7 @@
 class MainViewer : public QMainWindow
 {
      Q_OBJECT
+    
 public:
      MainViewer(QWidget *parent = 0);
      ~MainViewer();

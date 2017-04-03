@@ -14,6 +14,8 @@ public:
 public:
     // 内核初始化，必须要先调用
     virtual     int Init() = 0;
+
+
     virtual     QImage GetActruallyPageImage(int nPageNum) = 0;
     virtual     QSize GetActruallyPageSize(int nPageNum) = 0;
     virtual     int GetNumCount() = 0;

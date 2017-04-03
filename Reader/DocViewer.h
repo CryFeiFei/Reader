@@ -18,6 +18,7 @@
 #include <QDesktopWidget>
 
 #include "IChildViewer.h"
+#include "ViewModel.h"
 
 //class IChildViewer;
 
@@ -29,12 +30,16 @@ public:
     ~DocViewer();
 
 public:
+    ViewModel*          m_ViewModel;
+
+
     QScrollArea*        m_pscrollarea;
     QScrollBar*         m_pScrollBar;
     IChildViewer*       m_IChildViewer;
 
     // kit层不应该出现在这里，逻辑层应该与界面层分开
     Kit*                m_kit;
+
 
 public:
     void paintEvent(QPaintEvent *e);

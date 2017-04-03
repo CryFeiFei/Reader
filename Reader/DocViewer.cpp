@@ -18,8 +18,8 @@ DocViewer::DocViewer(IChildViewer* childviewer) : m_IChildViewer(childviewer)
     m_kit->SetFileName(filename);
     m_kit->Init();
 
-    int nNumCount = m_kit->GetNumCount();
-    QSize size = m_kit->GetActruallyPageSize(0);
+    int nNumCount = m_IChildViewer->getNumCount();
+    QSize size = m_IChildViewer->getActruallyPageSize(0);
 
     this->resize(size.width(), size.height() * nNumCount);
 
