@@ -12,10 +12,11 @@
 #include<QString>
 #include<QMdiArea>
 
-#include"ChildViewer.h"
+#include "IMainViewer.h"
+#include "ChildViewer.h"
 #include "MultiViwer.h"
 
-class MainViewer : public QMainWindow
+class MainViewer : public QMainWindow, public IMainViewer
 {
      Q_OBJECT
     
@@ -24,7 +25,7 @@ public:
      ~MainViewer();
 
 public:
-
+     virtual QString getFileName(){ return m_strFileName; }
 
 public:
      void CreatToolBar(); //创建工具栏

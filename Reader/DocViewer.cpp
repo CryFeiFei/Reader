@@ -25,15 +25,7 @@ void DocViewer::paintEvent(QPaintEvent *e)
 {
     QPainter* painter = new QPainter(this);
 
-    QSize size = m_IChildViewer->getActruallyPageSize(0);
-    QImage imag = m_IChildViewer->getActruallyPageImage(0);
-
-
-    QImage image1 = m_IChildViewer->getActruallyPageImage(0);
-    painter->drawImage(0,0,image1);
-
-    QImage image2 = m_IChildViewer->getActruallyPageImage(1);
-    painter->drawImage(0, size.height(), image2);
+    m_IChildViewer->RenderPages(painter);
 
 }
 

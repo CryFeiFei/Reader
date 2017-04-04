@@ -1,3 +1,4 @@
+
 #ifndef VIEWMODEL_H
 #define VIEWMODEL_H
 
@@ -19,20 +20,17 @@ public:
     ViewModel(ChildViewer* ChildViewer);
     ~ViewModel();
 
-private:
+public:
     ChildViewer*   m_ChildViewer;
     Kit*           m_kit;
-
-
-
-
 
 public:
     int GetNumCount() { return m_kit->GetNumCount(); }
     QSize GetActruallyPageSize(int nPageNum) { return m_kit->GetActruallyPageSize(nPageNum); }
     QImage GetActruallyPageImage(int nPageNum) { return m_kit->GetActruallyPageImage(nPageNum); }
 
-
+public:
+    void RenderPages(QPainter* paint);
 
 };
 

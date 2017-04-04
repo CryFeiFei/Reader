@@ -17,13 +17,15 @@
 #include "DocViewer.h"
 #include "ViewModel.h"
 
+#include "IMainViewer.h"
+
 
 class ChildViewer : public IChildViewer
 {
     Q_OBJECT
 
 public:
-    ChildViewer();
+    ChildViewer(IMainViewer* iMainViewer);
     ~ChildViewer();
     void resizeEvent(QResizeEvent *event);
 
@@ -33,21 +35,27 @@ public:
     }
 
 public:
+    virtual QString getFileName() { return m_strFileName; }
     virtual QScrollArea* getScrollArea() { return m_pscrollarea; }
     virtual int getNumCount() { return m_ViewModel->GetNumCount(); }
     virtual QSize getActruallyPageSize(int nPageNum) { return m_ViewModel->GetActruallyPageSize(nPageNum); }
     virtual QImage getActruallyPageImage(int nPageNum) { return m_ViewModel->GetActruallyPageImage(nPageNum); }
-
+    virtual void RenderPages(QPainter *painter) { m_ViewModel->RenderPages(painter); }
 
 
 private:
     ViewModel*            m_ViewModel;     // the most imporent point
 
+
 public:
+    IMainViewer*          m_IMainViewer;
+
+    QString               m_strFileName;
+
+
     QSplitter*            m_splitterMain;
     NaviViewer*           m_navigationBar; //左边导航栏
     DocViewer*            m_DocViewer;     //绘制主界面
-    QWidget*              m_Canves;
     QScrollArea*          m_pscrollarea;
 
 

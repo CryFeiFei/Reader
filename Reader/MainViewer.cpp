@@ -76,10 +76,17 @@ void MainViewer::CreatToolBar()
 void MainViewer::OpenFile()
 {
     m_strFileName = QFileDialog::getOpenFileName(this,"打开");
-    if(!m_strFileName.isEmpty())
-    {
 
-    }
+//    int index = m_strFile.lastIndexOf("/");
+//    m_strFilePath = m_strFile.mid(0, index + 1);
+//    m_strFileName = m_strFile.mid((index + 1), (m_strFile.size() - index));
+
+
+    if(m_strFileName.isEmpty())
+        return;
+
+    NewFile();
+
 }
 
 void MainViewer::NewFile()
@@ -91,7 +98,7 @@ void MainViewer::NewFile()
 
 ChildViewer* MainViewer::CreateChildViewer()
 {
-    ChildViewer *child = new ChildViewer();
+    ChildViewer *child = new ChildViewer(this);
  //   child->resize(m_MainMdiArea->size());
     m_MainMdiArea->addSubWindow(child);
     return child;

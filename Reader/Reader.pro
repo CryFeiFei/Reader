@@ -31,7 +31,8 @@ HEADERS  += \
     DocViewer.h \
     MultiViwer.h \
     IChildViewer.h \
-    ViewModel.h
+    ViewModel.h \
+    IMainViewer.h
 
 RESOURCES += \
     resource.qrc
