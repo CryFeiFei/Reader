@@ -44,7 +44,17 @@ public:
 
 
 private:
+    enum DocState
+    {
+        SINGLE_CONTINUOUS,
+        UNSINGLE_CONTINUOUS,
+        DOUBLE_CONTINUOUS,
+        UNDOUBLE_CONTINUOUS
+    };
+
     ViewModel*            m_ViewModel;     // the most imporent point
+    DocState              m_docstate;
+
 
 
 public:

@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     DocViewer.cpp \
     MultiViewer.cpp \
     PDFkit.cpp \
-    ViewModel.cpp
+    ViewModel.cpp \
+    ImageCache.cpp
 
 HEADERS  += \
     PDFkit.h \
@@ -32,7 +33,8 @@ HEADERS  += \
     MultiViwer.h \
     IChildViewer.h \
     ViewModel.h \
-    IMainViewer.h
+    IMainViewer.h \
+    ImageCache.h
 
 RESOURCES += \
     resource.qrc
