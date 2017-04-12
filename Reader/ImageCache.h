@@ -2,11 +2,10 @@
 #define IMAGE_CACHE_H
 
 #include <QImage>
-#include <QMap>
 #include <QPair>
+#include <QQueue>
 
-#define ImageMap QMap<int, QImage>
-#define ImageMapIter QMap<int, QImage>::iterator
+#define ImageQueue QQueue<QPair<int, QImage>>
 
 class ImageCache
 {
@@ -15,7 +14,7 @@ public:
     ~ImageCache();
 
 private:
-    ImageMap       m_map;
+    ImageQueue     m_queue;
     int            m_nMaxSize;
 public:
     bool getImage(int nPageNum, QImage &image);
