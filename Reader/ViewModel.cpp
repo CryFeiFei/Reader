@@ -27,14 +27,41 @@ void ViewModel::RenderPages(QPainter *painter)
     if (painter == NULL)
         return;
 
-    QSize size = m_ChildViewer->getActruallyPageSize(0);
-    QImage imag = m_ChildViewer->getActruallyPageImage(0);
+    QImage image1 = GetImage();
+    painter->drawImage(0, GetVScrollPos(),image1);
 
-
-    QImage image1 = m_ChildViewer->getActruallyPageImage(0);
-    painter->drawImage(0,0,image1);
-
-    QImage image2 = m_ChildViewer->getActruallyPageImage(1);
-    painter->drawImage(0, size.height(), image2);
 }
+
+int ViewModel::GetVScrollPos()
+{
+    QScrollBar* pScrollBar = m_ChildViewer->getScrollArea()->verticalScrollBar();
+    return pScrollBar->value();
+}
+
+int ViewModel::GetHScrollPos()
+{
+    QScrollBar* pScrollBar = m_ChildViewer->getScrollArea()->verticalScrollBar();
+    return pScrollBar->value();
+}
+
+// 暂时完成单页非连续状态
+QImage ViewModel::GetImage()
+{
+    int vPos = GetVScrollPos();
+
+    // 获取第一页的大小
+    int nNum = GetNumCount();
+    QSize size = GetActruallyPageSize(0);
+
+
+    int vhigh = size.height();
+
+    int ny = vPos % vhigh;
+    int nCurPageNum = vPos / vhigh;
+
+    QImage image2 = GetPageImage(nCurPageNum, 0, nCurPageNum, size.width(), size.height(), 0);
+
+    return image2;
+}
+
 

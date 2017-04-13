@@ -19,6 +19,11 @@ public:
     virtual  QImage GetActruallyPageImage(int nPageNum) = 0;
     virtual  QSize GetActruallyPageSize(int nPageNum) = 0;
     virtual  int GetNumCount() = 0;
+    // [in] dpi
+    // [in] dpi
+    // [in] x, y, w, h
+    // [in] Rotation
+    virtual  QImage GetPageImage(int nPageNum, int x=-1, int y=-1, int w=-1, int h=-1, int rotate = 0) = 0;
 
 public:
     void  SetFileName(QString strFileName){ m_strFileName = strFileName;}

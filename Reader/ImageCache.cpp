@@ -28,7 +28,7 @@ bool ImageCache::insertImage(int nPageNum, QImage image)
     if (m_queue.size() >= m_nMaxSize)
         m_queue.pop_front();
 
-    m_queue.push_back(QPair(nPageNum, image));
+    m_queue.push_back(QPair<int, QImage>(nPageNum, image));
 
     return true;
 }
