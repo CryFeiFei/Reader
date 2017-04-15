@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     MultiViewer.cpp \
     PDFkit.cpp \
     ViewModel.cpp \
-    ImageCache.cpp
+    ImageCache.cpp \
+    ViewState.cpp \
+    SingleContinuousState.cpp
 
 HEADERS  += \
     PDFkit.h \
@@ -34,7 +36,9 @@ HEADERS  += \
     IChildViewer.h \
     ViewModel.h \
     IMainViewer.h \
-    ImageCache.h
+    ImageCache.h \
+    ViewState.h \
+    SingleContinuousState.h
 
 RESOURCES += \
     resource.qrc
