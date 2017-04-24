@@ -41,6 +41,8 @@ public:
     virtual QSize getActruallyPageSize(int nPageNum) { return m_ViewModel->GetActruallyPageSize(nPageNum); }
     virtual QImage getActruallyPageImage(int nPageNum) { return m_ViewModel->GetActruallyPageImage(nPageNum); }
     virtual void RenderPages(QPainter *painter) { m_ViewModel->RenderPages(painter); }
+    virtual double getCurDocMultiple(){ return m_dCurDocMultiple; }
+    virtual QImage getPageImage(int nPageNum, int x, int y, int w, int h, int rotate) { return m_ViewModel->GetPageImage(nPageNum, x, y, w, h, rotate); }
 
 
 private:
@@ -54,15 +56,13 @@ private:
 
     ViewModel*            m_ViewModel;     // the most imporent point
     DocState              m_docstate;
+    double                m_dCurDocMultiple; //当前文档放大倍数
 
 
 
 public:
     IMainViewer*          m_IMainViewer;
-
     QString               m_strFileName;
-
-
     QSplitter*            m_splitterMain;
     NaviViewer*           m_navigationBar; //左边导航栏
     DocViewer*            m_DocViewer;     //绘制主界面
@@ -71,7 +71,7 @@ public:
 
 
 
-public:
+private:
 
     void InitOutline(); //初始化大纲树
     void InitThumbnail(); //初始化缩略图

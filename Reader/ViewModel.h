@@ -5,6 +5,7 @@
 #include "Kit.h"
 #include "PDFkit.h"
 #include "ViewState.h"
+#include "SingleContinuousState.h"
 
 
 // 测试头文件
@@ -37,10 +38,6 @@ public:
 public:
     void RenderPages(QPainter* paint);
 
-private:
-    int  GetVScrollPos();
-    int  GetHScrollPos();
-    QImage GetImage();
 
 };
 

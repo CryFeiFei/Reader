@@ -1,11 +1,11 @@
 #include "ChildViewer.h"
 
-ChildViewer::ChildViewer(IMainViewer* iMainViewer) : m_IMainViewer(iMainViewer)
+ChildViewer::ChildViewer(IMainViewer* iMainViewer) : m_IMainViewer(iMainViewer),m_docstate(SINGLE_CONTINUOUS),
+    m_dCurDocMultiple(1)
 {
     // 为了使关闭窗口时都关闭
     setAttribute(Qt::WA_DeleteOnClose);
     m_strFileName = m_IMainViewer->getFileName();
-    m_docstate = SINGLE_CONTINUOUS;
 
     // 水平分割
     m_splitterMain = new QSplitter(Qt::Horizontal, this);

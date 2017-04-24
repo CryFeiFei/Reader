@@ -2,8 +2,12 @@
 #define VIEWSTATE_H
 
 #include <QPainter>
+#include <QScrollBar>
+
+#include "IChildViewer.h"
 
 class ViewModel;
+class ChildViewer;
 
 class ViewState
 {
