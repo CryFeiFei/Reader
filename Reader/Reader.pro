@@ -38,7 +38,8 @@ HEADERS  += \
     IMainViewer.h \
     ImageCache.h \
     ViewState.h \
-    SingleContinuousState.h
+    SingleContinuousState.h \
+    define.h
 
 RESOURCES += \
     resource.qrc

@@ -7,7 +7,7 @@ DocViewer::DocViewer(IChildViewer* childviewer) : m_IChildViewer(childviewer)
     int nNumCount = m_IChildViewer->getNumCount();
     QSize size = m_IChildViewer->getActruallyPageSize(0);
 
-    this->resize(size.width(), size.height() * nNumCount);
+    this->resize(size.width(), size.height() * nNumCount + 8 * nNumCount);
 
     m_pscrollarea = m_IChildViewer->getScrollArea();
     m_pscrollarea->setBackgroundRole(QPalette::Dark);

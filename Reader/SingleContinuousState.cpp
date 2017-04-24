@@ -32,10 +32,11 @@ void SingleContinuousState::RenderPages(QPainter *paint)
     {
         GetVPos(nScrollYFlag, nPageNum, nPageVPos);
         // 绘制当前页的高度
-        int nRenderHeight = GetPageSize(nPageNum).height() - nPageVPos;
+        int nRenderHeight = GetPageSize(nPageNum).height() + 8 - nPageVPos;
 
         imageCopy = m_ChildViewer->getActruallyPageImage(nPageNum);
         img = imageCopy.copy(0, nPageVPos, GetPageSize(nPageNum).width(), nRenderHeight);
+
         paint->drawImage(0, nScrollYFlag, img);
 
         nScrollHeight -= img.height();
@@ -113,13 +114,13 @@ bool SingleContinuousState::GetVPos(int nScrollPos, int &nPageNum, int &nPageVSt
 
     for (int i = 0; i < nPageCount; i++)
     {
-        if (nScrollPos < GetPageSize(i).height())
+        if (nScrollPos < (GetPageSize(i).height() + 8))
         {
             nPageNum = i;
             nPageVStartPos = nScrollPos;
             break;
         }
-        nScrollPos -= GetPageSize(i).height();
+        nScrollPos -= (GetPageSize(i).height() + 8);
     }
 
     return true;
