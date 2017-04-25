@@ -13,11 +13,6 @@ DocViewer::DocViewer(IChildViewer* childviewer) : m_IChildViewer(childviewer)
     m_pscrollarea->setBackgroundRole(QPalette::Dark);
     m_pscrollarea->setWidget(this);
 
-    QScrollBar* pScrollBar = m_pscrollarea->verticalScrollBar();
-//    pScrollBar->setFixedHeight(size.height() * nNumCount);
-    pScrollBar->setMaximum(size.height() * nNumCount);
-    pScrollBar->setSingleStep(8);
-
 
 }
 
