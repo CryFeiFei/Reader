@@ -9,7 +9,7 @@ ChildViewer::ChildViewer(IMainViewer* iMainViewer) : m_IMainViewer(iMainViewer),
 
     // 水平分割
     m_splitterMain = new QSplitter(Qt::Horizontal, this);
-    m_pscrollarea = new QScrollArea(this);
+//    m_pscrollarea = new QScrollArea(this);
 
     m_ViewModel = new ViewModel(this);
 
@@ -19,13 +19,13 @@ ChildViewer::ChildViewer(IMainViewer* iMainViewer) : m_IMainViewer(iMainViewer),
     // 左边工具栏
     m_navigationBar = new NaviViewer();
 
-
+    m_pscrollarea = m_DocViewer->getScroll();
 
 
 
 
     m_splitterMain->addWidget(m_navigationBar);
-    m_splitterMain->addWidget(m_pscrollarea);
+    m_splitterMain->addWidget(m_DocViewer);
 
     m_splitterMain->setStretchFactor(0,0);
     m_splitterMain->setStretchFactor(1,1);

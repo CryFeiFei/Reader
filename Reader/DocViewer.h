@@ -31,6 +31,7 @@ public:
 
 public:
     void paintEvent(QPaintEvent *e);
+    QScrollArea* getScroll(){ return m_pscrollarea;}
 
 
 };
