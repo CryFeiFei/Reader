@@ -20,7 +20,7 @@ public:
     IChildViewer*       m_IChildViewer;
 
 public:
-    void paintEvent(QPaintEvent *e);
+//    void paintEvent(QPaintEvent *e);
     QScrollArea* getScroll(){ return m_pScrollArea;}
 
 };
