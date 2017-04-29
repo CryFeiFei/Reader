@@ -12,11 +12,11 @@ ChildViewer::ChildViewer(IMainViewer* iMainViewer) : m_IMainViewer(iMainViewer),
     m_ViewModel = new ViewModel(this);
 
 
-    m_DocViewer =  new DocViewer(this);
+//    m_DocViewer =  new DocViewer(this);
     m_navigationBar = new NaviViewer();
     m_pDocWidget = new DocWidget(this);
 
-    m_pscrollarea = m_DocViewer->getScroll();
+//    m_pscrollarea = m_DocViewer->getScroll();
 
     m_splitterMain->addWidget(m_navigationBar);
     m_splitterMain->addWidget(m_pDocWidget);

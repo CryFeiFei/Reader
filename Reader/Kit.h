@@ -13,7 +13,7 @@ public:
 
 public:
     // 内核初始化，必须要先调用
-    virtual  int Init() = 0;
+    virtual  bool Init() = 0;
 
 
     virtual  QImage GetActruallyPageImage(int nPageNum) = 0;

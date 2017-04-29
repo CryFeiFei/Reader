@@ -19,7 +19,6 @@ public:
 
 private:
      IChildViewer*    m_ChildViewer;
-//   QScrollArea*    m_ScrollArea;
 
 private:
     int GetPageCount() { return m_ChildViewer->getNumCount();}

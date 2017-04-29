@@ -36,7 +36,7 @@ public:
 
 public:
     virtual QString getFileName() { return m_strFileName; }
-    virtual QScrollArea* getScrollArea() { return m_pscrollarea; }
+    virtual QScrollArea* getScrollArea() { return m_pDocWidget->getScrollArea(); }
     virtual int getNumCount() { return m_ViewModel->GetNumCount(); }
     virtual QSize getActruallyPageSize(int nPageNum) { return m_ViewModel->GetActruallyPageSize(nPageNum); }
     virtual QImage getActruallyPageImage(int nPageNum) { return m_ViewModel->GetActruallyPageImage(nPageNum); }
@@ -66,8 +66,8 @@ public:
     QSplitter*            m_splitterMain;
     NaviViewer*           m_navigationBar; //左边导航栏
     DocWidget*            m_pDocWidget;    //右边绘制widget
-    DocViewer*            m_DocViewer;     //绘制主界面
-    QScrollArea*          m_pscrollarea;
+//    DocViewer*            m_DocViewer;     //绘制主界面
+//    QScrollArea*          m_pscrollarea;
 
 
 

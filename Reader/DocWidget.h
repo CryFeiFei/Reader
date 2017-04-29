@@ -5,15 +5,23 @@
 #include <QWidget>
 #include <QScrollArea>
 
+#include "IDocWidget.h"
 #include "IChildViewer.h"
 #include "ViewModel.h"
 #include "DocViewer.h"
 
-class DocWidget: public QWidget
+class DocWidget: public IDocWidget
 {
 public:
     DocWidget(IChildViewer* childviewer);
     ~DocWidget();
+
+public:
+    virtual int getNumCount(){ return m_IChildViewer->getNumCount();}
+    virtual QSize getActruallyPageSize(int nPageNum) { return m_IChildViewer->getActruallyPageSize(nPageNum);}
+    virtual QImage getActruallyPageImage(int nPageNum) { return m_IChildViewer->getActruallyPageImage(nPageNum);}
+    virtual void RenderPages(QPainter *painter) { m_IChildViewer->RenderPages(painter);}
+    virtual QScrollArea* getScrollArea() { return m_pScrollArea;}
 
 public:
     QScrollArea*        m_pScrollArea;  //滚动条区域

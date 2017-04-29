@@ -23,7 +23,7 @@ public:
 public:
 
     //初始化Doc指针
-    virtual int Init();
+    virtual bool Init();
     // 获得某一页的真实图像
     virtual QImage GetActruallyPageImage(int nPageNum);
     // 获得某一页真实的大小

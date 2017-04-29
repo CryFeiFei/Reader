@@ -23,13 +23,15 @@ Poppler::Page* PDFkit::GetPage(int nPageNum)
     return pPage;
 }
 
-int PDFkit::Init()
+bool PDFkit::Init()
 {
     m_document = Poppler::Document::load(m_strFileName);
 
     // 更加清晰
     m_document->setRenderHint(Poppler::Document::Antialiasing);
     m_document->setRenderHint(Poppler::Document::TextAntialiasing);
+
+    return true;
 }
 
 QImage PDFkit::GetActruallyPageImage(int nPageNum)

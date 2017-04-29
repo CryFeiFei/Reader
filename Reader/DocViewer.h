@@ -9,18 +9,20 @@
 
 #include "IChildViewer.h"
 #include "ViewModel.h"
+#include "IDocWidget.h"
 
 class DocViewer : public QWidget
 {
 
 public:
-    DocViewer(IChildViewer* childviewer);
+    DocViewer(IDocWidget* DocWidget);
     ~DocViewer();
 
 public:
     QScrollArea*        m_pscrollarea;
     QScrollBar*         m_pScrollBar;
-    IChildViewer*       m_IChildViewer;
+//    IChildViewer*       m_IChildViewer;
+    IDocWidget*         m_IDocWidget;
 
 
 public:
