@@ -6,9 +6,6 @@
 ViewModel::ViewModel(ChildViewer* ChildViewer) : m_ChildViewer(ChildViewer), m_kit(NULL)
 {
     m_kit = new PDFkit();
-    // 测试用例
-    QString filename;
-    filename = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation) + "/test.pdf";
 
     // todo待重构
     QString strFileName = m_ChildViewer->getFileName();
