@@ -40,8 +40,9 @@ HEADERS  += \
     ImageCache.h \
     ViewState.h \
     SingleContinuousState.h \
-    define.h \
-    DocWidget.h
+    DocWidget.h \
+    IDocWidget.h \
+    ReadDefine.h
 
 RESOURCES += \
     resource.qrc

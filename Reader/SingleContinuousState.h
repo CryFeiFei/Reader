@@ -4,8 +4,6 @@
 #include <QScrollArea>
 
 #include "ViewState.h"
-//#include "ChildViewer.h"
-//class ChildViewer;
 
 class SingleContinuousState : public ViewState
 {

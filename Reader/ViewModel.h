@@ -37,8 +37,6 @@ public:
 
 public:
     void RenderPages(QPainter* paint);
-
-
 };
 
 #endif // VIEWMODEL_H

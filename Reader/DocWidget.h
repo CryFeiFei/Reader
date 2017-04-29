@@ -7,6 +7,7 @@
 
 #include "IChildViewer.h"
 #include "ViewModel.h"
+#include "DocViewer.h"
 
 class DocWidget: public QWidget
 {
@@ -18,6 +19,7 @@ public:
     QScrollArea*        m_pScrollArea;  //滚动条区域
     QScrollBar*         m_pScrollBar;   //滚动条
     IChildViewer*       m_IChildViewer;
+    DocViewer*          m_pDocViewer;   //绘制区域
 
 public:
 //    void paintEvent(QPaintEvent *e);

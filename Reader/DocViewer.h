@@ -6,7 +6,6 @@
 #include <QWidget>
 #include <QScrollArea>
 #include <QPainter>
-#include <QWidget>
 
 #include "IChildViewer.h"
 #include "ViewModel.h"
