@@ -15,6 +15,7 @@ DocViewer::DocViewer(IChildViewer* childviewer) : m_IChildViewer(childviewer)
 
 //    m_pscrollarea = new QScrollArea(this);
 //    m_pscrollarea->setBackgroundRole(QPalette::Dark);
+    //m_pscrollarea->setWidgetResizable(true);
 
 
 }

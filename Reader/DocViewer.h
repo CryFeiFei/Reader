@@ -6,12 +6,7 @@
 #include <QWidget>
 #include <QScrollArea>
 #include <QPainter>
-
-// 测试头文件
-#include <QStandardPaths>
 #include <QWidget>
-#include <QPalette>
-#include <QDesktopWidget>
 
 #include "IChildViewer.h"
 #include "ViewModel.h"
