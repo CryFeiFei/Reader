@@ -12,6 +12,7 @@
 #include <QWidget>
 
 class ChildViewer;
+class DocWidget;
 
 class ViewModel
 {

@@ -8,6 +8,7 @@
 
 class ViewModel;
 class ChildViewer;
+class DocWidget;
 
 class ViewState
 {

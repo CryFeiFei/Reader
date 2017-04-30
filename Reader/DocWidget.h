@@ -6,9 +6,10 @@
 #include <QScrollArea>
 
 #include "IDocWidget.h"
-#include "IChildViewer.h"
 #include "ViewModel.h"
 #include "DocViewer.h"
+
+class IChildViewer;
 
 class DocWidget: public IDocWidget
 {

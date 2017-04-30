@@ -13,10 +13,8 @@
 
 #include "IChildViewer.h"
 #include "NaviViewer.h"
-#include "DocViewer.h"
 #include "ViewModel.h"
 #include "DocWidget.h"
-
 #include "IMainViewer.h"
 
 
@@ -44,6 +42,7 @@ public:
     virtual double getCurDocMultiple(){ return m_dCurDocMultiple; }
     virtual QImage getPageImage(int nPageNum, int x, int y, int w, int h, int rotate) { return m_ViewModel->GetPageImage(nPageNum, x, y, w, h, rotate); }
     virtual int getActruallyPageHighCount() { return m_ViewModel->GetActruallyPageHighCount();}
+    virtual QSize getDocWidgetSize() { return m_pDocWidget->size(); }
 
 private:
     enum DocState
@@ -66,11 +65,6 @@ public:
     QSplitter*            m_splitterMain;
     NaviViewer*           m_navigationBar; //左边导航栏
     DocWidget*            m_pDocWidget;    //右边绘制widget
-//    DocViewer*            m_DocViewer;     //绘制主界面
-//    QScrollArea*          m_pscrollarea;
-
-
-
 
 private:
 

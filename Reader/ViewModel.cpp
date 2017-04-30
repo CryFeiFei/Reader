@@ -25,7 +25,7 @@ int ViewModel::GetActruallyPageHighCount()
 {
     int nPageHighCount = 0;
     for (int i = 0; i < GetNumCount(); i++)
-        nPageHighCount += GetActruallyPageSize(i).height();
+        nPageHighCount += (GetActruallyPageSize(i).height() + 8);
 
     return nPageHighCount;
 }

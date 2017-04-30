@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QScrollArea>
 
+class DocWidget;
+
 class IChildViewer : public QWidget
 {
 public:
@@ -23,6 +25,7 @@ public:
     virtual double getCurDocMultiple() = 0;
     virtual QImage getPageImage(int nPageNum, int x, int y, int w, int h, int rotate = 0) = 0;
     virtual int getActruallyPageHighCount() = 0;
+    virtual QSize getDocWidgetSize() = 0;
 };
 
 #endif // I_CHILDVIEWER_H

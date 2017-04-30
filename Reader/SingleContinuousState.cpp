@@ -1,5 +1,7 @@
 #include "SingleContinuousState.h"
 
+class DocWidget;
+
 SingleContinuousState::SingleContinuousState(IChildViewer* childViewer): m_ChildViewer(childViewer)
 {
 
@@ -28,6 +30,8 @@ void SingleContinuousState::RenderPages(QPainter *paint)
     QImage img;
     QImage imageCopy;
 
+    int nXDrawPos = 0;
+
     while (nScrollHeight > 0)
     {
         GetVPos(nScrollYFlag, nPageNum, nPageVPos);
@@ -37,38 +41,17 @@ void SingleContinuousState::RenderPages(QPainter *paint)
         imageCopy = m_ChildViewer->getActruallyPageImage(nPageNum);
         img = imageCopy.copy(0, nPageVPos, GetPageSize(nPageNum).width(), nRenderHeight);
 
-        paint->drawImage(0, nScrollYFlag, img);
+        QSize sz = m_ChildViewer->getDocWidgetSize();
+//        int nDD = doc->size()->width();
+
+        nXDrawPos = (sz.width() - GetPageSize(nPageNum).width()) / 2;
+
+        paint->drawImage(nXDrawPos, nScrollYFlag, img);
 
         nScrollHeight -= img.height();
         nScrollYFlag += img.height();
     }
 
-
-}
-
-int SingleContinuousState::GetRenderRaw()
-{
-    QSize size = m_ChildViewer->getScrollArea()->size();
-    double dCurDocMultiple = m_ChildViewer->getCurDocMultiple();
-    double dDocHeight = m_ChildViewer->getActruallyPageSize(0).height();
-    int nPageCount = m_ChildViewer->getNumCount();
-
-    //todo暂时这样做，先把demo做起来
-    int nRaw = ceil(size.height()/dCurDocMultiple*dDocHeight*nPageCount);
-
-    return nRaw;
-
-}
-
-int SingleContinuousState::GetRenderColumn()
-{
-    QSize size = m_ChildViewer->getScrollArea()->size();
-    double dCurDocMultiple = m_ChildViewer->getCurDocMultiple();
-    double dDocWidth = m_ChildViewer->getActruallyPageSize(0).width();
-
-    int nColumn = ceil(size.width() / dCurDocMultiple * dDocWidth);
-
-    return nColumn;
 
 }
 
