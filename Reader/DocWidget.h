@@ -12,6 +12,7 @@
 
 class DocWidget: public IDocWidget
 {
+//    Q_OBJECT
 public:
     DocWidget(IChildViewer* childviewer);
     ~DocWidget();
@@ -32,6 +33,9 @@ public:
 public:
 //    void paintEvent(QPaintEvent *e);
     QScrollArea* getScroll(){ return m_pScrollArea;}
+
+public:
+    void resizeEvent(QResizeEvent* e);
 
 };
 

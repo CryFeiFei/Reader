@@ -22,7 +22,7 @@ public:
     virtual void RenderPages(QPainter *painter) = 0;
     virtual double getCurDocMultiple() = 0;
     virtual QImage getPageImage(int nPageNum, int x, int y, int w, int h, int rotate = 0) = 0;
-
+    virtual int getActruallyPageHighCount() = 0;
 };
 
 #endif // I_CHILDVIEWER_H

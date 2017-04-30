@@ -21,6 +21,15 @@ ViewModel::~ViewModel()
 
 }
 
+int ViewModel::GetActruallyPageHighCount()
+{
+    int nPageHighCount = 0;
+    for (int i = 0; i < GetNumCount(); i++)
+        nPageHighCount += GetActruallyPageSize(i).height();
+
+    return nPageHighCount;
+}
+
 void ViewModel::RenderPages(QPainter *painter)
 {
     if (painter == NULL || m_ViewState == NULL)

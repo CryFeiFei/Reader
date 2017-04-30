@@ -43,7 +43,7 @@ public:
     virtual void RenderPages(QPainter *painter) { m_ViewModel->RenderPages(painter); }
     virtual double getCurDocMultiple(){ return m_dCurDocMultiple; }
     virtual QImage getPageImage(int nPageNum, int x, int y, int w, int h, int rotate) { return m_ViewModel->GetPageImage(nPageNum, x, y, w, h, rotate); }
-
+    virtual int getActruallyPageHighCount() { return m_ViewModel->GetActruallyPageHighCount();}
 
 private:
     enum DocState
