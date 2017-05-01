@@ -33,8 +33,6 @@ public:
 
     virtual QImage GetPageImage(int nPageNum, int x, int y, int w, int h, int rotate = 0);
 
-
-
 };
 
 #endif // PDFKIT_H

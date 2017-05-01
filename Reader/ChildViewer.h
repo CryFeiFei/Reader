@@ -3,13 +3,7 @@
 #ifndef ChildViewer_H
 #define ChildViewer_H
 
-#include <QWidget>
-#include <QSplitter>
-#include <QTabWidget>
-#include <QLayout>
-#include <QPushButton>
-#include <QScrollArea>
-#include <QScrollBar>
+#include "ReadDefine.h"
 
 #include "IChildViewer.h"
 #include "NaviViewer.h"
@@ -25,12 +19,6 @@ class ChildViewer : public IChildViewer
 public:
     ChildViewer(IMainViewer* iMainViewer);
     ~ChildViewer();
-    void resizeEvent(QResizeEvent *event);
-
-    void newFile()
-    {
-        setWindowTitle("qwe");
-    }
 
 public:
     virtual QString getFileName() { return m_strFileName; }
@@ -44,15 +32,10 @@ public:
     virtual int getActruallyPageHighCount() { return m_ViewModel->GetActruallyPageHighCount();}
     virtual QSize getDocWidgetSize() { return m_pDocWidget->size(); }
 
-private:
-    enum DocState
-    {
-        SINGLE_CONTINUOUS,
-        UNSINGLE_CONTINUOUS,
-        DOUBLE_CONTINUOUS,
-        UNDOUBLE_CONTINUOUS
-    };
+public:
+    void resizeEvent(QResizeEvent *event);
 
+private:
     ViewModel*            m_ViewModel;     // the most imporent point
     DocState              m_docstate;
     double                m_dCurDocMultiple; //当前文档放大倍数

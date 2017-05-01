@@ -16,7 +16,6 @@ void DocViewer::paintEvent(QPaintEvent *e)
     QPainter* painter = new QPainter(this);
 
     m_IDocWidget->RenderPages(painter);
-
 }
 
 
