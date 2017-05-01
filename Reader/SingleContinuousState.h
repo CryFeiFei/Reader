@@ -28,13 +28,9 @@ private:
 
     int GetHScrollPos();
 
-    double GetVScrollPercent();
-
     int GetPageHeightCount(int nNumPage);
 
     bool GetVPos(int nScrollPos, int& nPageNum, int& nPageVPos);
-
-
 
 };
 

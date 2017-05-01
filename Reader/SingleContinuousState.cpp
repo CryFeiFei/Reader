@@ -68,20 +68,6 @@ int SingleContinuousState::GetHScrollPos()
     return pScrollBar->value();
 }
 
-double SingleContinuousState::GetVScrollPercent()
-{
-    QScrollBar* pScrollBar = m_ChildViewer->getScrollArea()->verticalScrollBar();
-    int nHeight = 0;
-    int nNumCount = m_ChildViewer->getNumCount();
-    for (int i = 0; i < nNumCount; i++)
-    {
-        nHeight += m_ChildViewer->getActruallyPageSize(i).height();
-    }
-    int nHPos = pScrollBar->value();
-    double dPercent = (double)nHPos / (double)nHeight;
-    return dPercent;
-}
-
 int SingleContinuousState::GetPageHeightCount(int nNumPage)
 {
     int nHeight = 0;

@@ -12,7 +12,6 @@
 class NaviViewer : public QWidget
 {
     Q_OBJECT
-
 public:
     NaviViewer();
     QSplitter*            m_splitterMain; //主窗口
@@ -27,7 +26,6 @@ private:
     QWidget*              m_SemanticTree; //语义树
 
 private slots:
-
     void sl_btnClicked();
 
 };

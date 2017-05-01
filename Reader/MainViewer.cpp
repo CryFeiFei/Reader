@@ -75,7 +75,11 @@ void MainViewer::CreatToolBar()
 
 void MainViewer::OpenFile()
 {
-    m_strFileName = QFileDialog::getOpenFileName(this,"打开");
+    QString strFilter;
+    strFilter = "*.pdf";
+    QString strDir;
+    strDir = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
+    m_strFileName = QFileDialog::getOpenFileName(this,"Reader", strDir, strFilter);
 
 //    int index = m_strFile.lastIndexOf("/");
 //    m_strFilePath = m_strFile.mid(0, index + 1);
@@ -91,15 +95,18 @@ void MainViewer::OpenFile()
 
 void MainViewer::NewFile()
 {
-    ChildViewer *child = CreateChildViewer();
-    child->newFile();
-    child->show();
+    ChildViewer *childViewer = CreateChildViewer();
+
+    int index = m_strFileName.lastIndexOf("/");
+//    m_strFilePath = m_strFileName.mid(0, index + 1);
+    QString strFileName = m_strFileName.mid((index + 1), (m_strFileName.size() - index));
+    childViewer->setWindowTitle(strFileName);
+    childViewer->show();
 }
 
 ChildViewer* MainViewer::CreateChildViewer()
 {
     ChildViewer *child = new ChildViewer(this);
- //   child->resize(m_MainMdiArea->size());
     m_MainMdiArea->addSubWindow(child);
     return child;
 }
@@ -121,4 +128,5 @@ void MainViewer::UpDataMenus()
 
 MainViewer::~MainViewer()
 {
+
 }

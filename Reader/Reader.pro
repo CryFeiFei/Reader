@@ -51,4 +51,5 @@ INCLUDEPATH += $$PWD/_Inclusion/Win32/poppler
 win32: LIBS += -L$$PWD/_Inclusion/Win32/poppler -llibpoppler
 win32: LIBS += -L$$PWD/_Inclusion/Win32/poppler -llibpoppler-qt5
 
-DISTFILES +=
+DISTFILES += \
+    widgets

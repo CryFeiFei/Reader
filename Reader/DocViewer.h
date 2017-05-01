@@ -21,7 +21,6 @@ public:
 public:
     QScrollArea*        m_pscrollarea;
     QScrollBar*         m_pScrollBar;
-//    IChildViewer*       m_IChildViewer;
     IDocWidget*         m_IDocWidget;
 
 

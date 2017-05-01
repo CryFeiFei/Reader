@@ -57,8 +57,6 @@ private:
     DocState              m_docstate;
     double                m_dCurDocMultiple; //当前文档放大倍数
 
-
-
 public:
     IMainViewer*          m_IMainViewer;
     QString               m_strFileName;
@@ -67,7 +65,6 @@ public:
     DocWidget*            m_pDocWidget;    //右边绘制widget
 
 private:
-
     void InitOutline(); //初始化大纲树
     void InitThumbnail(); //初始化缩略图
     void InitSemantic(); //初始化语义树

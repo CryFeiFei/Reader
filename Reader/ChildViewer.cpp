@@ -7,26 +7,17 @@ ChildViewer::ChildViewer(IMainViewer* iMainViewer) : m_IMainViewer(iMainViewer),
     setAttribute(Qt::WA_DeleteOnClose);
     m_strFileName = m_IMainViewer->getFileName();
 
-    // 水平分割
     m_splitterMain = new QSplitter(Qt::Horizontal, this);
     m_ViewModel = new ViewModel(this);
 
-
-//    m_DocViewer =  new DocViewer(this);
     m_navigationBar = new NaviViewer();
     m_pDocWidget = new DocWidget(this);
 
-//    m_pscrollarea = m_DocViewer->getScroll();
-
     m_splitterMain->addWidget(m_navigationBar);
     m_splitterMain->addWidget(m_pDocWidget);
-
     m_splitterMain->setStretchFactor(1,1);
     m_splitterMain->setAutoFillBackground(true);
-
-    m_splitterMain->setWindowTitle(QObject::tr("分割窗口"));
     m_splitterMain->show();
-
 }
 
 void ChildViewer::resizeEvent(QResizeEvent *event)

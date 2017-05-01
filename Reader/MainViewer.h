@@ -2,15 +2,16 @@
 #ifndef MAIN_VIEWER_H
 #define MAIN_VIEWER_H
 
-#include<QMainWindow>
-#include<QMenu>
-#include<QMenuBar>
-#include<QAction>
-#include<QToolBar>
-#include<QDialog>
-#include<QFileDialog>
-#include<QString>
-#include<QMdiArea>
+#include <QMainWindow>
+#include <QMenu>
+#include <QMenuBar>
+#include <QAction>
+#include <QToolBar>
+#include <QDialog>
+#include <QFileDialog>
+#include <QString>
+#include <QMdiArea>
+#include <QDesktopServices>
 
 #include "IMainViewer.h"
 #include "ChildViewer.h"

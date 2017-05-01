@@ -1,9 +1,8 @@
 #include "NaviViewer.h"
 
-NaviViewer::NaviViewer(/*QSplitter* parent*/)/*: m_splitterMain(parent)*/
+NaviViewer::NaviViewer()
 {
     //new project
-
     m_OutlineWidget = new QWidget();
     m_ThumbnailWidget = new QWidget();
     m_SemanticTree = new QWidget();

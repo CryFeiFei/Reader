@@ -12,8 +12,6 @@ public:
     IChildViewer(){}
     virtual ~IChildViewer(){}
 
-
-// 提供给子模块的接口
 public:
     // 获得
     virtual QString getFileName() = 0;
