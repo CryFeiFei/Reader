@@ -1,7 +1,7 @@
 
 #include "Kit.h"
 
-Kit::Kit()
+Kit::Kit():m_multiple(1)
 {
 
 }

@@ -37,7 +37,7 @@ void MainViewer::CreatActions()
     connect(m_OpenAction,SIGNAL(triggered()), this, SLOT(SaveFile()));
 
     //退出动作
-    m_QuitAction = new QAction(QIcon(":/image/cancel"), "退出", this);
+    m_QuitAction = new QAction(QIcon(":/image/close"), "退出", this);
     m_QuitAction->setShortcut(tr("Ctrl+Q"));
     m_QuitAction->setStatusTip(tr("退出程序"));
     connect(m_QuitAction,SIGNAL(triggered()),this,SLOT(CloseFile()));

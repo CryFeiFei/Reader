@@ -21,7 +21,6 @@ public:
     virtual QImage getActruallyPageImage(int nPageNum) = 0;
     virtual void RenderPages(QPainter *painter) = 0;
     virtual double getCurDocMultiple() = 0;
-    virtual QImage getPageImage(int nPageNum, int x, int y, int w, int h, int rotate = 0) = 0;
     virtual int getActruallyPageHighCount() = 0;
     virtual QSize getDocWidgetSize() = 0;
 };

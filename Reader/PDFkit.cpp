@@ -70,11 +70,6 @@ int PDFkit::GetNumCount()
     return nNumCount > 0 ? nNumCount: 0;
 }
 
-QImage PDFkit::GetPageImage(int nPageNum, int x, int y, int w, int h, int rotate)
-{
-    Poppler::Page* pPage = GetPage(nPageNum);
-    return pPage->renderToImage(72, 72, x, y, w, h/*(Rotation)rotate*/);
-}
 
 
 

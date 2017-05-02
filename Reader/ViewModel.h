@@ -31,7 +31,6 @@ public:
     int     GetNumCount() { return m_kit->GetNumCount(); }
     QSize   GetActruallyPageSize(int nPageNum) { return m_kit->GetActruallyPageSize(nPageNum); }
     QImage  GetActruallyPageImage(int nPageNum) { return m_kit->GetActruallyPageImage(nPageNum); }
-    QImage  GetPageImage(int nPageNum, int x, int y, int w, int h, int rotate){ return m_kit->GetPageImage(nPageNum, x, y, w, h, rotate); }
     int     GetActruallyPageHighCount();
 public:
     ChildViewer*   GetChildViewer() { return m_ChildViewer; }

@@ -20,4 +20,7 @@ enum DocState
     UNDOUBLE_CONTINUOUS
 };
 
+//文档倍数
+static double multiple[] = {0.5, 1, 0.5, 1.5, 1.75, 2};
+
 #endif // DEFINE_H

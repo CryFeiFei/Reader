@@ -1,5 +1,10 @@
 <RCC>
     <qresource prefix="/">
-        <file>image/open.png</file>
+        <file>image/open.ico</file>
+        <file>image/zoom_in.ico</file>
+        <file>image/zoom_out.ico</file>
+        <file>image/zoom_reset.ico</file>
+        <file>image/close.ico</file>
+        <file>image/save.ico</file>
     </qresource>
 </RCC>
