@@ -12,6 +12,7 @@
 #include <QString>
 #include <QMdiArea>
 #include <QDesktopServices>
+#include <QMdiSubWindow>
 
 #include "IMainViewer.h"
 #include "ChildViewer.h"
@@ -33,7 +34,8 @@ public:
      void CreatActions(); //创建动作
      void CreatMenus(); //创建菜单栏
 
-     void resizeEvent();
+public:
+     ChildViewer* getCurChildViewer();
 
 private:
      QMenu*               m_FileMenu; //菜单栏
@@ -46,6 +48,10 @@ private:
      QAction*             m_SaveAction; //保存文件
      QAction*             m_QuitAction; //退出
 
+     QAction*             m_ZoomIn;
+     QAction*             m_ZoomOut;
+     QAction*             m_ZoomReset;
+
      //test
      QAction*             m_NewAction; //新建文件
 
@@ -54,7 +60,6 @@ private:
      QToolBar*            m_ZoomTool;
 
      //窗口布局
-//     QWidget*             m_MainWin;    //主窗体
      MultiViwer*          m_MainMdiArea; //主窗体中的多文档区域
 
 
@@ -67,8 +72,10 @@ public slots:
      void SaveFile();
      void CloseFile();
      void NewFile();
-
      void UpDataMenus(); //更新状态栏
+     void ZoomIn();
+     void ZoomOut();
+     void ZoomReset();
 
 private:
      QString m_strFileName;

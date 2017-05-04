@@ -16,6 +16,11 @@ MainViewer::MainViewer(QWidget *parent) :  QMainWindow(parent)
 
 }
 
+MainViewer::~MainViewer()
+{
+
+}
+
 void MainViewer::CreatActions()
 {
     //打开动作
@@ -41,6 +46,21 @@ void MainViewer::CreatActions()
     m_QuitAction->setShortcut(tr("Ctrl+Q"));
     m_QuitAction->setStatusTip(tr("退出程序"));
     connect(m_QuitAction,SIGNAL(triggered()),this,SLOT(CloseFile()));
+
+    //放大
+    m_ZoomIn = new QAction(QIcon(":/image/zoom_in"), "放大", this);
+    m_ZoomIn->setStatusTip(tr("放大"));
+    connect(m_ZoomIn, SIGNAL(triggered()), this, SLOT(ZoomIn()));
+
+    //缩小
+    m_ZoomOut = new QAction(QIcon(":/image/zoom_out"), "缩小", this);
+    m_ZoomOut->setStatusTip(tr("缩小"));
+    connect(m_ZoomOut, SIGNAL(triggered()), this, SLOT(ZoomOut()));
+
+    //重置大小
+    m_ZoomReset = new QAction(QIcon(":/image/zoom_reset"), "重置", this);
+    m_ZoomReset->setStatusTip(tr("重置"));
+    connect(m_ZoomReset, SIGNAL(triggered()), this, SLOT(ZoomReset()));
 }
 
 void MainViewer::CreatMenus()
@@ -66,11 +86,15 @@ void MainViewer::CreatToolBar()
     addToolBar(Qt::TopToolBarArea,m_FileTool);//把这两个工具栏添加到窗口
     m_FileTool->addAction(m_OpenAction);//向工具栏内添加动作
     m_FileTool->addAction(m_SaveAction);
+    m_FileTool->addAction(m_NewAction);
     m_FileTool->addSeparator();
     m_FileTool->addAction(m_QuitAction);
 
     m_ZoomTool = new QToolBar(this);
     addToolBar(Qt::TopToolBarArea, m_ZoomTool);
+    m_ZoomTool->addAction(m_ZoomIn);
+    m_ZoomTool->addAction(m_ZoomReset);
+    m_ZoomTool->addAction(m_ZoomOut);
 }
 
 void MainViewer::OpenFile()
@@ -80,11 +104,6 @@ void MainViewer::OpenFile()
     QString strDir;
     strDir = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
     m_strFileName = QFileDialog::getOpenFileName(this,"Reader", strDir, strFilter);
-
-//    int index = m_strFile.lastIndexOf("/");
-//    m_strFilePath = m_strFile.mid(0, index + 1);
-//    m_strFileName = m_strFile.mid((index + 1), (m_strFile.size() - index));
-
 
     if(m_strFileName.isEmpty())
         return;
@@ -126,7 +145,26 @@ void MainViewer::UpDataMenus()
 
 }
 
-MainViewer::~MainViewer()
+void MainViewer::ZoomIn()
+{
+//    ChildViewer* child = m_MainMdiArea->currentSubWindow();
+//    m_MainMdiArea->currentSubWindow()
+    QMdiSubWindow* child = m_MainMdiArea->currentSubWindow();
+    QWidget* childd = child->widget();
+    ChildViewer* childdd = (ChildViewer*)childd;
+
+    int t = childdd->getActruallyPageHighCount();
+    int tt = 5;
+}
+
+void MainViewer::ZoomOut()
 {
 
 }
+
+void MainViewer::ZoomReset()
+{
+
+}
+
+
