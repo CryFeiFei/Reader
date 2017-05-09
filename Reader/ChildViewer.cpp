@@ -35,6 +35,10 @@ ChildViewer::~ChildViewer()
 
 }
 
+void ChildViewer::RefreshWindow()
+{
+
+}
 
 void ChildViewer::InitOutline()
 {
@@ -67,7 +71,7 @@ void ChildViewer::ZoomOut()
 
 void ChildViewer::ZoomReset()
 {
-    m_ViewModel->SetDocMultiple(m_dCurDocMultiple);
+    m_ViewModel->SetDocMultiple(1);
 }
 
 double ChildViewer::ComputeMul()

@@ -155,15 +155,32 @@ ChildViewer* MainViewer::getCurChildViewer()
 
 void MainViewer::ZoomIn()
 {
-//    getCurChildViewer()->zoo
+    ChildViewer* child = getCurChildViewer();
+    if (child == NULL)
+        return;
+
+    child->ZoomIn();
 }
 
 void MainViewer::ZoomOut()
 {
+    ChildViewer* child = getCurChildViewer();
+    if (child == NULL)
+        return;
 
+    child->ZoomOut();
 }
 
 void MainViewer::ZoomReset()
+{
+    ChildViewer* child = getCurChildViewer();
+    if (child == NULL)
+        return;
+
+    child->ZoomReset();
+}
+
+void MainViewer::RefreshWindow()
 {
 
 }

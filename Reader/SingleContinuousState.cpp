@@ -38,7 +38,7 @@ void SingleContinuousState::RenderPages(QPainter *paint)
         // 绘制当前页的高度
         int nRenderHeight = GetPageSize(nPageNum).height() + 8 - nPageVPos;
 
-        imageCopy = m_ChildViewer->getActruallyPageImage(nPageNum);
+        imageCopy = m_ChildViewer->getPageImage(nPageNum);
         img = imageCopy.copy(0, nPageVPos, GetPageSize(nPageNum).width(), nRenderHeight);
 
         QSize sz = m_ChildViewer->getDocWidgetSize();
@@ -72,7 +72,7 @@ int SingleContinuousState::GetPageHeightCount(int nNumPage)
 {
     int nHeight = 0;
     for (int i = 0; i < nNumPage; i++)
-        nHeight += m_ChildViewer->getActruallyPageImage(i).height();
+        nHeight += m_ChildViewer->getPageSize(i).height();
 
     return nHeight;
 }

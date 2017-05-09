@@ -82,7 +82,7 @@ QSize PDFkit::GetPageSize(int nPageNum)
     size = pPage->pageSize();
     size = size * m_multiple;
 
-    DELETE_POINT(pPage);
+ //   DELETE_POINT(pPage);
 
     return size;
 }
@@ -95,7 +95,7 @@ QImage PDFkit::GetPageImage(int nPageNum)
     QSize size = GetPageSize(nPageNum);
     QImage imageBuffer = pPage->renderToImage(72 * m_multiple, 72 * m_multiple, 0, nPageNum, size.width(), size.height());
 
-    DELETE_POINT(pPage);
+ //   DELETE_POINT(pPage);
 
     return imageBuffer;
 

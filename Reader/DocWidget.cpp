@@ -18,5 +18,5 @@ DocWidget::~DocWidget()
 void DocWidget::resizeEvent(QResizeEvent* e)
 {
     m_pScrollArea->resize(this->size());
-    m_pDocViewer->resize(this->size().width(), m_IChildViewer->getActruallyPageHighCount());
+    m_pDocViewer->resize(this->size().width(), m_IChildViewer->getPageHighCount());
 }

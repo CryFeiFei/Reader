@@ -30,9 +30,19 @@ int ViewModel::GetActruallyPageHighCount()
     return nPageHighCount;
 }
 
+int ViewModel::GetPageHighCount()
+{
+    int nPageHighCount = 0;
+    for (int i =0; i < GetNumCount(); i++)
+        nPageHighCount += (GetPageSize(i).height() + 8);
+
+    return nPageHighCount;
+}
+
 void ViewModel::SetDocMultiple(double docMultiple)
 {
     m_DocMultiple = docMultiple;
+    m_kit->SetDocMultiple(docMultiple);
 }
 
 void ViewModel::RenderPages(QPainter *painter)

@@ -79,5 +79,6 @@ public slots:
 
 private:
      QString m_strFileName;
+     void RefreshWindow();
 };
 #endif // MAIN_VIEWER_H

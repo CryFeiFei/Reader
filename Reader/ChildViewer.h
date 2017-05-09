@@ -26,9 +26,12 @@ public:
     virtual int getNumCount() { return m_ViewModel->GetNumCount(); }
     virtual QSize getActruallyPageSize(int nPageNum) { return m_ViewModel->GetActruallyPageSize(nPageNum); }
     virtual QImage getActruallyPageImage(int nPageNum) { return m_ViewModel->GetActruallyPageImage(nPageNum); }
+    virtual QSize getPageSize(int nPageNum) { return m_ViewModel->GetPageSize(nPageNum); }
+    virtual QImage getPageImage(int nPageNum) { return m_ViewModel->GetPageImage(nPageNum); }
     virtual void RenderPages(QPainter *painter) { m_ViewModel->RenderPages(painter); }
     virtual double getCurDocMultiple(){ return m_dCurDocMultiple; }
     virtual int getActruallyPageHighCount() { return m_ViewModel->GetActruallyPageHighCount();}
+    virtual int getPageHighCount() { return m_ViewModel->GetPageHighCount(); }
     virtual QSize getDocWidgetSize() { return m_pDocWidget->size(); }
 
 public:
@@ -53,6 +56,7 @@ public:
     DocWidget*            m_pDocWidget;    //右边绘制widget
 
 private:
+    void RefreshWindow(); //刷新界面
     void InitOutline(); //初始化大纲树
     void InitThumbnail(); //初始化缩略图
     void InitSemantic(); //初始化语义树

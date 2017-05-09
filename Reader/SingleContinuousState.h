@@ -22,7 +22,7 @@ private:
 
 private:
     int GetPageCount() { return m_ChildViewer->getNumCount();}
-    QSize GetPageSize(int nPageNum) { return m_ChildViewer->getActruallyPageSize(nPageNum);}
+    QSize GetPageSize(int nPageNum) { return m_ChildViewer->getPageSize(nPageNum);}
 
     int GetVScrollPos();
 

@@ -32,10 +32,14 @@ public:
     int     GetNumCount() { return m_kit->GetNumCount(); }
     QSize   GetActruallyPageSize(int nPageNum) { return m_kit->GetActruallyPageSize(nPageNum); }
     QImage  GetActruallyPageImage(int nPageNum) { return m_kit->GetActruallyPageImage(nPageNum); }
+    QSize   GetPageSize(int nPageNum) { return m_kit->GetPageSize(nPageNum);}
+    QImage  GetPageImage(int nPageNum) { return m_kit->GetPageImage(nPageNum);}
     int     GetActruallyPageHighCount();
+    int     GetPageHighCount();
 public:
     ChildViewer*   GetChildViewer() { return m_ChildViewer; }
     void    SetDocMultiple(double docMultiple);
+    void    RefreshWindow();
 
 public:
     void RenderPages(QPainter* paint);
