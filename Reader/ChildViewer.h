@@ -32,6 +32,12 @@ public:
     virtual QSize getDocWidgetSize() { return m_pDocWidget->size(); }
 
 public:
+    void ZoomIn();
+    void ZoomOut();
+    void ZoomReset();
+    double ComputeMul();
+
+public:
     void resizeEvent(QResizeEvent *event);
 
 private:

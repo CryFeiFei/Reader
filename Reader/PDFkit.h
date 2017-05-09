@@ -30,6 +30,10 @@ public:
     virtual QSize GetActruallyPageSize(int nPageNum);
     // 获得页总数大小
     virtual int GetNumCount();
+    // 获得某一页缩放后的图像
+    virtual QImage GetPageImage(int nPageNum);
+    // 获得某一页缩放后的大小
+    virtual QSize GetPageSize(int nPageNum);
 
 };
 

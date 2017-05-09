@@ -30,15 +30,17 @@ int ViewModel::GetActruallyPageHighCount()
     return nPageHighCount;
 }
 
+void ViewModel::SetDocMultiple(double docMultiple)
+{
+    m_DocMultiple = docMultiple;
+}
+
 void ViewModel::RenderPages(QPainter *painter)
 {
     if (painter == NULL || m_ViewState == NULL)
         return;
 
-//    QImage image1 = GetImage();
-//    painter->drawImage(0, GetVScrollPos(),image1);
     m_ViewState->RenderPages(painter);
-
 }
 
 

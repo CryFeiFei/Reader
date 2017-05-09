@@ -26,6 +26,7 @@ public:
 
 private:
     ViewState*     m_ViewState;
+    double         m_DocMultiple;
 
 public:
     int     GetNumCount() { return m_kit->GetNumCount(); }
@@ -34,6 +35,7 @@ public:
     int     GetActruallyPageHighCount();
 public:
     ChildViewer*   GetChildViewer() { return m_ChildViewer; }
+    void    SetDocMultiple(double docMultiple);
 
 public:
     void RenderPages(QPainter* paint);

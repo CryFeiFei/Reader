@@ -11,6 +11,7 @@
 #include <QString>
 #include <QImage>
 #include <QSplitter>
+#include "float.h"
 
 enum DocState
 {
@@ -21,6 +22,9 @@ enum DocState
 };
 
 //文档倍数
-static double multiple[] = {0.5, 1, 0.5, 1.5, 1.75, 2};
+static double doc_multiple[] = {0.5, 0.75, 1, 1.5, 1.75, 2};
+
+#define DELETE_POINT(p){delete p; p = NULL;}
+#define DELETE_ARRAY(p){delete[](p); (p) = NULL;}
 
 #endif // DEFINE_H

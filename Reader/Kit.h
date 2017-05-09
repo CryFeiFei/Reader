@@ -2,8 +2,7 @@
 #ifndef KIT_H
 #define KIT_H
 
-#include <QString>
-#include <QImage>
+#include "ReadDefine.h"
 
 class Kit
 {
@@ -19,13 +18,16 @@ public:
     virtual  QImage GetActruallyPageImage(int nPageNum) = 0;
     virtual  QSize GetActruallyPageSize(int nPageNum) = 0;
     virtual  int GetNumCount() = 0;
+    virtual  QImage GetPageImage(int nPageNum) = 0;
+    virtual  QSize GetPageSize(int nPageNum) = 0;
 
 public:
     void  SetFileName(QString strFileName){ m_strFileName = strFileName;}
+    void  SetDocMultiple(double multiple){ m_multiple = multiple;}
 
 public:
-    QString     m_strFileName;
-    double      m_multiple;
+    QString     m_strFileName; //文件名
+    double      m_multiple; // 文件放大倍数
 
 };
 

@@ -50,3 +50,27 @@ void ChildViewer::InitSemantic()
 {
 
 }
+
+void ChildViewer::ZoomIn()
+{
+    m_dCurDocMultiple += 0.25;
+    m_dCurDocMultiple = m_dCurDocMultiple > 2 ? 2 : m_dCurDocMultiple;
+    m_ViewModel->SetDocMultiple(m_dCurDocMultiple);
+}
+
+void ChildViewer::ZoomOut()
+{
+    m_dCurDocMultiple -= 0.25;
+    m_dCurDocMultiple = m_dCurDocMultiple < 0.25 ? 0.25 : m_dCurDocMultiple;
+    m_ViewModel->SetDocMultiple(m_dCurDocMultiple);
+}
+
+void ChildViewer::ZoomReset()
+{
+    m_ViewModel->SetDocMultiple(m_dCurDocMultiple);
+}
+
+double ChildViewer::ComputeMul()
+{
+
+}

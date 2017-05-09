@@ -145,16 +145,17 @@ void MainViewer::UpDataMenus()
 
 }
 
+ChildViewer* MainViewer::getCurChildViewer()
+{
+    ChildViewer* child = static_cast<ChildViewer*>(m_MainMdiArea->currentSubWindow()->widget());
+    Q_ASSERT(child != NULL);
+
+    return child;
+}
+
 void MainViewer::ZoomIn()
 {
-//    ChildViewer* child = m_MainMdiArea->currentSubWindow();
-//    m_MainMdiArea->currentSubWindow()
-    QMdiSubWindow* child = m_MainMdiArea->currentSubWindow();
-    QWidget* childd = child->widget();
-    ChildViewer* childdd = (ChildViewer*)childd;
-
-    int t = childdd->getActruallyPageHighCount();
-    int tt = 5;
+//    getCurChildViewer()->zoo
 }
 
 void MainViewer::ZoomOut()

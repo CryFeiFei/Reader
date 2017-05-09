@@ -70,6 +70,37 @@ int PDFkit::GetNumCount()
     return nNumCount > 0 ? nNumCount: 0;
 }
 
+QSize PDFkit::GetPageSize(int nPageNum)
+{
+    QSize size = QSize(0,0);
+    if (m_document == NULL)
+        return size;
+
+    Poppler::Page*  pPage = NULL;
+    pPage = GetPage(nPageNum);
+
+    size = pPage->pageSize();
+    size = size * m_multiple;
+
+    DELETE_POINT(pPage);
+
+    return size;
+}
+
+QImage PDFkit::GetPageImage(int nPageNum)
+{
+    Poppler::Page*  pPage = NULL;
+    pPage = GetPage(nPageNum);
+
+    QSize size = GetPageSize(nPageNum);
+    QImage imageBuffer = pPage->renderToImage(72 * m_multiple, 72 * m_multiple, 0, nPageNum, size.width(), size.height());
+
+    DELETE_POINT(pPage);
+
+    return imageBuffer;
+
+}
+
 
 
 
