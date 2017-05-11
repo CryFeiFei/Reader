@@ -42,6 +42,7 @@ public:
 
 public:
     void resizeEvent(QResizeEvent *event);
+    void RefreshWindow(); //刷新界面
 
 private:
     ViewModel*            m_ViewModel;     // the most imporent point
@@ -56,7 +57,6 @@ public:
     DocWidget*            m_pDocWidget;    //右边绘制widget
 
 private:
-    void RefreshWindow(); //刷新界面
     void InitOutline(); //初始化大纲树
     void InitThumbnail(); //初始化缩略图
     void InitSemantic(); //初始化语义树

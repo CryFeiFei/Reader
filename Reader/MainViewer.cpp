@@ -182,7 +182,11 @@ void MainViewer::ZoomReset()
 
 void MainViewer::RefreshWindow()
 {
+    ChildViewer* child = getCurChildViewer();
+    if (child == NULL)
+        return;
 
+    child->RefreshWindow();
 }
 
 

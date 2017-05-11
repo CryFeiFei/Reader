@@ -37,7 +37,9 @@ ChildViewer::~ChildViewer()
 
 void ChildViewer::RefreshWindow()
 {
-
+    m_pDocWidget->RefreshWindow();
+ //   m_pDocWidget->paintEvent(NULL);
+//    m_ViewModel->RefreshWindow();
 }
 
 void ChildViewer::InitOutline()
@@ -60,6 +62,7 @@ void ChildViewer::ZoomIn()
     m_dCurDocMultiple += 0.25;
     m_dCurDocMultiple = m_dCurDocMultiple > 2 ? 2 : m_dCurDocMultiple;
     m_ViewModel->SetDocMultiple(m_dCurDocMultiple);
+    RefreshWindow();
 }
 
 void ChildViewer::ZoomOut()
@@ -67,11 +70,14 @@ void ChildViewer::ZoomOut()
     m_dCurDocMultiple -= 0.25;
     m_dCurDocMultiple = m_dCurDocMultiple < 0.25 ? 0.25 : m_dCurDocMultiple;
     m_ViewModel->SetDocMultiple(m_dCurDocMultiple);
+    RefreshWindow();
 }
 
 void ChildViewer::ZoomReset()
 {
+    m_dCurDocMultiple = 1;
     m_ViewModel->SetDocMultiple(1);
+    RefreshWindow();
 }
 
 double ChildViewer::ComputeMul()

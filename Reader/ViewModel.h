@@ -39,7 +39,6 @@ public:
 public:
     ChildViewer*   GetChildViewer() { return m_ChildViewer; }
     void    SetDocMultiple(double docMultiple);
-    void    RefreshWindow();
 
 public:
     void RenderPages(QPainter* paint);
