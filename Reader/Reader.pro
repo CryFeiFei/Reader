@@ -51,4 +51,7 @@ INCLUDEPATH += $$PWD/_Inclusion/Win32/poppler
 win32: LIBS += -L$$PWD/_Inclusion/Win32/poppler -llibpoppler
 win32: LIBS += -L$$PWD/_Inclusion/Win32/poppler -llibpoppler-qt5
 
+unix: PKGCONFIG += poppler-qt5
+unix: CONFIG += c++11 link_pkgconfig
+
 DISTFILES +=
