@@ -6,5 +6,9 @@
         <file>image/zoom_reset.ico</file>
         <file>image/close.ico</file>
         <file>image/save.ico</file>
+        <file>image/firstpage.ico</file>
+        <file>image/lastpaget.ico</file>
+        <file>image/nextpage.ico</file>
+        <file>image/previouspage.ico</file>
     </qresource>
 </RCC>

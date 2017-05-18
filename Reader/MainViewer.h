@@ -52,12 +52,16 @@ private:
      QAction*             m_ZoomOut;
      QAction*             m_ZoomReset;
 
+     QAction*             m_PreviousPage; //上一页
+     QAction*             m_NextPage; //下一页
+
      //test
      QAction*             m_NewAction; //新建文件
 
      //两个工具栏
      QToolBar*            m_FileTool;
      QToolBar*            m_ZoomTool;
+     QToolBar*            m_PageTool;
 
      //窗口布局
      MultiViwer*          m_MainMdiArea; //主窗体中的多文档区域
@@ -76,6 +80,8 @@ public slots:
      void ZoomIn();
      void ZoomOut();
      void ZoomReset();
+     void PreviousPage();
+     void NextPage();
 
 private:
      QString m_strFileName;

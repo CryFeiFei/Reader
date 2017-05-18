@@ -39,7 +39,7 @@ void MainViewer::CreatActions()
     m_SaveAction = new QAction(QIcon(":/image/save"), "保存", this);
     m_SaveAction->setShortcut(tr("Ctrl+S"));
     m_SaveAction->setStatusTip(tr("保存文件"));
-    connect(m_OpenAction,SIGNAL(triggered()), this, SLOT(SaveFile()));
+    connect(m_SaveAction,SIGNAL(triggered()), this, SLOT(SaveFile()));
 
     //退出动作
     m_QuitAction = new QAction(QIcon(":/image/close"), "退出", this);
@@ -61,6 +61,17 @@ void MainViewer::CreatActions()
     m_ZoomReset = new QAction(QIcon(":/image/zoom_reset"), "重置", this);
     m_ZoomReset->setStatusTip(tr("重置"));
     connect(m_ZoomReset, SIGNAL(triggered()), this, SLOT(ZoomReset()));
+
+    //跳转上一页
+    m_PreviousPage = new QAction(QIcon(":/image/previouspage"), "上一页", this);
+    m_PreviousPage->setStatusTip(tr("上一页"));
+    connect(m_PreviousPage, SIGNAL(triggered()), this, SLOT(PreviousPage()));
+
+    //跳转下一页
+    m_NextPage = new QAction(QIcon(":/image/nextpage"), "下一页", this);
+    m_NextPage->setStatusTip(tr("下一页"));
+    connect(m_NextPage, SIGNAL(triggered()), this, SLOT(NextPage()));
+
 }
 
 void MainViewer::CreatMenus()
@@ -82,19 +93,27 @@ void MainViewer::CreatMenus()
 
 void MainViewer::CreatToolBar()
 {
+    // 打开工具条
     m_FileTool = new QToolBar(this);
-    addToolBar(Qt::TopToolBarArea,m_FileTool);//把这两个工具栏添加到窗口
+    addToolBar(Qt::TopToolBarArea, m_FileTool);//把这两个工具栏添加到窗口
     m_FileTool->addAction(m_OpenAction);//向工具栏内添加动作
     m_FileTool->addAction(m_SaveAction);
     m_FileTool->addAction(m_NewAction);
     m_FileTool->addSeparator();
     m_FileTool->addAction(m_QuitAction);
 
+    // zoom工具条
     m_ZoomTool = new QToolBar(this);
     addToolBar(Qt::TopToolBarArea, m_ZoomTool);
     m_ZoomTool->addAction(m_ZoomIn);
     m_ZoomTool->addAction(m_ZoomReset);
     m_ZoomTool->addAction(m_ZoomOut);
+
+    // 页码工具条
+    m_PageTool = new QToolBar(this);
+    addToolBar(Qt::TopToolBarArea, m_PageTool);
+    m_PageTool->addAction(m_PreviousPage);
+    m_PageTool->addAction(m_NextPage);
 }
 
 void MainViewer::OpenFile()
@@ -147,7 +166,11 @@ void MainViewer::UpDataMenus()
 
 ChildViewer* MainViewer::getCurChildViewer()
 {
-    ChildViewer* child = static_cast<ChildViewer*>(m_MainMdiArea->currentSubWindow()->widget());
+    QMdiSubWindow* mdiSubWindow = m_MainMdiArea->currentSubWindow();
+    if (mdiSubWindow == NULL)
+        return NULL;
+
+    ChildViewer* child = static_cast<ChildViewer*>(mdiSubWindow->widget());
     Q_ASSERT(child != NULL);
 
     return child;
@@ -178,6 +201,23 @@ void MainViewer::ZoomReset()
         return;
 
     child->ZoomReset();
+}
+
+void MainViewer::PreviousPage()
+{
+    ChildViewer* child = getCurChildViewer();
+    if (child == NULL)
+        return;
+
+//    child->LastPage()
+}
+
+void MainViewer::NextPage()
+{
+    ChildViewer* child = getCurChildViewer();
+    if (child == NULL)
+        return;
+
 }
 
 void MainViewer::RefreshWindow()
