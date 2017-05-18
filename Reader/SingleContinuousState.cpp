@@ -55,6 +55,11 @@ void SingleContinuousState::RenderPages(QPainter *paint)
 
 }
 
+int SingleContinuousState::GetCurPageNum()
+{
+    return 1;
+}
+
 int SingleContinuousState::GetVScrollPos()
 {
     QScrollBar* pScrollBar = m_ChildViewer->getScrollArea()->verticalScrollBar();

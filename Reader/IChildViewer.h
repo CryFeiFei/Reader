@@ -26,6 +26,7 @@ public:
     virtual int getActruallyPageHighCount() = 0;
     virtual int getPageHighCount() = 0;
     virtual QSize getDocWidgetSize() = 0;
+    virtual int getCurPageNum() = 0;
 };
 
 #endif // I_CHILDVIEWER_H

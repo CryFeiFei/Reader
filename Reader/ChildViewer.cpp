@@ -80,7 +80,3 @@ void ChildViewer::ZoomReset()
     RefreshWindow();
 }
 
-double ChildViewer::ComputeMul()
-{
-
-}

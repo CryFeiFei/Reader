@@ -13,6 +13,7 @@ public:
 
 public:
     virtual void RenderPages(QPainter* paint);
+    virtual int GetCurPageNum();
 
 public:
     ViewModel*      m_ViewModel;

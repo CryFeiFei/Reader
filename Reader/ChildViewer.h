@@ -33,12 +33,12 @@ public:
     virtual int getActruallyPageHighCount() { return m_ViewModel->GetActruallyPageHighCount();}
     virtual int getPageHighCount() { return m_ViewModel->GetPageHighCount(); }
     virtual QSize getDocWidgetSize() { return m_pDocWidget->size(); }
+    virtual int getCurPageNum() { return m_ViewModel->GetCurPageNum(); }
 
 public:
     void ZoomIn();
     void ZoomOut();
     void ZoomReset();
-    double ComputeMul();
 
 public:
     void resizeEvent(QResizeEvent *event);

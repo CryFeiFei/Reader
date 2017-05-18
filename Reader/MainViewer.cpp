@@ -29,12 +29,6 @@ void MainViewer::CreatActions()
     m_OpenAction->setStatusTip(tr("打开文件"));
     connect(m_OpenAction,SIGNAL(triggered()), this, SLOT(OpenFile()));
 
-    //
-    m_NewAction = new QAction(QIcon(":/image/new"), "新建", this);
-    m_NewAction->setShortcut(tr("Ctrl+N"));
-    m_NewAction->setStatusTip(tr("新建文件"));
-    connect(m_NewAction,SIGNAL(triggered()), this, SLOT(NewFile()));
-
     //保存动作
     m_SaveAction = new QAction(QIcon(":/image/save"), "保存", this);
     m_SaveAction->setShortcut(tr("Ctrl+S"));
@@ -79,7 +73,6 @@ void MainViewer::CreatMenus()
     m_FileMenu = menuBar()->addMenu(tr("文件(F)"));
     m_FileMenu->addAction(m_OpenAction);//往菜单栏内添加动作
     m_FileMenu->addAction(m_SaveAction);
-    m_FileMenu->addAction(m_NewAction);
     m_FileMenu->addSeparator();
     m_FileMenu->addAction(m_QuitAction);
 
@@ -98,7 +91,6 @@ void MainViewer::CreatToolBar()
     addToolBar(Qt::TopToolBarArea, m_FileTool);//把这两个工具栏添加到窗口
     m_FileTool->addAction(m_OpenAction);//向工具栏内添加动作
     m_FileTool->addAction(m_SaveAction);
-    m_FileTool->addAction(m_NewAction);
     m_FileTool->addSeparator();
     m_FileTool->addAction(m_QuitAction);
 
@@ -128,7 +120,6 @@ void MainViewer::OpenFile()
         return;
 
     NewFile();
-
 }
 
 void MainViewer::NewFile()

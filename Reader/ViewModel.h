@@ -36,6 +36,7 @@ public:
     QImage  GetPageImage(int nPageNum) { return m_kit->GetPageImage(nPageNum);}
     int     GetActruallyPageHighCount();
     int     GetPageHighCount();
+    int     GetCurPageNum() { return m_ViewState->GetCurPageNum();}
 public:
     ChildViewer*   GetChildViewer() { return m_ChildViewer; }
     void    SetDocMultiple(double docMultiple);
