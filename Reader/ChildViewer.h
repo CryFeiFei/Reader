@@ -23,7 +23,7 @@ public:
 public:
     virtual QString getFileName() { return m_strFileName; }
     virtual QScrollArea* getScrollArea() { return m_pDocWidget->getScrollArea(); }
-    virtual int getNumCount() { return m_ViewModel->GetNumCount(); }
+    virtual int getPageCount() { return m_ViewModel->GetPageCount(); }
     virtual QSize getActruallyPageSize(int nPageNum) { return m_ViewModel->GetActruallyPageSize(nPageNum); }
     virtual QImage getActruallyPageImage(int nPageNum) { return m_ViewModel->GetActruallyPageImage(nPageNum); }
     virtual QSize getPageSize(int nPageNum) { return m_ViewModel->GetPageSize(nPageNum); }
@@ -39,6 +39,10 @@ public:
     void ZoomIn();
     void ZoomOut();
     void ZoomReset();
+    void PreviousPage();
+    void NextPage();
+    // 跳转某一页
+    void GotoPage(int nPageNum) { m_ViewModel->GotoPage(nPageNum);};
 
 public:
     void resizeEvent(QResizeEvent *event);

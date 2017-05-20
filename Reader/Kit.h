@@ -17,7 +17,7 @@ public:
 public:
     virtual  QImage GetActruallyPageImage(int nPageNum) = 0;
     virtual  QSize GetActruallyPageSize(int nPageNum) = 0;
-    virtual  int GetNumCount() = 0;
+    virtual  int GetPageCount() = 0;
     virtual  QImage GetPageImage(int nPageNum) = 0;
     virtual  QSize GetPageSize(int nPageNum) = 0;
 

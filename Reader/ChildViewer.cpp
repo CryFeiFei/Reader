@@ -80,3 +80,19 @@ void ChildViewer::ZoomReset()
     RefreshWindow();
 }
 
+void ChildViewer::PreviousPage()
+{
+    int nPageNum = getCurPageNum();
+    int nCurPageNum = (nPageNum == 0) ? 0 : (nPageNum - 1);
+    m_ViewModel->GotoPage(nCurPageNum);
+}
+
+void ChildViewer::NextPage()
+{
+    int nPageNum = getCurPageNum();
+    int nPageCount = getPageCount();
+    int nCurPageNum = (nPageNum == nPageCount) ? nPageCount : (nPageNum + 1);
+    m_ViewModel->GotoPage(nCurPageNum);
+}
+
+

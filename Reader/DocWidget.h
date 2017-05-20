@@ -19,7 +19,7 @@ public:
     ~DocWidget();
 
 public:
-    virtual int getNumCount(){ return m_IChildViewer->getNumCount();}
+    virtual int getPageCount(){ return m_IChildViewer->getPageCount();}
     virtual QSize getActruallyPageSize(int nPageNum) { return m_IChildViewer->getActruallyPageSize(nPageNum);}
     virtual QImage getActruallyPageImage(int nPageNum) { return m_IChildViewer->getActruallyPageImage(nPageNum);}
     virtual void RenderPages(QPainter *painter) { m_IChildViewer->RenderPages(painter);}

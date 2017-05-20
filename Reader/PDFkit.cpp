@@ -60,7 +60,7 @@ QSize PDFkit::GetActruallyPageSize(int nPageNum)
     return size;
 }
 
-int PDFkit::GetNumCount()
+int PDFkit::GetPageCount()
 {
     if (m_document == NULL)
         return 0;

@@ -10,7 +10,7 @@ public:
     virtual ~IDocWidget(){}
 
 public:
-    virtual int getNumCount() = 0;
+    virtual int getPageCount() = 0;
     virtual QSize getActruallyPageSize(int nPageNum) = 0;
     virtual QImage getActruallyPageImage(int nPageNum) = 0;
     virtual void RenderPages(QPainter *painter) = 0;

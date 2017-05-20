@@ -19,6 +19,7 @@ public:
 public:
     virtual void RenderPages(QPainter* paint) = 0;
     virtual int  GetCurPageNum() = 0;
+    virtual void GotoPage(int nPageNum) = 0;
 };
 
 #endif // VIEWSTATE_H

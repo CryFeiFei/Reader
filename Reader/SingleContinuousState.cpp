@@ -41,10 +41,8 @@ void SingleContinuousState::RenderPages(QPainter *paint)
         imageCopy = m_ChildViewer->getPageImage(nPageNum);
         img = imageCopy.copy(0, nPageVPos, GetPageSize(nPageNum).width(), nRenderHeight);
 
-        QSize sz = m_ChildViewer->getDocWidgetSize();
-//        int nDD = doc->size()->width();
-
-        nXDrawPos = (sz.width() - GetPageSize(nPageNum).width()) / 2;
+        QSize docWidget = m_ChildViewer->getDocWidgetSize();
+        nXDrawPos = (docWidget.width() - GetPageSize(nPageNum).width()) / 2;
 
         paint->drawImage(nXDrawPos, nScrollYFlag, img);
 
@@ -57,7 +55,22 @@ void SingleContinuousState::RenderPages(QPainter *paint)
 
 int SingleContinuousState::GetCurPageNum()
 {
+    int nCurPagePos = GetVScrollPos() + m_ChildViewer->getDocWidgetSize().height() / 2;
+    int nPageCount = GetPageCount();
+    for (int i = 0; i < nPageCount; i++)
+    {
+       if (nCurPagePos < m_ChildViewer->getPageSize(i).height())
+           return i;
+       nCurPagePos = nCurPagePos - GetPageSize(i).height() - 8;
+    }
     return 1;
+}
+
+void SingleContinuousState::GotoPage(int nPageNum)
+{
+    int nPageNumHeight = GetPageHeightCount(nPageNum);
+    QScrollBar* pScrollBar = m_ChildViewer->getScrollArea()->verticalScrollBar();
+    pScrollBar->setValue(nPageNumHeight);
 }
 
 int SingleContinuousState::GetVScrollPos()
@@ -77,7 +90,7 @@ int SingleContinuousState::GetPageHeightCount(int nNumPage)
 {
     int nHeight = 0;
     for (int i = 0; i < nNumPage; i++)
-        nHeight += m_ChildViewer->getPageSize(i).height();
+        nHeight += m_ChildViewer->getPageSize(i).height() + 8;
 
     return nHeight;
 }

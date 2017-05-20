@@ -199,7 +199,7 @@ void MainViewer::PreviousPage()
     ChildViewer* child = getCurChildViewer();
     if (child == NULL)
         return;
-
+    child->PreviousPage();
 //    child->LastPage()
 }
 
@@ -208,6 +208,8 @@ void MainViewer::NextPage()
     ChildViewer* child = getCurChildViewer();
     if (child == NULL)
         return;
+
+    child->NextPage();
 
 }
 

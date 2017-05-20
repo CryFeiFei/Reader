@@ -29,7 +29,7 @@ private:
     double         m_DocMultiple;
 
 public:
-    int     GetNumCount() { return m_kit->GetNumCount(); }
+    int     GetPageCount() { return m_kit->GetPageCount(); }
     QSize   GetActruallyPageSize(int nPageNum) { return m_kit->GetActruallyPageSize(nPageNum); }
     QImage  GetActruallyPageImage(int nPageNum) { return m_kit->GetActruallyPageImage(nPageNum); }
     QSize   GetPageSize(int nPageNum) { return m_kit->GetPageSize(nPageNum);}
@@ -37,6 +37,7 @@ public:
     int     GetActruallyPageHighCount();
     int     GetPageHighCount();
     int     GetCurPageNum() { return m_ViewState->GetCurPageNum();}
+    void    GotoPage(int nPageNum) { return m_ViewState->GotoPage(nPageNum);}
 public:
     ChildViewer*   GetChildViewer() { return m_ChildViewer; }
     void    SetDocMultiple(double docMultiple);
