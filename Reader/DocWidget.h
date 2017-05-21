@@ -13,10 +13,10 @@ class IChildViewer;
 
 class DocWidget: public IDocWidget
 {
-//    Q_OBJECT
+    Q_OBJECT
 public:
     DocWidget(IChildViewer* childviewer);
-    ~DocWidget();
+    virtual ~DocWidget();
 
 public:
     virtual int getPageCount(){ return m_IChildViewer->getPageCount();}
@@ -39,6 +39,9 @@ public:
 public:
     void resizeEvent(QResizeEvent* e);
 
+// 工具栏的一些回调函数
+//public slots:
+//    void lineEditChange();
 };
 
 #endif // DOCWIDGET_H

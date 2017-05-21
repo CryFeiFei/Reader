@@ -42,7 +42,7 @@ public:
     void PreviousPage();
     void NextPage();
     // 跳转某一页
-    void GotoPage(int nPageNum) { m_ViewModel->GotoPage(nPageNum);};
+    void GotoPage(int nPageNum) { m_ViewModel->GotoPage(nPageNum);}
 
 public:
     void resizeEvent(QResizeEvent *event);
@@ -59,12 +59,16 @@ public:
     QSplitter*            m_splitterMain;
     NaviViewer*           m_navigationBar; //左边导航栏
     DocWidget*            m_pDocWidget;    //右边绘制widget
+    QScrollBar*           m_pDocWidgetScrollBar; //右边绘制widget滚动条，消息回调都用这个
 
 private:
     void InitOutline(); //初始化大纲树
     void InitThumbnail(); //初始化缩略图
     void InitSemantic(); //初始化语义树
     void CreatNavigationBar(); //创建导航栏
+
+public slots:
+    void lineEditChange();
 
 };
 

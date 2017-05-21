@@ -106,6 +106,14 @@ void MainViewer::CreatToolBar()
     addToolBar(Qt::TopToolBarArea, m_PageTool);
     m_PageTool->addAction(m_PreviousPage);
     m_PageTool->addAction(m_NextPage);
+
+    m_PageNumLineEdit = new QLineEdit();
+    m_PageTool->addWidget(m_PageNumLineEdit);
+    m_PageNumLineEdit->setFixedWidth(40);
+    m_PageNumLineEdit->setText("1");
+    connect(m_PageNumLineEdit, SIGNAL(textChanged()), this, SLOT(UpdataPageNum()));
+    connect(m_PageNumLineEdit, SIGNAL(returnPressed()), this, SLOT(GotoPage()));
+//    m_PageNumLineEdit->focusNextChild();
 }
 
 void MainViewer::OpenFile()
@@ -210,6 +218,28 @@ void MainViewer::NextPage()
         return;
 
     child->NextPage();
+
+}
+
+void MainViewer::UpdataPageNum()
+{
+    ChildViewer* child = getCurChildViewer();
+    if (child == NULL)
+        return;
+    int nCurPageNum = child->getCurPageNum() + 1;
+    QString str = QString::number(nCurPageNum);
+    m_PageNumLineEdit->setText(str);
+}
+
+void MainViewer::GotoPage()
+{
+    ChildViewer* child = getCurChildViewer();
+    if (child == NULL)
+        return;
+
+    QString str = m_PageNumLineEdit->text();
+    int nPage = str.toInt() - 1;
+    child->GotoPage(nPage);
 
 }
 

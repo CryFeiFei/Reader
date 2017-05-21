@@ -13,6 +13,7 @@
 #include <QMdiArea>
 #include <QDesktopServices>
 #include <QMdiSubWindow>
+#include <QLineEdit>
 
 #include "IMainViewer.h"
 #include "ChildViewer.h"
@@ -28,13 +29,14 @@ public:
 
 public:
      virtual QString getFileName(){ return m_strFileName; }
+     virtual QLineEdit* getPageNumLineEdit() { return m_PageNumLineEdit; }
 
 public:
      void CreatToolBar(); //创建工具栏
      void CreatActions(); //创建动作
      void CreatMenus(); //创建菜单栏
 
-public:
+private:
      ChildViewer* getCurChildViewer();
 
 private:
@@ -54,6 +56,7 @@ private:
 
      QAction*             m_PreviousPage; //上一页
      QAction*             m_NextPage; //下一页
+     QLineEdit*           m_PageNumLineEdit;
 
      //test
      QAction*             m_NewAction; //新建文件
@@ -82,6 +85,8 @@ public slots:
      void ZoomReset();
      void PreviousPage();
      void NextPage();
+     void UpdataPageNum();
+     void GotoPage();
 
 private:
      QString m_strFileName;

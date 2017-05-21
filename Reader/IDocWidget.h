@@ -5,6 +5,7 @@
 
 class IDocWidget : public QWidget
 {
+    Q_OBJECT
 public:
     IDocWidget(){}
     virtual ~IDocWidget(){}

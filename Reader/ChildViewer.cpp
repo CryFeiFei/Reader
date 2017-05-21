@@ -18,6 +18,13 @@ ChildViewer::ChildViewer(IMainViewer* iMainViewer) : m_IMainViewer(iMainViewer),
     m_splitterMain->setStretchFactor(1,1);
     m_splitterMain->setAutoFillBackground(true);
     m_splitterMain->show();
+
+
+
+    //绑定主界面工具栏
+    m_pDocWidgetScrollBar =  m_pDocWidget->getScrollArea()->verticalScrollBar();
+    connect(m_pDocWidgetScrollBar, SIGNAL(valueChanged(int)), this, SLOT(lineEditChange()));
+
 }
 
 void ChildViewer::resizeEvent(QResizeEvent *event)
@@ -93,6 +100,14 @@ void ChildViewer::NextPage()
     int nPageCount = getPageCount();
     int nCurPageNum = (nPageNum == nPageCount) ? nPageCount : (nPageNum + 1);
     m_ViewModel->GotoPage(nCurPageNum);
+}
+
+void ChildViewer::lineEditChange()
+{
+    int nPageNum = getCurPageNum() + 1;
+    QLineEdit* lineEdit = m_IMainViewer->getPageNumLineEdit();
+    QString strPageNum = QString::number(nPageNum);
+    lineEdit->setText(strPageNum);
 }
 
 

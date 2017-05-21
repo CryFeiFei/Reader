@@ -8,6 +8,9 @@ DocWidget::DocWidget(IChildViewer* childviewer):m_IChildViewer(childviewer)
     m_pDocViewer = new DocViewer(this);
     m_pScrollArea->setWidget(m_pDocViewer);
 
+    m_pScrollBar = m_pScrollArea->verticalScrollBar();
+
+ //   connect(m_pScrollBar, SIGNAL(valueChanged(int)), this, SLOT(lineEditChange()));
 }
 
 DocWidget::~DocWidget()
@@ -26,3 +29,8 @@ void DocWidget::RefreshWindow()
     update();
     m_pDocViewer->resize(this->size().width(), m_IChildViewer->getPageHighCount());
 }
+
+//void DocWidget::lineEditChange()
+//{
+//    m_IChildViewer->get
+//}
