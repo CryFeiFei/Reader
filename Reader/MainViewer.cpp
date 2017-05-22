@@ -158,10 +158,6 @@ void MainViewer::CloseFile()
     this->close();
 }
 
-void MainViewer::UpDataMenus()
-{
-
-}
 
 ChildViewer* MainViewer::getCurChildViewer()
 {
@@ -182,6 +178,7 @@ void MainViewer::ZoomIn()
         return;
 
     child->ZoomIn();
+    RefreshWindow();
 }
 
 void MainViewer::ZoomOut()
@@ -191,6 +188,7 @@ void MainViewer::ZoomOut()
         return;
 
     child->ZoomOut();
+    RefreshWindow();
 }
 
 void MainViewer::ZoomReset()
@@ -200,6 +198,7 @@ void MainViewer::ZoomReset()
         return;
 
     child->ZoomReset();
+    RefreshWindow();
 }
 
 void MainViewer::PreviousPage()
@@ -208,7 +207,6 @@ void MainViewer::PreviousPage()
     if (child == NULL)
         return;
     child->PreviousPage();
-//    child->LastPage()
 }
 
 void MainViewer::NextPage()
@@ -250,6 +248,7 @@ void MainViewer::RefreshWindow()
         return;
 
     child->RefreshWindow();
+    UpdataPageNum();
 }
 
 

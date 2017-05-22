@@ -69,7 +69,7 @@ void ChildViewer::ZoomIn()
     m_dCurDocMultiple += 0.25;
     m_dCurDocMultiple = m_dCurDocMultiple > 2 ? 2 : m_dCurDocMultiple;
     m_ViewModel->SetDocMultiple(m_dCurDocMultiple);
-    RefreshWindow();
+//    RefreshWindow();
 }
 
 void ChildViewer::ZoomOut()
@@ -77,14 +77,14 @@ void ChildViewer::ZoomOut()
     m_dCurDocMultiple -= 0.25;
     m_dCurDocMultiple = m_dCurDocMultiple < 0.25 ? 0.25 : m_dCurDocMultiple;
     m_ViewModel->SetDocMultiple(m_dCurDocMultiple);
-    RefreshWindow();
+//    RefreshWindow();
 }
 
 void ChildViewer::ZoomReset()
 {
     m_dCurDocMultiple = 1;
     m_ViewModel->SetDocMultiple(1);
-    RefreshWindow();
+//    RefreshWindow();
 }
 
 void ChildViewer::PreviousPage()

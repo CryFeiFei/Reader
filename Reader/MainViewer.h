@@ -79,7 +79,7 @@ public slots:
      void SaveFile();
      void CloseFile();
      void NewFile();
-     void UpDataMenus(); //更新状态栏
+//     void UpDataMenus(); //更新状态栏
      void ZoomIn();
      void ZoomOut();
      void ZoomReset();
