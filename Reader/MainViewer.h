@@ -14,6 +14,7 @@
 #include <QDesktopServices>
 #include <QMdiSubWindow>
 #include <QLineEdit>
+#include <QLabel>
 
 #include "IMainViewer.h"
 #include "ChildViewer.h"
@@ -56,7 +57,8 @@ private:
 
      QAction*             m_PreviousPage; //上一页
      QAction*             m_NextPage; //下一页
-     QLineEdit*           m_PageNumLineEdit;
+     QLineEdit*           m_PageNumLineEdit; //页码框
+     QLabel*              m_PageCountLabel; //页码总数
 
      //test
      QAction*             m_NewAction; //新建文件

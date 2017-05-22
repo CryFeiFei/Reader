@@ -109,11 +109,16 @@ void MainViewer::CreatToolBar()
 
     m_PageNumLineEdit = new QLineEdit();
     m_PageTool->addWidget(m_PageNumLineEdit);
-    m_PageNumLineEdit->setFixedWidth(40);
-    m_PageNumLineEdit->setText("1");
+    m_PageNumLineEdit->setFixedWidth(30);
+    m_PageNumLineEdit->setText("0");
+
+    m_PageCountLabel = new QLabel();
+    m_PageTool->addWidget(m_PageCountLabel);
+    m_PageCountLabel->setFixedWidth(30);
+    m_PageCountLabel->setText(" / 0");
+
     connect(m_PageNumLineEdit, SIGNAL(textChanged()), this, SLOT(UpdataPageNum()));
     connect(m_PageNumLineEdit, SIGNAL(returnPressed()), this, SLOT(GotoPage()));
-//    m_PageNumLineEdit->focusNextChild();
 }
 
 void MainViewer::OpenFile()
@@ -128,6 +133,7 @@ void MainViewer::OpenFile()
         return;
 
     NewFile();
+    RefreshWindow();
 }
 
 void MainViewer::NewFile()
