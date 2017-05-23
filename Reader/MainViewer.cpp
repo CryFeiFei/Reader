@@ -233,6 +233,11 @@ void MainViewer::UpdataPageNum()
     int nCurPageNum = child->getCurPageNum() + 1;
     QString str = QString::number(nCurPageNum);
     m_PageNumLineEdit->setText(str);
+
+    int nCurPageCount = child->getPageCount();
+    str = QString::number(nCurPageCount);
+    str = " / " + str;
+    m_PageCountLabel->setText(str);
 }
 
 void MainViewer::GotoPage()
