@@ -1,7 +1,8 @@
 # Reader
+Qt，poppler，阅读器
+
 use QT to creat a reader
 
-Qt，poppler，阅读器
 
 windows平台下下来代码直接用QtCreator打开就能编译通过
 
