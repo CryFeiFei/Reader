@@ -12,6 +12,7 @@ MainViewer::MainViewer(QWidget *parent) :  QMainWindow(parent)
 
     m_MainMdiArea = new MultiViwer();
     setCentralWidget(m_MainMdiArea);
+    connect(m_MainMdiArea, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(UpdataPageNum()));
     m_MainMdiArea->setViewMode(QMdiArea::TabbedView);
 
 }
