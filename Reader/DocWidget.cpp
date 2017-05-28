@@ -2,7 +2,7 @@
 
 DocWidget::DocWidget(IChildViewer* childviewer):m_IChildViewer(childviewer)
 {
-    setStyleSheet("background-color:red;");
+    setStyleSheet("background-color:gray;");
 
     m_pScrollArea = new QScrollArea(this);
     m_pDocViewer = new DocViewer(this);
@@ -10,7 +10,6 @@ DocWidget::DocWidget(IChildViewer* childviewer):m_IChildViewer(childviewer)
 
     m_pScrollBar = m_pScrollArea->verticalScrollBar();
 
- //   connect(m_pScrollBar, SIGNAL(valueChanged(int)), this, SLOT(lineEditChange()));
 }
 
 DocWidget::~DocWidget()
@@ -30,7 +29,3 @@ void DocWidget::RefreshWindow()
     m_pDocViewer->resize(this->size().width(), m_IChildViewer->getPageHighCount());
 }
 
-//void DocWidget::lineEditChange()
-//{
-//    m_IChildViewer->get
-//}

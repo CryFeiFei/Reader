@@ -9,16 +9,20 @@
 #include<QLayout>
 #include<QPushButton>
 
+#include "IChildViewer.h"
+
 class NaviViewer : public QWidget
 {
     Q_OBJECT
 public:
-    NaviViewer();
-    QSplitter*            m_splitterMain; //主窗口
+    NaviViewer(IChildViewer* childviewer);
 
 private:
-    QList<qint32>         m_baseSize;
-private:
+    IChildViewer*         m_IChildViewer;
+
+
+    //widget
+private:   
     QWidget*              m_topNBWidget; //上面的菜单栏
     QTabWidget*           m_tabWidget; //导航栏里边的tab标签
     QWidget*              m_OutlineWidget; //大纲栏
@@ -27,6 +31,11 @@ private:
 
 private slots:
     void sl_btnClicked();
+
+private:
+    void InitUI();
+    // 目录
+    void InitTOC();
 
 };
 

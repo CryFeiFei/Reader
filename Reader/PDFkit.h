@@ -34,6 +34,8 @@ public:
     virtual QImage GetPageImage(int nPageNum);
     // 获得某一页缩放后的大小
     virtual QSize GetPageSize(int nPageNum);
+    // 获得目录根指针
+    virtual QDomDocument* GetTOC();
 
 };
 

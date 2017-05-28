@@ -95,10 +95,14 @@ QImage PDFkit::GetPageImage(int nPageNum)
     QSize size = GetPageSize(nPageNum);
     QImage imageBuffer = pPage->renderToImage(72 * m_multiple, 72 * m_multiple, 0, nPageNum, size.width(), size.height());
 
- //   DELETE_POINT(pPage);
-
     return imageBuffer;
+}
 
+QDomDocument* PDFkit::GetTOC()
+{
+    Q_ASSERT(m_document != NULL);
+
+    return m_document->toc();
 }
 
 

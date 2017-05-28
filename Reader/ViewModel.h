@@ -32,8 +32,11 @@ public:
     int     GetPageCount() { return m_kit->GetPageCount(); }
     QSize   GetActruallyPageSize(int nPageNum) { return m_kit->GetActruallyPageSize(nPageNum); }
     QImage  GetActruallyPageImage(int nPageNum) { return m_kit->GetActruallyPageImage(nPageNum); }
-    QSize   GetPageSize(int nPageNum) { return m_kit->GetPageSize(nPageNum);}
-    QImage  GetPageImage(int nPageNum) { return m_kit->GetPageImage(nPageNum);}
+    QSize   GetPageSize(int nPageNum) { return m_kit->GetPageSize(nPageNum); }
+    QImage  GetPageImage(int nPageNum) { return m_kit->GetPageImage(nPageNum); }
+    QDomDocument* GetTOC() {return m_kit->GetTOC(); }
+
+public:
     int     GetActruallyPageHighCount();
     int     GetPageHighCount();
     int     GetCurPageNum() { return m_ViewState->GetCurPageNum();}

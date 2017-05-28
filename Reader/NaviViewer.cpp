@@ -1,12 +1,17 @@
 #include "NaviViewer.h"
 
-NaviViewer::NaviViewer()
+NaviViewer::NaviViewer(IChildViewer* childviewer) : m_IChildViewer(childviewer)
+{
+    InitUI();
+    InitTOC();
+}
+
+void NaviViewer::InitUI()
 {
     //new project
     m_OutlineWidget = new QWidget();
     m_ThumbnailWidget = new QWidget();
     m_SemanticTree = new QWidget();
-
     m_topNBWidget = new QWidget();
     //上边水平布局
     QHBoxLayout* NBTopLayout = new QHBoxLayout();
@@ -31,25 +36,26 @@ NaviViewer::NaviViewer()
     naVLayout->addWidget(m_tabWidget);
 
     this->setLayout(naVLayout);
- //   m_baseSize = m_splitterMain->sizes();
-
     connect(btn_cancel,SIGNAL(clicked()),this,SLOT(sl_btnClicked()));
 
 }
 
+void NaviViewer::InitTOC()
+{
+    QDomDocument* domdoc = m_IChildViewer->getTOC();
+
+    QDomNode domroot = domdoc->firstChild();
+
+    QString strDom;
+
+    while (!domroot.isNull())
+    {
+        strDom = domroot.toElement().tagName();
+        domroot = domroot.firstChild();
+    }
+}
+
 void NaviViewer::sl_btnClicked()
 {
-     //todo 少个虚函数
-//    QList<qint32>  newSize;
 
-//    if(this->width()!=0)
-//    {
-//        newSize<<m_baseSize.at(0)+m_baseSize.at(1)<<0;
-//    }
-//    else
-//    {
-//        newSize<<m_baseSize.at(0)<<m_baseSize.at(1);
-//    }
-
-//    m_splitterMain->setSizes(newSize);  //move the SPLITTER
 }

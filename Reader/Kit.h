@@ -20,6 +20,8 @@ public:
     virtual  int GetPageCount() = 0;
     virtual  QImage GetPageImage(int nPageNum) = 0;
     virtual  QSize GetPageSize(int nPageNum) = 0;
+    // 获取目录树
+    virtual  QDomDocument* GetTOC() = 0;
 
 public:
     void  SetFileName(QString strFileName){ m_strFileName = strFileName;}

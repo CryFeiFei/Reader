@@ -11,6 +11,7 @@
 #include <QString>
 #include <QImage>
 #include <QSplitter>
+#include <QDomDocument>
 #include "float.h"
 
 enum DocState

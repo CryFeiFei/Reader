@@ -1,8 +1,7 @@
 #ifndef I_CHILDVIEWER_H
 #define I_CHILDVIEWER_H
 
-#include <QWidget>
-#include <QScrollArea>
+#include "ReadDefine.h"
 
 class DocWidget;
 
@@ -27,6 +26,7 @@ public:
     virtual int getPageHighCount() = 0;
     virtual QSize getDocWidgetSize() = 0;
     virtual int getCurPageNum() = 0;
+    virtual QDomDocument* getTOC() = 0;
 };
 
 #endif // I_CHILDVIEWER_H
