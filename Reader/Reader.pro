@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     ImageCache.cpp \
     ViewState.cpp \
     SingleContinuousState.cpp \
-    DocWidget.cpp
+    DocWidget.cpp \
+    ThumbnailWidget.cpp
 
 HEADERS  += \
     PDFkit.h \
@@ -43,7 +44,8 @@ HEADERS  += \
     SingleContinuousState.h \
     DocWidget.h \
     IDocWidget.h \
-    ReadDefine.h
+    ReadDefine.h \
+    ThumbnailWidget.h
 
 RESOURCES += \
     resource.qrc
