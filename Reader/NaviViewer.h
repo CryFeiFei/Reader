@@ -13,6 +13,7 @@
 #include<QTreeWidgetItem>
 
 #include "IChildViewer.h"
+#include "ThumbnailWidget.h"
 
 class NaviViewer : public QWidget
 {
@@ -35,6 +36,7 @@ private:
 
 
 	QWidget*              m_ThumbnailWidget; //缩略图
+	QVBoxLayout*		m_ThumbnailLayout; //缩略图布局
 	QWidget*              m_SemanticTree; //语义树
 
 private slots:

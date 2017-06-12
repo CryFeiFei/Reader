@@ -14,7 +14,10 @@ void NaviViewer::InitUI()
 	m_OutlineWidget->setLayout(m_OutlineLayout);
 
 
-    m_ThumbnailWidget = new QWidget();
+	m_ThumbnailWidget = new ThumbnailWidget(m_IChildViewer);
+	m_ThumbnailLayout = new QVBoxLayout();
+	m_ThumbnailWidget->setLayout(m_ThumbnailLayout);
+
     m_SemanticTree = new QWidget();
     m_topNBWidget = new QWidget();
     //上边水平布局
@@ -31,7 +34,7 @@ void NaviViewer::InitUI()
     m_tabWidget = new QTabWidget();
     m_tabWidget->setTabPosition(QTabWidget::West);
 	m_tabWidget->addTab(m_OutlineWidget,"目录");
-    m_tabWidget->addTab(m_ThumbnailWidget,"utitle");
+	m_tabWidget->addTab(m_ThumbnailWidget,"缩略图");
     m_tabWidget->addTab(m_SemanticTree,"utitle");
 
     //垂直分割的布局

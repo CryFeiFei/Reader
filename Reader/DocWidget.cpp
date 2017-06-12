@@ -2,7 +2,7 @@
 
 DocWidget::DocWidget(IChildViewer* childviewer):m_IChildViewer(childviewer)
 {
-    setStyleSheet("background-color:gray;");
+	setStyleSheet("background-color:gray");
 
     m_pScrollArea = new QScrollArea(this);
     m_pDocViewer = new DocViewer(this);

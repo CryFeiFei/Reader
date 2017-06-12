@@ -12,6 +12,11 @@
 #include <QImage>
 #include <QSplitter>
 #include <QDomDocument>
+#include <QPainter>
+#include <QListWidget>
+#include <QTimer>
+#include <QTreeWidget>
+#include <QListView>
 #include "float.h"
 
 enum DocState
