@@ -3,7 +3,7 @@
 
 #include <QImage>
 
-#include "_Inclusion/Win32/poppler/poppler-qt5.h"
+#include "3rdparty/Win32/poppler/poppler-qt5.h"
 #include "Kit.h"
 
 class PDFkit : public Kit
