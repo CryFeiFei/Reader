@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     SingleContinuousState.cpp \
     DocWidget.cpp \
     ThumbnailWidget.cpp \
-    ThumbnailTreeModel.cpp
+    TOCModel.cpp \
+    TOCTreeItem.cpp
 
 HEADERS  += \
     PDFkit.h \
@@ -47,7 +48,8 @@ HEADERS  += \
     IDocWidget.h \
     ReadDefine.h \
     ThumbnailWidget.h \
-    ThumbnailTreeModel.h
+    TOCModel.h \
+    TOCTreeItem.h
 
 RESOURCES += \
     resource.qrc
