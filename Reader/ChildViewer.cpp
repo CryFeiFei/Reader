@@ -25,6 +25,7 @@ ChildViewer::ChildViewer(IMainViewer* iMainViewer) : m_IMainViewer(iMainViewer),
 
 }
 
+//恶心，用布局重新写
 void ChildViewer::resizeEvent(QResizeEvent *event)
 {
     m_splitterMain->resize(this->size());
