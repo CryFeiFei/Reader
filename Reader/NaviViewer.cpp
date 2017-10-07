@@ -15,21 +15,21 @@ void NaviViewer::InitUI()
 
 
 	m_ThumbnailWidget = new ThumbnailWidget(m_IChildViewer);
-	m_ThumbnailLayout = new QVBoxLayout();
-	m_ThumbnailWidget->setLayout(m_ThumbnailLayout);
+//	m_ThumbnailLayout = new QVBoxLayout();
+//	m_ThumbnailWidget->setLayout(m_ThumbnailLayout);
 
-    m_SemanticTree = new QWidget();
-    m_topNBWidget = new QWidget();
-    //上边水平布局
-    QHBoxLayout* NBTopLayout = new QHBoxLayout();
-    QPushButton* btn_ok = new QPushButton(QWidget::tr("OK"), m_topNBWidget);
-    btn_ok->setDefault(true);
-    btn_ok->setFixedSize(10,10);
-    QPushButton* btn_cancel = new QPushButton(QWidget::tr("Cancel"), m_topNBWidget);
-    btn_cancel->setFixedSize(10,10);
-    NBTopLayout->addWidget(btn_ok, Qt::AlignLeft);
-    NBTopLayout->addStretch();
-    NBTopLayout->addWidget(btn_cancel, Qt::AlignRight);
+//    m_SemanticTree = new QWidget();
+//    m_topNBWidget = new QWidget();
+//    //上边水平布局
+//    QHBoxLayout* NBTopLayout = new QHBoxLayout();
+//    QPushButton* btn_ok = new QPushButton(QWidget::tr("OK"), m_topNBWidget);
+//    btn_ok->setDefault(true);
+//    btn_ok->setFixedSize(10,10);
+//    QPushButton* btn_cancel = new QPushButton(QWidget::tr("Cancel"), m_topNBWidget);
+//    btn_cancel->setFixedSize(10,10);
+//    NBTopLayout->addWidget(btn_ok, Qt::AlignLeft);
+//    NBTopLayout->addStretch();
+//    NBTopLayout->addWidget(btn_cancel, Qt::AlignRight);
 
     m_tabWidget = new QTabWidget();
     m_tabWidget->setTabPosition(QTabWidget::West);
@@ -39,11 +39,11 @@ void NaviViewer::InitUI()
 
     //垂直分割的布局
     QVBoxLayout* naVLayout = new QVBoxLayout();
-    naVLayout->addLayout(NBTopLayout);
+//    naVLayout->addLayout(NBTopLayout);
     naVLayout->addWidget(m_tabWidget);
 
     this->setLayout(naVLayout);
-    connect(btn_cancel,SIGNAL(clicked()),this,SLOT(sl_btnClicked()));
+//    connect(btn_cancel,SIGNAL(clicked()),this,SLOT(sl_btnClicked()));
 
 }
 
@@ -60,7 +60,6 @@ void NaviViewer::InitTOC()
 	m_OutlineLayout->addWidget(m_OutlineTree);
 	m_OutlineTree->setHeaderLabel(tr("图像选择"));
 	m_OutlineTree->setHeaderHidden(true);
-//	m_OutlineTree->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
 	treeWidgetItem = new QTreeWidgetItem(m_OutlineTree, QStringList(QString(domNode.toElement().tagName())));
 	ComputerToc(&domNode, treeWidgetItem);

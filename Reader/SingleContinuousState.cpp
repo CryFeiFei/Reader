@@ -21,6 +21,7 @@ void SingleContinuousState::RenderPages(QPainter *paint)
     int nScrollYFlag = 0;  //当前坐标（画布）
     nScrollHeight = m_ChildViewer->getScrollArea()->size().height(); //当前绘制的剩余窗口高度
     nScrollYFlag  = GetVScrollPos();
+	//首先刷一下成灰色
 
     // 当前绘制的页码
     int nPageNum;
@@ -49,7 +50,6 @@ void SingleContinuousState::RenderPages(QPainter *paint)
         nScrollHeight -= img.height();
         nScrollYFlag += img.height();
     }
-
 
 }
 
@@ -109,6 +109,7 @@ bool SingleContinuousState::GetVPos(int nScrollPos, int &nPageNum, int &nPageVSt
         }
         nScrollPos -= (GetPageSize(i).height() + 8);
     }
+	nScrollPos += 8;
 
     return true;
 }

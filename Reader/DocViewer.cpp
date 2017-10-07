@@ -2,7 +2,7 @@
 
 DocViewer::DocViewer(IDocWidget* DocWidget) : m_IDocWidget(DocWidget)
 {
-	setStyleSheet("background-color:red");
+//	setStyleSheet("background-color:red");
 }
 
 DocViewer::~DocViewer()

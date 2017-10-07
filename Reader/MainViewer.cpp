@@ -4,8 +4,8 @@
 MainViewer::MainViewer(QWidget *parent) :  QMainWindow(parent)
 {
 
-    this->resize(QSize(800,600)); //设置初始窗口大小
-    statusBar(); //显示状态栏
+	resize(QSize(800,600)); //设置初始窗口大小
+	statusBar(); //显示状态栏
     CreatActions();
     CreatMenus();
     CreatToolBar();
@@ -124,11 +124,9 @@ void MainViewer::CreatToolBar()
 
 void MainViewer::OpenFile()
 {
-    QString strFilter;
-    strFilter = "*.pdf";
-    QString strDir;
-    strDir = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
-    m_strFileName = QFileDialog::getOpenFileName(this,"Reader", strDir, strFilter);
+	QString strFilter = "*.pdf";
+	QString strDir = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
+	m_strFileName = QFileDialog::getOpenFileName(this,"Reader", strDir, strFilter);
 
     if(m_strFileName.isEmpty())
         return;
@@ -139,10 +137,9 @@ void MainViewer::OpenFile()
 
 void MainViewer::NewFile()
 {
-    ChildViewer *childViewer = CreateChildViewer();
+	ChildViewer *childViewer = CreateChildViewer();
 
-    int index = m_strFileName.lastIndexOf("/");
-//    m_strFilePath = m_strFileName.mid(0, index + 1);
+	int index = m_strFileName.lastIndexOf("/");
     QString strFileName = m_strFileName.mid((index + 1), (m_strFileName.size() - index));
     childViewer->setWindowTitle(strFileName);
     childViewer->show();

@@ -68,7 +68,6 @@ void ChildViewer::ZoomIn()
     m_dCurDocMultiple += 0.25;
     m_dCurDocMultiple = m_dCurDocMultiple > 2 ? 2 : m_dCurDocMultiple;
     m_ViewModel->SetDocMultiple(m_dCurDocMultiple);
-//    RefreshWindow();
 }
 
 void ChildViewer::ZoomOut()
