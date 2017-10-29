@@ -27,8 +27,8 @@ private:
 
     //widget
 private:   
-    QWidget*              m_topNBWidget; //上面的菜单栏
-    QTabWidget*           m_tabWidget; //导航栏里边的tab标签
+	QWidget*              m_topNBWidget; //上面的菜单栏
+	QTabWidget*           m_tabWidget; //导航栏里边的tab标签
 	QWidget*              m_OutlineWidget; //大纲栏
 	QTreeWidget*          m_OutlineTree;//大纲树
 	QVBoxLayout*          m_OutlineLayout; //大纲树布局
@@ -40,12 +40,12 @@ private:
 	QWidget*              m_SemanticTree; //语义树
 
 private slots:
-    void sl_btnClicked();
+	void sl_btnClicked();
 
 private:
-    void InitUI();
-    // 目录
-    void InitTOC();
+	void InitUI();
+	// 目录
+	void InitTOC();
 
 };
 

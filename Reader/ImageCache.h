@@ -10,15 +10,15 @@
 class ImageCache
 {
 public:
-    ImageCache();
-    ~ImageCache();
+	ImageCache();
+	~ImageCache();
 
 private:
-    ImageQueue     m_queue;
-    int            m_nMaxSize;
+	ImageQueue     m_queue;
+	int            m_nMaxSize;
 public:
-    bool getImage(int nPageNum, QImage &image);
-    bool insertImage(int nPageNum, QImage image);
+	bool getImage(int nPageNum, QImage &image);
+	bool insertImage(int nPageNum, QImage image);
 
 };
 

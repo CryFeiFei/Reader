@@ -8,31 +8,31 @@
 class SingleContinuousState : public ViewState
 {
 public:
-    SingleContinuousState(IChildViewer* childViewer);
-    virtual ~SingleContinuousState();
+	SingleContinuousState(IChildViewer* childViewer);
+	virtual ~SingleContinuousState();
 
 public:
-    virtual void RenderPages(QPainter* paint);
-    virtual int GetCurPageNum();
-    virtual void GotoPage(int nPageNum);
+	virtual void RenderPages(QPainter* paint);
+	virtual int GetCurPageNum();
+	virtual void GotoPage(int nPageNum);
 
 public:
-    ViewModel*      m_ViewModel;
+	ViewModel*      m_ViewModel;
 
 private:
-    IChildViewer*    m_ChildViewer;
+	IChildViewer*    m_ChildViewer;
 
 private:
-    int GetPageCount() { return m_ChildViewer->getPageCount();}
-    QSize GetPageSize(int nPageNum) { return m_ChildViewer->getPageSize(nPageNum);}
+	int GetPageCount() { return m_ChildViewer->getPageCount();}
+	QSize GetPageSize(int nPageNum) { return m_ChildViewer->getPageSize(nPageNum);}
 
-    int GetVScrollPos();
+	int GetVScrollPos();
 
-    int GetHScrollPos();
+	int GetHScrollPos();
 
-    int GetPageHeightCount(int nNumPage);
+	int GetPageHeightCount(int nNumPage);
 
-    bool GetVPos(int nScrollPos, int& nPageNum, int& nPageVPos);
+	bool GetVPos(int nScrollPos, int& nPageNum, int& nPageVPos);
 
 };
 

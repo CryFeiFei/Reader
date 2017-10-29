@@ -13,13 +13,13 @@ class DocWidget;
 class ViewState
 {
 public:
-    ViewState(){};
-    virtual ~ViewState(){};
+	ViewState(){};
+	virtual ~ViewState(){};
 
 public:
-    virtual void RenderPages(QPainter* paint) = 0;
-    virtual int  GetCurPageNum() = 0;
-    virtual void GotoPage(int nPageNum) = 0;
+	virtual void RenderPages(QPainter* paint) = 0;
+	virtual int  GetCurPageNum() = 0;
+	virtual void GotoPage(int nPageNum) = 0;
 };
 
 #endif // VIEWSTATE_H
