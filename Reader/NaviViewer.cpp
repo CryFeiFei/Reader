@@ -4,6 +4,7 @@ NaviViewer::NaviViewer(IChildViewer* childviewer) : m_IChildViewer(childviewer)
 {
 	InitUI();
 	InitTOC();
+	InitConnect();
 }
 
 void NaviViewer::InitUI()
@@ -45,12 +46,19 @@ void NaviViewer::InitTOC()
 	m_OutlineLayout->addWidget(m_OutlineTree);
 	m_OutlineTree->setHeaderLabel(tr("图像选择"));
 	m_OutlineTree->setHeaderHidden(true);
+	m_OutlineTree->setStyleSheet( "QTreeView::item:hover{background-color:rgb(0,255,0,50)}"
+							   "QTreeView::item:selected{background-color:rgb(255,0,0,100)}");
 
 	treeWidgetItem = new QTreeWidgetItem(m_OutlineTree, QStringList(QString(domNode.toElement().tagName())));
 	ComputerToc(&domNode, treeWidgetItem);
 
 	m_OutlineTree->expandAll();
 //	m_OutlineTree->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+}
+
+void NaviViewer::InitConnect()
+{
+	connect(m_OutlineTree, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(outLineTreeClicked(QTreeWidgetItem*,int)));
 }
 
 void NaviViewer::ComputerToc(QDomNode* domNode, QTreeWidgetItem* parentWidgetItem)
@@ -67,6 +75,11 @@ void NaviViewer::ComputerToc(QDomNode* domNode, QTreeWidgetItem* parentWidgetIte
 }
 
 void NaviViewer::sl_btnClicked()
+{
+
+}
+
+void NaviViewer::outLineTreeClicked(QTreeWidgetItem* item, int n)
 {
 
 }

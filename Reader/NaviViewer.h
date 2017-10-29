@@ -41,11 +41,13 @@ private:
 
 private slots:
 	void sl_btnClicked();
+	void outLineTreeClicked(QTreeWidgetItem*,int);
 
 private:
 	void InitUI();
 	// 目录
 	void InitTOC();
+	void InitConnect();
 
 };
 
