@@ -1,8 +1,11 @@
-#include "PDFkit.h"
+﻿#include "PDFkit.h"
 
 PDFkit::PDFkit():m_pdfPage(NULL),m_document(NULL)
 {
-
+//	QLibrary libr("libpoppler.dll");
+//	libr.load();
+//	QLibrary libqt("libpoppler-qt5.dll");
+//	libqt.load();
 }
 
 PDFkit::~PDFkit()

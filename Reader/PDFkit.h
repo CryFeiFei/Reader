@@ -1,7 +1,8 @@
-#ifndef PDFKIT_H
+﻿#ifndef PDFKIT_H
 #define PDFKIT_H
 
 #include <QImage>
+#include <QLibrary>
 
 #include "3rdparty/Win32/poppler/poppler-qt5.h"
 #include "Kit.h"
