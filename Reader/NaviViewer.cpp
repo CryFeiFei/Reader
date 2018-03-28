@@ -60,14 +60,15 @@ TocTreeModel::TocTreeModel(QDomDocument* domdoc, QObject *parent)
 
 	QDomNode domNode = domdoc->firstChild();
 	rootItem = new TocTreeItem("domNode.toElement().tagName()");
-
-	for(QDomNode childNode = domNode; !childNode.isNull(); childNode = childNode.nextSibling())
-	{
-		QString strDom = childNode.toElement().tagName();
-		TocTreeItem* treeItem = new TocTreeItem(strDom, rootItem);
-		rootItem->appendChild(treeItem);
-	}
-	parserDom(&domNode, NULL);
+    TocTreeItem* treeItem;
+    for(QDomNode childNode = domNode; !childNode.isNull(); childNode = childNode.nextSibling())
+    {
+        QString strDom = childNode.toElement().tagName();
+        treeItem = new TocTreeItem(strDom, rootItem);
+        rootItem->appendChild(treeItem);
+        parserDom(&domNode, treeItem);
+    }
+//    parserDom(&domNode, treeItem);
 }
 
 TocTreeModel::~TocTreeModel()
@@ -79,7 +80,7 @@ void TocTreeModel::parserDom(QDomNode* domNode, TocTreeItem* parentItem)
 {
 	TocTreeItem* treeItem = NULL;
 	QString strDom;
-	for(QDomNode childNode = domNode->firstChild(); !childNode.isNull(); childNode = childNode.nextSibling())
+    for(QDomNode childNode = domNode->firstChild(); !childNode.isNull(); childNode = childNode.nextSibling())
 	{
 		strDom = childNode.toElement().tagName();
 		treeItem = new TocTreeItem(strDom, parentItem);
