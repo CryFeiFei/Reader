@@ -1,4 +1,4 @@
-#include "NaviViewer.h"
+﻿#include "NaviViewer.h"
 
 TocTreeItem::TocTreeItem(QString des, TocTreeItem* parentItem)
 {
@@ -172,7 +172,7 @@ QModelIndex TocTreeModel::parent(const QModelIndex &index) const
 	return createIndex(parentItem->row(), 0, parentItem);
 }
 
-NaviViewer::NaviViewer(IChildViewer* childviewer) : m_IChildViewer(childviewer)
+NaviViewer::NaviViewer(IChildViewer* childviewer) : m_IChildViewer(childviewer), m_OutlineTree(NULL)
 {
 	InitUI();
 	InitTOC();
@@ -239,7 +239,8 @@ void NaviViewer::InitTOC()
 
 void NaviViewer::InitConnect()
 {
-	connect(m_OutlineTree, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(outLineTreeClicked(QTreeWidgetItem*,int)));
+	if (m_OutlineTree)
+		connect(m_OutlineTree, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(outLineTreeClicked(QTreeWidgetItem*,int)));
 }
 
 void NaviViewer::ComputerToc(QDomNode* domNode, QTreeWidgetItem* parentWidgetItem)
