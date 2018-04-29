@@ -181,7 +181,7 @@ NaviViewer::NaviViewer(IChildViewer* childviewer) : m_IChildViewer(childviewer),
 
 void NaviViewer::InitUI()
 {
-    //new project
+	//new project
 	m_OutlineWidget = new QWidget();
 	m_OutlineLayout = new QVBoxLayout();
 	m_OutlineWidget->setLayout(m_OutlineLayout);
@@ -201,7 +201,7 @@ void NaviViewer::InitUI()
 	//垂直分割的布局
 	QVBoxLayout* naVLayout = new QVBoxLayout();
 	naVLayout->addWidget(m_tabWidget);
-
+	naVLayout->setContentsMargins(1, 1, 1, 1);
 	this->setLayout(naVLayout);
 }
 
@@ -211,18 +211,10 @@ void NaviViewer::InitTOC()
 	if (domdoc == NULL)
 		return;
 
-//	TocTreeModel* treeModel = new TocTreeModel(domdoc, NULL);
-
-//	QDomNode domNode = domdoc->firstChild();
-//	QTreeWidgetItem* treeWidgetItem = NULL;
-
 	m_OutlineTree = new QTreeWidget();
-//	m_OutlineLayout->addWidget(m_OutlineTree);
-//	m_OutlineTree->setHeaderLabel(tr("图像选择"));
-//	m_OutlineTree->setHeaderHidden(true);
-//	m_OutlineTree->setStyleSheet( "QTreeView::item:hover{background-color:rgb(0,255,0,50)}"
-//							   "QTreeView::item:selected{background-color:rgb(255,0,0,100)}");
 
+	m_OutlineTree->setStyleSheet( "QTreeView::item:hover{background-color:rgb(0,255,0,50)}"
+							   "QTreeView::item:selected{background-color:rgb(255,0,0,100)}");
 
 //	m_OutlineTree->setModel(treeModel);
 //	treeWidgetItem = new QTreeWidgetItem(m_OutlineTree, QStringList(QString(domNode.toElement().tagName())));

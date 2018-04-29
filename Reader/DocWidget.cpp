@@ -12,6 +12,7 @@ DocWidget::DocWidget(IChildViewer* childviewer):m_IChildViewer(childviewer)
 	QVBoxLayout* layout = new QVBoxLayout();
 	setLayout(layout);
 	layout->addWidget(m_pScrollArea);
+	layout->setContentsMargins(1,1,1,1);
 
 	m_pScrollBar = m_pScrollArea->verticalScrollBar();
 	m_pScrollArea->setAlignment(Qt::AlignCenter);

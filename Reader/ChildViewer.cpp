@@ -1,4 +1,4 @@
-#include "ChildViewer.h"
+﻿#include "ChildViewer.h"
 
 ChildViewer::ChildViewer(IMainViewer* iMainViewer) : m_IMainViewer(iMainViewer),m_docstate(SINGLE_CONTINUOUS),
 	m_dCurDocMultiple(1)
@@ -8,6 +8,7 @@ ChildViewer::ChildViewer(IMainViewer* iMainViewer) : m_IMainViewer(iMainViewer),
 	m_strFileName = m_IMainViewer->getFileName();
 
 	m_splitterMain = new QSplitter(Qt::Horizontal, this);
+	m_splitterMain->setHandleWidth(1);
 	m_ViewModel = new ViewModel(this);
 
 	m_navigationBar = new NaviViewer(this);

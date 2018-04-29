@@ -1,4 +1,4 @@
-// summary: 主窗口
+﻿// summary: 主窗口
 #ifndef MAIN_VIEWER_H
 #define MAIN_VIEWER_H
 
@@ -40,35 +40,35 @@ private:
 	ChildViewer* getCurChildViewer();
 
 private:
-	QMenu*               m_FileMenu; //菜单栏
-	QMenu*               m_EditMenu;
-	QMenu*               m_WindowMenu;
-	QMenu*               m_HelpMenu;
+	QMenu* m_FileMenu; //菜单栏
+	QMenu* m_EditMenu;
+	QMenu* m_WindowMenu;
+	QMenu* m_HelpMenu;
 
 	//动作
-	QAction*             m_OpenAction; //打开文件
-	QAction*             m_SaveAction; //保存文件
-	QAction*             m_QuitAction; //退出
+	QAction* m_OpenAction; //打开文件
+	QAction* m_SaveAction; //保存文件
+	QAction* m_QuitAction; //退出
 
-	QAction*             m_ZoomIn;
-	QAction*             m_ZoomOut;
-	QAction*             m_ZoomReset;
+	QAction* m_ZoomIn;
+	QAction* m_ZoomOut;
+	QAction* m_ZoomReset;
 
-	QAction*             m_PreviousPage; //上一页
-	QAction*             m_NextPage; //下一页
-	QLineEdit*           m_PageNumLineEdit; //页码框
-	QLabel*              m_PageCountLabel; //页码总数
+	QAction* m_PreviousPage; //上一页
+	QAction* m_NextPage; //下一页
+	QLineEdit* m_PageNumLineEdit; //页码框
+	QLabel* m_PageCountLabel; //页码总数
 
 	//test
-	QAction*             m_NewAction; //新建文件
+	QAction* m_NewAction; //新建文件
 
 	//两个工具栏
-	QToolBar*            m_FileTool;
-	QToolBar*            m_ZoomTool;
-	QToolBar*            m_PageTool;
+	QToolBar* m_FileTool;
+	QToolBar* m_ZoomTool;
+	QToolBar* m_PageTool;
 
 	//窗口布局
-	MultiViwer*          m_MainMdiArea; //主窗体中的多文档区域
+	MultiViwer* m_MainMdiArea; //主窗体中的多文档区域
 
 
 public:
