@@ -1,4 +1,4 @@
-#include "SingleContinuousState.h"
+﻿#include "SingleContinuousState.h"
 
 class DocWidget;
 
@@ -43,7 +43,9 @@ void SingleContinuousState::RenderPages(QPainter *paint)
 		img = imageCopy.copy(0, nPageVPos, GetPageSize(nPageNum).width(), nRenderHeight);
 
 		QSize docWidget = m_ChildViewer->getDocWidgetSize();
-		nXDrawPos = (docWidget.width() - GetPageSize(nPageNum).width()) / 2;
+		nXDrawPos = ((docWidget.width() - GetPageSize(nPageNum).width())) / 2;
+		if (nXDrawPos < 0)
+			nXDrawPos = m_ChildViewer->getScrollArea()->verticalScrollBar()->size().width() / 2;
 
 		paint->drawImage(nXDrawPos, nScrollYFlag, img);
 

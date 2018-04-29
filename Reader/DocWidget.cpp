@@ -1,4 +1,4 @@
-#include "DocWidget.h"
+﻿#include "DocWidget.h"
 #include <QVBoxLayout>
 
 DocWidget::DocWidget(IChildViewer* childviewer):m_IChildViewer(childviewer)
@@ -14,6 +14,16 @@ DocWidget::DocWidget(IChildViewer* childviewer):m_IChildViewer(childviewer)
 	layout->addWidget(m_pScrollArea);
 
 	m_pScrollBar = m_pScrollArea->verticalScrollBar();
+//	m_pDocViewer->resize(this->size().width() + m_pScrollBar->width(), m_IChildViewer->getPageHighCount());
+//	m_pDocViewer->resize(m_IChildViewer->getMaxPageWidth(), m_IChildViewer->getPageHighCount());
+//	QVBoxLayout* scrollLayout = new QVBoxLayout();
+//	scrollLayout->addWidget(m_pDocViewer);
+
+//	m_pScrollArea->setLayout(scrollLayout);
+//	m_pScrollArea->setMinimumHeight();
+	m_pScrollArea->setAlignment(Qt::AlignCenter);
+
+//	m_pScrollArea->setMinimumWidth(m_IChildViewer->getMaxPageWidth());
 
 }
 
@@ -25,12 +35,21 @@ DocWidget::~DocWidget()
 void DocWidget::resizeEvent(QResizeEvent* e)
 {
 //	m_pScrollArea->resize(this->size());
-	m_pDocViewer->resize(this->size().width(), m_IChildViewer->getPageHighCount());
+//	m_pScrollArea->size.width();
+//	m_pScrollArea->size().
+	if (m_IChildViewer->getMaxPageWidth() > m_pScrollArea->size().width())
+		m_pDocViewer->resize(m_IChildViewer->getMaxPageWidth() + m_pScrollBar->size().width(), m_IChildViewer->getPageHighCount());
+	else
+		m_pDocViewer->resize(m_pScrollArea->size().width() - m_pScrollBar->size().width(), m_IChildViewer->getPageHighCount());
 }
 
 void DocWidget::RefreshWindow()
 {
 	update();
-//	m_pDocViewer->resize(this->size().width(), m_IChildViewer->getPageHighCount());
+	if (m_IChildViewer->getMaxPageWidth() > m_pScrollArea->size().width())
+		m_pDocViewer->resize(m_IChildViewer->getMaxPageWidth() + m_pScrollBar->size().width(), m_IChildViewer->getPageHighCount());
+	else
+		m_pDocViewer->resize(m_pScrollArea->size().width() - m_pScrollBar->size().width(), m_IChildViewer->getPageHighCount());
+//	m_pDocViewer->resize(m_IChildViewer->getMaxPageWidth(), m_IChildViewer->getPageHighCount());
 }
 

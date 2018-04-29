@@ -1,4 +1,4 @@
-#ifndef I_CHILDVIEWER_H
+﻿#ifndef I_CHILDVIEWER_H
 #define I_CHILDVIEWER_H
 
 #include "ReadDefine.h"
@@ -24,6 +24,8 @@ public:
 	virtual double getCurDocMultiple() = 0;
 	virtual int getActruallyPageHighCount() = 0;
 	virtual int getPageHighCount() = 0;
+	virtual int getActruallyMaxPageWidth() = 0;
+	virtual int getMaxPageWidth() = 0;
 	virtual QSize getDocWidgetSize() = 0;
 	virtual int getCurPageNum() = 0;
 	virtual QDomDocument* getTOC() = 0;

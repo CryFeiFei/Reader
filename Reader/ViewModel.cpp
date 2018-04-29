@@ -1,4 +1,4 @@
-
+﻿
 #include "ViewModel.h"
 #include "ChildViewer.h"
 
@@ -39,6 +39,29 @@ int ViewModel::GetPageHighCount()
 		nPageHighCount += (GetPageSize(i).height() + 8);
 
 	return nPageHighCount;
+}
+
+int ViewModel::GetActruallyMaxPageWidth()
+{
+	//todo待优化。可以跟上边俩函数用一个循环搞定。
+	//下边这个函数也要优化。先完成功能吧。
+	int nMaxPageWidth = -1;
+	for(int i = 0; i < GetPageCount(); i++)
+		if (nMaxPageWidth < GetActruallyPageSize(i).width())
+			nMaxPageWidth = GetActruallyPageSize(i).width();
+
+	return nMaxPageWidth;
+}
+
+int ViewModel::GetMaxPageWidth()
+{
+	int nMaxPageWidth = -1;
+	for (int i = 0; i < GetPageCount(); i++)
+		if (nMaxPageWidth < GetPageSize(i).width())
+			nMaxPageWidth = GetPageSize(i).width();
+
+	return nMaxPageWidth;
+
 }
 
 void ViewModel::SetDocMultiple(double docMultiple)
