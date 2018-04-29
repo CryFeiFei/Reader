@@ -1,5 +1,7 @@
 ﻿#include "NaviViewer.h"
 
+#include <QProxyStyle>
+
 TocTreeItem::TocTreeItem(QString des, TocTreeItem* parentItem)
 {
 	m_description = des;
@@ -185,6 +187,8 @@ void NaviViewer::InitUI()
 	m_OutlineWidget = new QWidget();
 	m_OutlineLayout = new QVBoxLayout();
 	m_OutlineWidget->setLayout(m_OutlineLayout);
+	m_OutlineLayout->setContentsMargins(1,1,1,1);
+
 
 
 	m_ThumbnailWidget = new ThumbnailWidget(m_IChildViewer);
@@ -194,9 +198,14 @@ void NaviViewer::InitUI()
 
 	m_tabWidget = new QTabWidget();
 	m_tabWidget->setTabPosition(QTabWidget::West);
-	m_tabWidget->addTab(m_OutlineWidget,"333");
-	m_tabWidget->addTab(m_ThumbnailWidget, "123");
-	m_tabWidget->addTab(m_SemanticTree,"utitle");
+	m_tabWidget->addTab(m_OutlineWidget,"目录");
+	m_tabWidget->addTab(m_ThumbnailWidget, "缩略图");
+	m_tabWidget->addTab(m_SemanticTree,"这个待定");
+
+	//重写QProxyStyle todo
+//	QTabBar* tabbar = m_tabWidget->tabBar();
+//	QProxyStyle prxsty;
+//	prxsty.drawItemText();
 
 	//垂直分割的布局
 	QVBoxLayout* naVLayout = new QVBoxLayout();

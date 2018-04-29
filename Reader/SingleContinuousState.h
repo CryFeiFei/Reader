@@ -1,4 +1,4 @@
-#ifndef SINGLECONTINUOUSSTATE_H
+﻿#ifndef SINGLECONTINUOUSSTATE_H
 #define SINGLECONTINUOUSSTATE_H
 
 #include <QScrollArea>
@@ -17,13 +17,14 @@ public:
 	virtual void GotoPage(int nPageNum);
 
 public:
-	ViewModel*      m_ViewModel;
+	ViewModel* m_ViewModel;
 
 private:
-	IChildViewer*    m_ChildViewer;
+	IChildViewer* m_ChildViewer;
 
 private:
 	int GetPageCount() { return m_ChildViewer->getPageCount();}
+
 	QSize GetPageSize(int nPageNum) { return m_ChildViewer->getPageSize(nPageNum);}
 
 	int GetVScrollPos();

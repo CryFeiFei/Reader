@@ -14,17 +14,9 @@ ThumbnailWidget::ThumbnailWidget(IChildViewer* childViewer):m_IChildViewer(child
 	m_ItemModel = new QStandardItemModel();
 	m_listView->setModel(m_ItemModel);
 	m_vBoxlayout->addWidget(m_listView);
+	m_vBoxlayout->setContentsMargins(1,1,1,1);
 
 	m_nPageCount = m_IChildViewer->getPageCount();
-
-//    QImage img;
-//    img = m_IChildViewer->getActruallyPageImage(0);
-//    img.scaled(QSize(100,100));
-//    QPixmap pixmap;
-//    pixmap = QPixmap::fromImage(img);
-//    QStandardItem* s1 = new QStandardItem(QIcon(pixmap),"1");
-//    m_ItemModel->appendRow(s1);
-//    m_listView->setModel(m_ItemModel);
 
 }
 

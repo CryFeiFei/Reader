@@ -67,7 +67,7 @@ public:
 	NaviViewer(IChildViewer* childviewer);
 
 private:
-	IChildViewer*         m_IChildViewer;
+	IChildViewer* m_IChildViewer;
 
 
 	//widget
