@@ -1,4 +1,4 @@
-#include "ThumbnailWidget.h"
+﻿#include "ThumbnailWidget.h"
 
 ThumbnailWidget::ThumbnailWidget(IChildViewer* childViewer):m_IChildViewer(childViewer),m_nCurThumDrawPageNum(0),m_nPageCount(0)
 {
@@ -37,7 +37,7 @@ ThumbnailWidget::~ThumbnailWidget()
 void ThumbnailWidget::timerEvent(QTimerEvent *)
 {
 	if (m_nCurThumDrawPageNum >= m_nPageCount)
-	return;
+		return;
 
 	QImage img;
 	img = m_IChildViewer->getActruallyPageImage(m_nCurThumDrawPageNum);

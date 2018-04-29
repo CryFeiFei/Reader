@@ -13,10 +13,10 @@ class IChildViewer;
 
 class DocWidget: public IDocWidget
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-    DocWidget(IChildViewer* childviewer);
-    virtual ~DocWidget();
+	DocWidget(IChildViewer* childviewer);
+	virtual ~DocWidget();
 
 public:
 	virtual int getPageCount(){ return m_IChildViewer->getPageCount();}
@@ -33,11 +33,14 @@ public:
 
 public:
 //    void paintEvent(QPaintEvent *e);
-    QScrollArea* getScroll(){ return m_pScrollArea;}
-    void RefreshWindow();
+	QScrollArea* getScroll(){ return m_pScrollArea;}
+	void RefreshWindow();
 
 public:
-    void resizeEvent(QResizeEvent* e);
+	void resizeEvent(QResizeEvent* e);
+
+private:
+	void _resize();
 
 // 工具栏的一些回调函数
 //public slots:
