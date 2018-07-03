@@ -1,0 +1,8 @@
+poppler_datadir=C:/Program Files (x86)/poppler-data/share/poppler
+
+Name: poppler-data
+Description: Encoding files for use with poppler
+Version: 0.4.9
+
+Cflags: -DPOPPLER_DATADIR=C:/Program Files (x86)/poppler-data/share/poppler
+
