@@ -51,8 +51,8 @@ RESOURCES += \
     resource.qrc
 
 INCLUDEPATH += $$PWD/3rdparty/Win32/Poppler/Include
-win32: LIBS += -L$$PWD/3rdparty/Win32/poppler -llibpoppler
-win32: LIBS += -L$$PWD/3rdparty/Win32/poppler -llibpoppler-qt5
+win32: LIBS += -L$$PWD/3rdparty/Win32/Poppler -llibpoppler
+win32: LIBS += -L$$PWD/3rdparty/Win32/Poppler -llibpoppler-qt5
 
 unix: PKGCONFIG += poppler-qt5
 unix: CONFIG += c++11 link_pkgconfig
