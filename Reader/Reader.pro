@@ -50,7 +50,7 @@ HEADERS  += \
 RESOURCES += \
     resource.qrc
 
-INCLUDEPATH += $$PWD/3rdparty/Win32/poppler
+INCLUDEPATH += $$PWD/3rdparty/Win32/Poppler/Include
 win32: LIBS += -L$$PWD/3rdparty/Win32/poppler -llibpoppler
 win32: LIBS += -L$$PWD/3rdparty/Win32/poppler -llibpoppler-qt5
 
