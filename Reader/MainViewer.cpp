@@ -5,24 +5,16 @@ MainViewer::MainViewer(QWidget *parent) :  QMainWindow(parent)
 {
 
 	resize(QSize(800,600)); //设置初始窗口大小
-//	statusBar(); //显示状态栏
-//	CreatActions();
-//	CreatMenus();
-//	CreatToolBar();
-	QWidget* MWidget = new QWidget(this); //zhuchuangkou
-	QVBoxLayout* mainLayout = new QVBoxLayout(); //zhubuju
-	QWidget* mainWidget = new QWidget(MWidget); //doc
-	QWidget* tabWidget = new QWidget(MWidget); //rabion
-	tabWidget->setFixedHeight(20);
-	mainLayout->addWidget(tabWidget);
-	mainLayout->addWidget(mainWidget);
-	MWidget->setLayout(mainLayout);
-	m_MainMdiArea = new MultiViwer(mainWidget);
-	connect(m_MainMdiArea, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(UpdataPageNum()));
+	statusBar(); //显示状态栏
+	CreatActions();
+	CreatMenus();
+	CreatToolBar();
 
-	setCentralWidget(MWidget);
-	m_strFileName = "/home/zhangpf/1.pdf";
-	NewFile();
+	m_MainMdiArea = new MultiViwer();
+	setCentralWidget(m_MainMdiArea);
+	connect(m_MainMdiArea, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(UpdataPageNum()));
+	m_MainMdiArea->setViewMode(QMdiArea::TabbedView);
+
 }
 
 MainViewer::~MainViewer()
@@ -150,8 +142,7 @@ void MainViewer::NewFile()
 	int index = m_strFileName.lastIndexOf("/");
 	QString strFileName = m_strFileName.mid((index + 1), (m_strFileName.size() - index));
 	childViewer->setWindowTitle(strFileName);
-//	childViewer->show();
-	childViewer->showMaximized();
+	childViewer->show();
 }
 
 ChildViewer* MainViewer::CreateChildViewer()

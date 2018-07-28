@@ -4,14 +4,10 @@
 #define MULTIVIEWER_H
 
 #include <QMdiArea>
-#include <QWidget>
 
 class MultiViwer:public QMdiArea
 {
-public:
-	explicit MultiViwer(QWidget* parent);
-	MultiViwer(){}
-	~MultiViwer();
+
 };
 
 #endif // MULTIVIEWER_H
