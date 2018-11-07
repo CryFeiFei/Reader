@@ -1,66 +1,58 @@
 # Reader
 
-#自己的个人网站 www.qtdoc.cn
+## Describe
 
-## Qt，poppler，阅读器
+pdf reader like adobeReader. use Qt5 and poppler-qt5
 
-use QT to creat a reader
+## Compile
 
+### Requirements
 
-# Reader在win下编译
+- QtVersion > 5.1
+- poppler-qt5
 
-windows平台下下来代码直接用QtCreator5.7打开就能编译通过
+### Win32
 
+just run 
+```
+git clone https://github.com/CryFeiFei/Reader.git
+```
+and then 
 
-# Reader在linux下编译
+- open the Reader.pro by QtCreator(MinGW)
 
-### 编译poppler
+you can build it
 
-### poppler在linux下编译方法
+### Linux
 
+#### Ubuntu
 
-## Ubuntu
+under *Ubuntu14.04 Ubuntu16.04 Ubuntu18.04* 
 
-现在poppler在Linux官方的包一般可以找到
-
-```shell
+just run 
+```
 apt-cache search poppler-qt5
 ```
-看看有没有linux的包
+to search libpoppler-qt5-dev
 
 ```shell
-libpoppler-qt5-1 - PDF rendering library (Qt 5 based shared library)
-libpoppler-qt5-dev - PDF rendering library -- development files (Qt 5 interface)
-python3-poppler-qt5 - Python binding to Poppler-Qt5 C++ library (Python 3)
+sudo apt-get install pkg-config && libpoppler-qt5-dev
 ```
-libpoppler-qt5-dev是poppler的包。直接安装
 
-```shell
-sudo apt-get install libpoppler-qt5-dev
-```
-安装成功之后可以用这个方式检查下
+then,you can check up the dev package.
+
 ```shell
 pkg-config --cflags poppler-qt5
 ```
 
-这是最简单的方式了。如果没有的话只能去官方上下载最新的源代码自己安装了。
 
-----
+### other desktop
 
-官方下载地址
+you should build the poppler-qt5 by yourself
+
 https://poppler.freedesktop.org/
 
-下载完之后解压
-```shell
-./configure
-make
-sudo make install
-```
-编译期间，根据不同的电脑安装自己对应的依赖包
-
-然后再按照上边的步骤再安装
-
-最后在Pro文件中添加这两行
+after build the poppler-qt5, you can use it like Reader.pro
 ```c++
 unix: PKGCONFIG += poppler-qt5
 unix: CONFIG += c++11 link_pkgconfig
