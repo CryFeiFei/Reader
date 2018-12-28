@@ -26,7 +26,11 @@ SOURCES += main.cpp\
     ViewState.cpp \
     SingleContinuousState.cpp \
     DocWidget.cpp \
-    ThumbnailWidget.cpp
+    ThumbnailWidget.cpp \
+    shell/kribbonwidget.cpp \
+    shell/kribbontoolbutton.cpp \
+    shell/kribbontoolicon.cpp \
+    shell/kribbontooltext.cpp
 
 HEADERS  += \
     PDFkit.h \
@@ -45,7 +49,11 @@ HEADERS  += \
     DocWidget.h \
     IDocWidget.h \
     ReadDefine.h \
-    ThumbnailWidget.h
+    ThumbnailWidget.h \
+    shell/kribbonwidget.h \
+    shell/kribbontoolbutton.h \
+    shell/kribbontoolicon.h \
+    shell/kribbontooltext.h
 
 RESOURCES += \
     resource.qrc
