@@ -63,6 +63,7 @@ win32: LIBS += -L$$PWD/3rdparty/Win32/Poppler -llibpoppler
 win32: LIBS += -L$$PWD/3rdparty/Win32/Poppler -llibpoppler-qt5
 
 unix: PKGCONFIG += poppler-qt5
-unix: CONFIG += c++11 link_pkgconfig
+unix: CONFIG += link_pkgconfig
 
+CONFIG += c++11
 DISTFILES +=
