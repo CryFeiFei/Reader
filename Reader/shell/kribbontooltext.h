@@ -7,11 +7,19 @@ class KRibbonToolText : public QWidget
 {
 	Q_OBJECT
 public:
-	explicit KRibbonToolText(QWidget *parent = nullptr);
+	using QWidget::QWidget;
+
+public:
+	void setText(QString );
+	QSize sizeHint() const override;
+	void paintEvent(QPaintEvent* event) override;
 
 signals:
 
 public slots:
+
+private:
+	QString m_text;
 };
 
 #endif // KRIBBONTOOLTEXT_H

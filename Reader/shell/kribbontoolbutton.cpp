@@ -3,8 +3,8 @@
 #include <QVBoxLayout>
 
 KRibbonToolButton::KRibbonToolButton(QWidget *parent) : QWidget(parent)
-	, m_toolIcon(nullptr)
-	, m_textWidget(nullptr)
+	, m_text(nullptr)
+	, m_Icon(nullptr)
 {
 	setObjectName("KRibbonToolButton");
 	_init();
@@ -13,5 +13,6 @@ KRibbonToolButton::KRibbonToolButton(QWidget *parent) : QWidget(parent)
 void KRibbonToolButton::_init()
 {
 	QVBoxLayout* mainLayout = new QVBoxLayout(this);
+	mainLayout->setContentsMargins(0, 0, 0, 0);
 
 }

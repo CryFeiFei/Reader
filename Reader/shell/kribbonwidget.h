@@ -7,7 +7,7 @@ class KRibbonWidget : public QWidget
 {
 	Q_OBJECT
 public:
-	explicit KRibbonWidget(QWidget *parent = nullptr);
+	using QWidget::QWidget;
 
 signals:
 

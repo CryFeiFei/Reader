@@ -3,10 +3,11 @@
 
 #include <QWidget>
 
-class KRibbonToolIcon
+class KRibbonToolIcon : public QWidget
 {
+	Q_OBJECT
 public:
-	KRibbonToolIcon();
+	using QWidget::QWidget;
 };
 
 #endif // KRIBBONTOOLICON_H

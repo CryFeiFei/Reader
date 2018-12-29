@@ -3,6 +3,8 @@
 
 #include <QWidget>
 class QPixmap;
+class KRibbonToolIcon;
+class KRibbonToolText;
 
 class KRibbonToolButton : public QWidget
 {
@@ -18,8 +20,8 @@ private:
 	void _init();
 
 private:
-	QWidget* m_textWidget;
-	QWidget* m_Icon;
+	KRibbonToolText* m_text;
+	KRibbonToolIcon* m_Icon;
 };
 
 #endif // KRIBBONTOOLBUTTON_H
