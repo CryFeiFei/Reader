@@ -51,6 +51,7 @@ KRibbonToolButton::KRibbonToolButton(QWidget *parent) : QWidget(parent)
 	_init();
 }
 
+
 QString KRibbonToolButton::text()
 {
 	return m_text;
@@ -59,6 +60,8 @@ QString KRibbonToolButton::text()
 void KRibbonToolButton::setText(QString text)
 {
 	m_text = text;
+	assert(m_textWidget);
+	m_textWidget->setText(m_text);
 }
 
 QPixmap KRibbonToolButton::icon()
@@ -69,6 +72,7 @@ QPixmap KRibbonToolButton::icon()
 void KRibbonToolButton::setIcon(QPixmap pixmap)
 {
 	m_pixmap = pixmap;
+	m_IconWidget->setIcon(m_pixmap);
 }
 
 
@@ -76,6 +80,12 @@ void KRibbonToolButton::_init()
 {
 	QVBoxLayout* mainLayout = new QVBoxLayout(this);
 	mainLayout->setContentsMargins(0, 0, 0, 0);
+
+	m_textWidget = new KRibbonToolText(this);
+	m_IconWidget = new KRibbonToolIcon(this);
+
+	mainLayout->addWidget(m_IconWidget, Qt::AlignCenter);
+	mainLayout->addWidget(m_textWidget, Qt::AlignCenter);
 
 	//m_text->setText()
 	//
