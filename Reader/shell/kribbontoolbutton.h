@@ -55,6 +55,7 @@ public:
 	void setText(QString text);
 	QPixmap icon();
 	void setIcon(QPixmap pixmap);
+	virtual QSize sizeHint() const override;
 
 signals:
 

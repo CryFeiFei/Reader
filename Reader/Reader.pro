@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     DocWidget.cpp \
     ThumbnailWidget.cpp \
     shell/kribbonwidget.cpp \
-    shell/kribbontoolbutton.cpp
+    shell/kribbontoolbutton.cpp \
+    shell/kribbontabwidget.cpp
 
 HEADERS  += \
     PDFkit.h \
@@ -49,7 +50,8 @@ HEADERS  += \
     ReadDefine.h \
     ThumbnailWidget.h \
     shell/kribbonwidget.h \
-    shell/kribbontoolbutton.h
+    shell/kribbontoolbutton.h \
+    shell/kribbontabwidget.h
 
 RESOURCES += \
     resource.qrc

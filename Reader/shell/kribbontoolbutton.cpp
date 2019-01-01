@@ -2,6 +2,7 @@
 
 #include <QVBoxLayout>
 #include <QPainter>
+#include <utility>
 
 //--------------------------------------------------
 void KRibbonToolIcon::setIcon(QPixmap pixmap)
@@ -59,7 +60,7 @@ QString KRibbonToolButton::text()
 
 void KRibbonToolButton::setText(QString text)
 {
-	m_text = text;
+	m_text = std::move(text);
 	assert(m_textWidget);
 	m_textWidget->setText(m_text);
 }
@@ -75,6 +76,11 @@ void KRibbonToolButton::setIcon(QPixmap pixmap)
 	m_IconWidget->setIcon(m_pixmap);
 }
 
+QSize KRibbonToolButton::sizeHint() const
+{
+	//这里先写个固定值
+	return QSize(50, 70);
+}
 
 void KRibbonToolButton::_init()
 {
