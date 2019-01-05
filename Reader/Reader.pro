@@ -9,6 +9,9 @@ QT       += xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+# add svg support
+QT += svg
+
 TARGET = Reader
 TEMPLATE = app
 
