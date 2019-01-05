@@ -53,6 +53,11 @@ KRibbonScrollWidget::KRibbonScrollWidget(QWidget* parent) :
 
 }
 
+void KRibbonScrollWidget::resizeEvent(QResizeEvent* event)
+{
+	QWidget::resizeEvent(event);
+}
+
 ///////////////////////////////////////////////////////////////
 
 KRibbonTabWidget::KRibbonTabWidget(QWidget *parent) : QTabWidget(parent)

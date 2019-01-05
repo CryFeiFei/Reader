@@ -1,4 +1,5 @@
 ﻿#include "MainViewer.h"
+#include "shell/kribbonwidget.h"
 
 
 MainViewer::MainViewer(QWidget *parent) :  QMainWindow(parent)
@@ -94,6 +95,17 @@ void MainViewer::CreatToolBar()
 	m_FileTool->addAction(m_SaveAction);
 	m_FileTool->addSeparator();
 	m_FileTool->addAction(m_QuitAction);
+
+	auto fCreateRb = [this] ()
+	{
+		KRibbonWidget* rbWidget = new KRibbonWidget();
+		rbWidget->show();
+	};
+
+	//test
+	QAction* rbAction = new QAction(QIcon(":/image/open"), "open", this);
+	connect(rbAction, &QAction::triggered, fCreateRb);
+	m_FileTool->addAction(rbAction);
 
 	// zoom工具条
 	m_ZoomTool = new QToolBar(this);
