@@ -34,6 +34,7 @@ private:
 	KRbScrollArrow* m_leftArrow;
 	KRbScrollArrow* m_rightArrow;
 	QScrollArea* m_scrollArea;
+	QWidget* m_centerWidget;
 };
 
 class KRibbonTabWidget : public QTabWidget

@@ -4,6 +4,7 @@
 #include <QStyleOptionComplex>
 #include <QPainter>
 #include <QStylePainter>
+#include <QHBoxLayout>
 
 const int ARROWSIZE = 15;
 
@@ -40,7 +41,6 @@ void KRbScrollArrow::paintEvent(QPaintEvent* event)
 
 	option.state |= QStyle::State_AutoRaise;
 
-	QPainter pp(this);
 	QStylePainter painter(this);
 	painter.drawComplexControl(QStyle::CC_ToolButton, option);
 }
@@ -50,6 +50,16 @@ void KRbScrollArrow::paintEvent(QPaintEvent* event)
 KRibbonScrollWidget::KRibbonScrollWidget(QWidget* parent) :
 	QWidget (parent)
 {
+	setObjectName("KRibbonScrollWidget");
+
+	m_scrollArea = new QScrollArea(this);
+
+	QHBoxLayout* mainLayout = new QHBoxLayout(this);
+	mainLayout->addWidget(m_scrollArea);
+	mainLayout->setContentsMargins(0, 0, 0, 0);
+
+//	m_centerWidget
+
 
 }
 
