@@ -9,6 +9,7 @@
 
 class QScrollArea;
 
+//arrow
 class KRbScrollArrow : public QAbstractButton
 {
 	Q_OBJECT
@@ -21,6 +22,14 @@ public:
 	virtual void paintEvent(QPaintEvent* event) override;
 };
 
+class KRbScrollCenterWidget : public QWidget
+{
+	Q_OBJECT
+public:
+	KRbScrollCenterWidget(QWidget* parent = nullptr);
+};
+
+//widget in tab
 class KRibbonScrollWidget : public QWidget
 {
 	Q_OBJECT

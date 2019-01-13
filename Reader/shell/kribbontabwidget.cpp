@@ -46,7 +46,13 @@ void KRbScrollArrow::paintEvent(QPaintEvent* event)
 }
 
 /////////////////////////////////////////////////////////////////////
+KRbScrollCenterWidget::KRbScrollCenterWidget(QWidget* parent) :
+	QWidget(parent)
+{
+	setObjectName("KRbScrollCenterWidget");
+}
 
+////////////////////////////////////////////////////////////////////
 KRibbonScrollWidget::KRibbonScrollWidget(QWidget* parent) :
 	QWidget (parent)
 {
@@ -55,8 +61,8 @@ KRibbonScrollWidget::KRibbonScrollWidget(QWidget* parent) :
 	m_scrollArea = new QScrollArea(this);
 
 	QHBoxLayout* mainLayout = new QHBoxLayout(this);
-	mainLayout->addWidget(m_scrollArea);
 	mainLayout->setContentsMargins(0, 0, 0, 0);
+	mainLayout->addWidget(m_scrollArea);
 
 //	m_centerWidget
 
