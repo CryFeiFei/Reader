@@ -98,7 +98,7 @@ void MainViewer::CreatToolBar()
 
 	auto fCreateRb = [this] ()
 	{
-		KRibbonWidget* rbWidget = new KRibbonWidget();
+		KRibbonWidget* rbWidget = new KRibbonWidget(this);
 		rbWidget->show();
 	};
 
